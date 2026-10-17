@@ -1,0 +1,30 @@
+{
+    "type": "BordersPanel",
+    "name": "PanelBordersPanel",
+    "fields": {
+        "fitToParent": true,
+        "priority": -1
+    },
+    "children": [
+        {
+            "type": "Panel",
+            "name": "LeftAnchor",
+            "fields": {
+                "anchor": {
+                    "x": 0.0
+                }
+            },
+            "children": []
+        },
+        {
+            "type": "Panel",
+            "name": "RightAnchor",
+            "fields": {
+                "anchor": {
+                    "x": 1.0
+                }
+            },
+            "children": []
+        }
+    ]
+}

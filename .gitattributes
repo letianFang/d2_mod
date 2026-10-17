@@ -1,0 +1,12 @@
+* text=auto
+*.py text eol=lf
+*.ps1 text eol=crlf
+*.md text eol=lf
+*.json text eol=lf
+*.zip binary
+*.sprite binary
+*.texture binary
+*.flac binary
+# Game assets and extraction baselines must retain exact bytes and hashes.
+/mods/** -text
+/.original-build-93854/** -text

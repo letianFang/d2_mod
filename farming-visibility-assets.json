@@ -1,0 +1,22 @@
+{
+  "build": "93854",
+  "launchArguments": "-mod FarmHub -txt -assettestmode 1",
+  "corpseScope": "all areas; used corpses only",
+  "stateChange": {
+    "state": "corpse_noselect",
+    "id": 118,
+    "column": "hide",
+    "before": "",
+    "after": "1"
+  },
+  "originalSha256": {
+    "data/global/excel/states.txt": "edca1756ad868308e91dd088708d69b3a583b6187edd0c0c001d4dbb8644d5c7",
+    "data/global/ui/layouts/panelborderspanelhd.json": "b0eeb0ed6fa2816f030751c030b43fee39047236f8bd3d7a0993e1acc48c7a03"
+  },
+  "files": {
+    "data/global/excel/states.txt": "bc4486d37917ca5f15969e985fc3174f903471a2b135b5cd14b8e0e7c43ca1d4",
+    "data/global/ui/layouts/panelborderspanelhd.json": "d9e9f9469e58e2fbc27f986e2c5a48bd0d48b7a4fa073451f7d916ec4edd5669"
+  },
+  "runtimeVerification": "pending in-game verification",
+  "parameterReference": "https://github.com/jcymeow/jcy#使用"
+}

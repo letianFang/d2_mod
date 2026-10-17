@@ -1,0 +1,49 @@
+{
+  "version": "1.3.1",
+  "reference": "https://github.com/lukezord/d2r-advanced",
+  "referenceCommit": "77045d9592a3eb6b0f556c20f80f91da92938ddc",
+  "directionAngles": {
+    "n": "0045",
+    "e": "0315",
+    "s": "0225",
+    "w": "0135"
+  },
+  "entranceTiles": [
+    "act_3_mephisto_down_l",
+    "act_3_mephisto_down_r",
+    "act_5_baal_temple_down_l",
+    "act_5_baal_temple_down_r",
+    "act_5_temple_down",
+    "act_1_catacombs_down",
+    "act_1_crypt_down"
+  ],
+  "removedFiles": [
+    "data/hd/roomtiles/act_3_travincal_to_mephisto.json"
+  ],
+  "files": {
+    "data/hd/directionarrows/particles/directionarrows_0045.particles": "720a9c2cd6359e1c08ad50c12e6aa2059b5ee08cad7110a99e322949c05e7a42",
+    "data/hd/directionarrows/particles/directionarrows_0135.particles": "6d528e35057ee289dcc9d13b00bf13918b6a3f999e68b975607127639360c825",
+    "data/hd/directionarrows/particles/directionarrows_0225.particles": "552d4276032943df21df57f0a8ecd943aec83896d82efa0009ea504c46b91431",
+    "data/hd/directionarrows/particles/directionarrows_0315.particles": "bf777aa629d561532b59e45ce8ae1656d7a8d16fd67205bcc2a7c48040dd2308",
+    "data/hd/directionarrows/textures/directionarrows_0045.texture": "09830073a0d9dfbd8ff44403e403653228a31b88f03ed919fe8aa03394a8e038",
+    "data/hd/directionarrows/textures/directionarrows_0135.texture": "9fb9b0786cfcefff5dfff8236b82c8acd1592622910cf1af0d1a5f832a413f26",
+    "data/hd/directionarrows/textures/directionarrows_0225.texture": "1769fefaf99397570ece365a1397e2773d1fff58e4159f174c101fbbb88a6aab",
+    "data/hd/directionarrows/textures/directionarrows_0315.texture": "73954a7c5a84024f791fe7093d554eff140ea59e4e340eb98690311128f9807c",
+    "data/hd/env/porory/beacon/pf_beacon_downstairs.json": "434ec1dcfcb77ab722a5485623149cf9d94e91f3be7ca4d6f64d6a8c6af60a40",
+    "data/hd/env/porory/beacon/texture/beacon_c03_s07_o100$a.texture": "2e2e68144e9709a8c466877dc73a2dff9f2f33a4bd66173b054e9155dad2e007",
+    "data/hd/env/porory/beacon/texture/beacon_c03_s07_o100$rgb.texture": "d4c8b7c41fc941f97f731f29d41b2df1522202e9cf74d00289b9d75896b69a43",
+    "data/hd/env/preset/expansion/wildtemple/nihle.json": "7b6b6af83d7b6f9dddbb3d24f4cfda2900ccdff0bfda8c0abaec85ae5992847a",
+    "data/hd/env/preset/expansion/wildtemple/nihln.json": "5aba0991e15e51cb9bbb95fcaf8c4a6a57de9ca5d30db2f2084dba094709f786",
+    "data/hd/env/preset/expansion/wildtemple/nihls.json": "c11bf8aedbdcd96c3ce73a654472a9c7e13e0c59fdb0a361b37048b5de0dc0b2",
+    "data/hd/env/preset/expansion/wildtemple/nihlw.json": "5f6a41e6e61d6ecb63bed381a6ee560d3a396e9b12e830eeec5b890f4c310213",
+    "data/hd/nickname/textures/graphic/nick2_icon_alb.texture": "09830073a0d9dfbd8ff44403e403653228a31b88f03ed919fe8aa03394a8e038",
+    "data/hd/nickname/textures/graphic/npcname_akara00glow.texture": "a6db4e7d60f30ea12e19585189009c9080b16ef277123197c594b0d909a8b240",
+    "data/hd/roomtiles/act_1_catacombs_down.json": "4b707f3a3155a075c90efaa5d4f2f2d3645c67505a6e36fb258b70091214f8a9",
+    "data/hd/roomtiles/act_1_crypt_down.json": "a28b546b999bf098d8d27b15b43c525fd4456ddd22a9d2a3709962e4c6bff403",
+    "data/hd/roomtiles/act_3_mephisto_down_l.json": "72944b68ddaed8a96ee3725c17060b9c22611329119c53afa255d7bed2f3f6a0",
+    "data/hd/roomtiles/act_3_mephisto_down_r.json": "b37d036fa5ee6c3089f283d4ac102d13bd4fa72fe211996f84510901ed73a495",
+    "data/hd/roomtiles/act_5_baal_temple_down_l.json": "b5b70d7c6df7cf37a0062d7a275cd276ff2b54c4b63966b03f9c818b5e07af46",
+    "data/hd/roomtiles/act_5_baal_temple_down_r.json": "424a5d3d36b447dbf241a3fa5e133bf9bd2d845bb8818625be257e88afd9d18f",
+    "data/hd/roomtiles/act_5_temple_down.json": "790388c5e9cb5b9a221806c210bdd6d43255408dec9de6503e2e87d3ca003602"
+  }
+}

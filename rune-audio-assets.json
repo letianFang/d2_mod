@@ -1,0 +1,101 @@
+{
+  "version": "1.4.0",
+  "build": "93854",
+  "source": "E:\\磨刀门MOD\\MDM\\MDM\\MDM.mpq",
+  "runes": [
+    {
+      "code": "r26",
+      "name": "Vex Rune",
+      "sound": "high_rune_26"
+    },
+    {
+      "code": "r27",
+      "name": "Ohm Rune",
+      "sound": "high_rune_27"
+    },
+    {
+      "code": "r28",
+      "name": "Lo Rune",
+      "sound": "high_rune_28"
+    },
+    {
+      "code": "r29",
+      "name": "Sur Rune",
+      "sound": "high_rune_29"
+    },
+    {
+      "code": "r30",
+      "name": "Ber Rune",
+      "sound": "high_rune_30"
+    },
+    {
+      "code": "r31",
+      "name": "Jah Rune",
+      "sound": "high_rune_31"
+    },
+    {
+      "code": "r32",
+      "name": "Cham Rune",
+      "sound": "high_rune_32"
+    },
+    {
+      "code": "r33",
+      "name": "Zod Rune",
+      "sound": "high_rune_33"
+    }
+  ],
+  "audioInfo": {
+    "r26": {
+      "sampleRate": 44100,
+      "durationSeconds": 2.113
+    },
+    "r27": {
+      "sampleRate": 44100,
+      "durationSeconds": 2.81
+    },
+    "r28": {
+      "sampleRate": 44100,
+      "durationSeconds": 3.181
+    },
+    "r29": {
+      "sampleRate": 44100,
+      "durationSeconds": 3.344
+    },
+    "r30": {
+      "sampleRate": 44100,
+      "durationSeconds": 6.571
+    },
+    "r31": {
+      "sampleRate": 44100,
+      "durationSeconds": 3.785
+    },
+    "r32": {
+      "sampleRate": 44100,
+      "durationSeconds": 2.879
+    },
+    "r33": {
+      "sampleRate": 44100,
+      "durationSeconds": 3.669
+    }
+  },
+  "miscColumns": 172,
+  "miscRows": 170,
+  "soundColumns": 38,
+  "soundRows": 11921,
+  "originalHashes": {
+    "data/global/excel/misc.txt": "4b7259d1db5fa0a9da1d9530a019066cd40806ede91a4c0f4c69f81aebffdb7f",
+    "data/global/excel/sounds.txt": "c80b4d612e6f33edfea589d2fb6757b8fb92fadd8fc8a87a6e89ca6eeee2a512"
+  },
+  "files": {
+    "data/hd/global/sfx/item/high_rune_26.flac": "c4ec50ec35e741e20c3de52cb8d395c451ba562a63a65888e6c1f6c9e47f59de",
+    "data/hd/global/sfx/item/high_rune_27.flac": "f01f2dc746f3a4ae5e0ea7bf4061b6381580e8006a9a4dbee59c65d270961d24",
+    "data/hd/global/sfx/item/high_rune_28.flac": "abcdc9aee314ccbc710ba54355ec336527c360f36da41fd306479159056ca71c",
+    "data/hd/global/sfx/item/high_rune_29.flac": "404c6893a9de1c0c7653ef5068bac990a764760ca959a0feeb2d420d45e457f8",
+    "data/hd/global/sfx/item/high_rune_30.flac": "8ab6ec8b7a58a2b6316a7ce974e5ab826c45727a66b60f9c6f3fa80ac4b3ad73",
+    "data/hd/global/sfx/item/high_rune_31.flac": "fa027efb2d3136794ab17a0bcf9d7740ddc95795020cfc7261286e1389224711",
+    "data/hd/global/sfx/item/high_rune_32.flac": "3cc6e59ca45294d0eba534e606628303f6e295342e658f11747150531dba4ba3",
+    "data/hd/global/sfx/item/high_rune_33.flac": "7b629074ab06b5a2eafd63a4956fbf88b51acae4a08feb7c003c557dbe68dbfe",
+    "data/global/excel/misc.txt": "82ffbcb9a8e05167eea0fdc06821ab4a7a21bbc6d895bc14ea73602bcabfbc45",
+    "data/global/excel/sounds.txt": "7c435a6913c9affb391d16b93bb777a725675d8ddeb6b264706ae870b0f987d4"
+  }
+}
