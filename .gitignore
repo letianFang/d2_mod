@@ -4,6 +4,7 @@
 
 # Runtime logs and Python cache.
 *.log
+*.zip
 __pycache__/
 *.py[cod]
 

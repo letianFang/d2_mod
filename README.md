@@ -10,7 +10,7 @@
 
 新增 `build-farming-visibility.py` 和 `farming-visibility-assets.json` 记录构建方式、原文件及输出哈希。`verify.ps1` 已包含新资源的静态校验；静态通过不代表已完成游戏内验证。下文 `FarmHub-v1.4.0.zip` 是历史发布包，不包含这次新增功能；当前完整资源以 `mods/FarmHub` 为准。
 
-仓库保留已有发布 ZIP、`backups/` 历史备份和 `.original-build-93854/` 构建基线；不收录本机 `.tools/` 工具及 `.reference-*` 第三方参考检出。后续日常修改使用 Git 提交记录，不再每次新增 ZIP 备份。游戏存档不纳入此仓库。
+发布 ZIP 和历史备份压缩包统一放在 [GitHub Releases](https://github.com/letianFang/d2_mod/releases)，不作为仓库目录中的文件维护。仓库保留 `.original-build-93854/` 构建基线；不收录本机 `.tools/` 工具及 `.reference-*` 第三方参考检出。后续日常修改使用 Git 提交记录，不再每次新增 ZIP 备份。游戏存档不纳入此仓库。
 
 这是一个用于《暗黑破坏神 II：狱火重生》（D2R）离线模式的数据模组。它补满第四幕传送点菜单的 9 个固定槽位，并在其他各幕保留一条返回第四幕城镇（群魔堡垒）的通路。
 
