@@ -19,10 +19,14 @@ $destination = Join-Path $modsRoot 'FarmHub'
 New-Item -ItemType Directory -Path $modsRoot -Force | Out-Null
 Copy-Item -LiteralPath $source -Destination $modsRoot -Recurse -Force
 
-# Remove only the explicitly retired resource; the game then uses its original.
-$retiredEntrance = Join-Path $destination 'FarmHub.mpq\data\hd\roomtiles\act_3_travincal_to_mephisto.json'
-if (Test-Path -LiteralPath $retiredEntrance -PathType Leaf) {
-    Remove-Item -LiteralPath $retiredEntrance
+# Remove only the explicitly retired resources; the game then uses its originals.
+$stashMerge = Get-Content -LiteralPath (Join-Path $PSScriptRoot 'stash-merge-assets.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+$retiredFiles = @('data\hd\roomtiles\act_3_travincal_to_mephisto.json') + @($stashMerge.removedFiles)
+foreach ($retiredFile in $retiredFiles) {
+    $retiredPath = Join-Path $destination "FarmHub.mpq\$retiredFile"
+    if (Test-Path -LiteralPath $retiredPath -PathType Leaf) {
+        Remove-Item -LiteralPath $retiredPath
+    }
 }
 
 Write-Host "FarmHub installed to: $destination"

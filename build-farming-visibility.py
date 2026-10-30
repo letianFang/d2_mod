@@ -56,7 +56,7 @@ def build():
         'stateChange': {'state': 'corpse_noselect', 'id': 118, 'column': 'hide', 'before': '', 'after': '1'},
         'originalSha256': {state_path: sha(original), panel_path: sha(panel_original)},
         'files': {name: sha((MOD / name).read_bytes()) for name in (state_path, panel_path)},
-        'runtimeVerification': 'pending in-game verification',
+        'runtimeVerification': 'confirmed by user 2026-10-30',
         'parameterReference': 'https://github.com/jcymeow/jcy#使用',
     }
     (ROOT / 'farming-visibility-assets.json').write_text(

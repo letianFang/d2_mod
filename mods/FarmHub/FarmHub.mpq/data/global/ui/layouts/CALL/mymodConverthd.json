@@ -1,0 +1,22 @@
+{
+    "type": "Panel",
+    "name": "CALL/mymodConvert",
+    "children": [
+        {
+            "type": "TimerWidget",
+            "name": "reshaping_timer",
+            "fields": {
+                "time": 0.9,
+                "message": "BankPanelMessage:Convert"
+            }
+        },
+        {
+            "type": "TimerWidget",
+            "name": "TimerClose8",
+            "fields": {
+                "time": 0.9,
+                "message": "PanelManager:UnloadPanel:CALL/mymodConvert"
+            }
+        }
+    ]
+}
