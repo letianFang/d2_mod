@@ -1,0 +1,36 @@
+{
+  "version": "1.5.0",
+  "build": "93854",
+  "source": "MDM mod (author 暗黑2阿檬), local copy; no license file found",
+  "tabLabel": "材料",
+  "slotCount": 91,
+  "transmuteIntervalSeconds": 0.9,
+  "runtimeVerification": "confirmed by user 2026-10-30",
+  "removedFiles": [
+    "data/global/ui/layouts/bankoriginallayouthd.json",
+    "data/hd/global/ui/panel/stash/stashpanel_bg_personal.sprite",
+    "data/hd/global/ui/panel/stash/stashpanel_bg_personal.lowend.sprite",
+    "data/hd/global/ui/panel/stash/stashpanel_bg_shared.sprite",
+    "data/hd/global/ui/panel/stash/stashpanel_bg_shared.lowend.sprite",
+    "data/hd/global/ui/panel/stash/stash_rightarrow.sprite",
+    "data/hd/global/ui/panel/stash/stash_rightarrow.lowend.sprite",
+    "data/hd/global/ui/panel/stash/additionalstash/panel_additionalstash_gems.sprite",
+    "data/hd/global/ui/panel/stash/additionalstash/panel_additionalstash_gems.lowend.sprite",
+    "data/hd/global/ui/panel/stash/additionalstash/stashnotification.sprite",
+    "data/hd/global/ui/panel/stash/additionalstash/stashnotification.lowend.sprite"
+  ],
+  "originalSha256": {
+    "data/global/ui/layouts/CALL/mymodConvertAutoStarthd.json": "93F891F3A1EBD0186709959E883819910D3D259C1BDFFA88BC3DFB3288B7BD11",
+    "data/global/ui/layouts/CALL/mymodConverthd.json": "D92212E54EDA5CEF25323CD6E5348541FE02DE6DCC6647972F23CA21BA33A7BB",
+    "data/global/ui/layouts/bankexpansionlayouthd.json": "ACABBA56E24457A04266CFC176C28461466D9629EA183CA6B96DF6BA1AF6E104",
+    "data/hd/global/ui/panel/stash/additionalstash/panel_bg_craft.lowend.sprite": "95BA5BB003461BCE6E48C009310A2B311F8D74164C577470E47AE004B4DFCCBC",
+    "data/hd/global/ui/panel/stash/additionalstash/panel_bg_craft.sprite": "66535DE4501004813F2C8A80D68227C3DF6359F70CCE3B2A4FF938441B58C936"
+  },
+  "files": {
+    "data/global/ui/layouts/CALL/mymodConvertAutoStarthd.json": "24DDD3D7943693F7C1FA160A0C2332C0023B38B029923F6F5E144CABA8B648FD",
+    "data/global/ui/layouts/CALL/mymodConverthd.json": "C6B838E791E8BABA4F08468F3FDE4BBAAC36E1AA40156FCB73620269D8AD946B",
+    "data/global/ui/layouts/bankexpansionlayouthd.json": "47DE8AB6D784A8E902151756D85206BEBD74484BF121D237A833A32A9352AED8",
+    "data/hd/global/ui/panel/stash/additionalstash/panel_bg_craft.lowend.sprite": "95BA5BB003461BCE6E48C009310A2B311F8D74164C577470E47AE004B4DFCCBC",
+    "data/hd/global/ui/panel/stash/additionalstash/panel_bg_craft.sprite": "66535DE4501004813F2C8A80D68227C3DF6359F70CCE3B2A4FF938441B58C936"
+  }
+}

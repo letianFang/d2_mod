@@ -186,4 +186,47 @@ if ($borders.type -ne 'BordersPanel' -or $borders.children.Count -ne 2 -or
     $borders.children[0].name -ne 'LeftAnchor' -or $borders.children[1].name -ne 'RightAnchor') {
     throw 'Panel borders or mouse click catchers are still present.'
 }
-Write-Host 'Verification passed: existing FarmHub features, navigation, high-rune audio, used corpse visibility, borderless panels, and asset hashes.'
+$stashMerge = [System.IO.File]::ReadAllText((Join-Path $PSScriptRoot 'stash-merge-assets.json'), [System.Text.Encoding]::UTF8) | ConvertFrom-Json
+foreach ($file in $stashMerge.files.PSObject.Properties) {
+    if ((Get-FileHash -LiteralPath (Join-Path $modRoot $file.Name)).Hash -ne $file.Value) {
+        throw "Stash merge asset hash mismatch: $($file.Name)"
+    }
+}
+foreach ($removedFile in $stashMerge.removedFiles) {
+    if (Test-Path -LiteralPath (Join-Path $modRoot $removedFile)) {
+        throw "Retired stash resource still exists: $removedFile"
+    }
+}
+$bank = [System.IO.File]::ReadAllText((Join-Path $modRoot 'data/global/ui/layouts/bankexpansionlayouthd.json'), [System.Text.Encoding]::UTF8) | ConvertFrom-Json
+$bankGroup = { param($name) @($bank.children | Where-Object name -eq $name) }
+$bankTabs = @(& $bankGroup 'BankTabs')
+if ($bankTabs.Count -ne 1 -or $bankTabs[0].fields.tabCount -ne 3 -or $bankTabs[0].fields.textStrings[2] -ne $stashMerge.tabLabel) {
+    throw 'The merged stash tab bar is incorrect.'
+}
+$stashGrid = @((& $bankGroup 'basicstash_container')[0].children | Where-Object name -eq 'grid')
+if ($stashGrid.Count -ne 1 -or $stashGrid[0].fields.cellCount.x -ne 10 -or $stashGrid[0].fields.cellCount.y -ne 10) {
+    throw 'The personal and shared stash grid must stay 10x10.'
+}
+foreach ($emptyGroup in @('advancedstash_materials', 'advancedstash_runes')) {
+    if (@((& $bankGroup $emptyGroup)[0].children).Count -ne 0) {
+        throw "Merged stash source group must stay empty: $emptyGroup"
+    }
+}
+$slotCodes = @((& $bankGroup 'advancedstash_gems')[0].children | ForEach-Object { $_.fields.itemCode })
+$stackableCodes = @($misc | Where-Object AdvancedStashStackable -eq '1' | ForEach-Object code)
+if ($slotCodes.Count -ne $stashMerge.slotCount -or @($slotCodes | Select-Object -Unique).Count -ne $slotCodes.Count -or
+    (Compare-Object $slotCodes $stackableCodes)) {
+    throw 'The merged stash slots do not match the stackable items in misc.txt.'
+}
+$cubeWidgets = @((& $bankGroup 'advancedstash_horadriccube')[0].children)
+$autoTransmute = @($cubeWidgets | Where-Object name -eq 'auto_convert_container')
+if ($autoTransmute.Count -ne 1 -or $autoTransmute[0].children[0].fields.onClickMessage -ne 'PanelManager:TogglePanel:CALL/mymodConvertAutoStart') {
+    throw 'The auto-transmute toggle is missing or incorrect.'
+}
+$autoStart = Get-Content -LiteralPath (Join-Path $modRoot 'data/global/ui/layouts/CALL/mymodConvertAutoStarthd.json') -Raw | ConvertFrom-Json
+$autoStep = Get-Content -LiteralPath (Join-Path $modRoot 'data/global/ui/layouts/CALL/mymodConverthd.json') -Raw | ConvertFrom-Json
+if ($autoStart.name -ne 'CALL/mymodConvertAutoStart' -or $autoStep.name -ne 'CALL/mymodConvert' -or
+    @($autoStep.children | Where-Object { $_.fields.message -eq 'BankPanelMessage:Convert' -and $_.fields.time -eq $stashMerge.transmuteIntervalSeconds }).Count -ne 1) {
+    throw 'The auto-transmute timer panels are incorrect.'
+}
+Write-Host 'Verification passed: existing FarmHub features, navigation, high-rune audio, used corpse visibility, borderless panels, merged stash tab, and asset hashes.'

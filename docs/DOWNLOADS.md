@@ -2,15 +2,17 @@
 
 适配基线：国服《暗黑破坏神 II：狱火重生》build **93854**，用于离线角色。历史包没有验证后续客户端版本；遇到版本不匹配时，请按仓库 README 的维护步骤处理。
 
+用户已确认（2026-10-30）v1.5.0 全部功能的游戏内测试正常。下表中较早的“待回归”记录保留为各版本发布时的状态。
+
 ## 先按需求选一个完整包
 
 | 你的需求 | 下载选择 | 需要了解的限制 |
 | --- | --- | --- |
-| 想用目前历史压缩包中功能最多的版本 | **[v1.4.0：传送＋崔凡克视野＋快速操作＋导航＋大符文音效](https://github.com/letianFang/d2_mod/releases/download/archive-2026-10-17/FarmHub-v1.4.0.zip)** | 26–33 号符文专用掉落音效尚待游戏内回归；不含后来新增的挖尸消失、面板去边框 |
+| 想要全部功能（推荐） | **[v1.5.0：合并材料页＋自动重塑＋尸体与面板改进＋此前全部功能](https://github.com/letianFang/d2_mod/releases/download/v1.5.0/FarmHub-v1.5.0.zip)** | 查看过往赛季时“材料”页没有提取按钮；个人和共享页保持原版 |
+| 不要合并材料页、尸体和面板改动 | **[v1.4.0：传送＋崔凡克视野＋快速操作＋导航＋大符文音效](https://github.com/letianFang/d2_mod/releases/download/archive-2026-10-17/FarmHub-v1.4.0.zip)** | 26–33 号符文专用掉落音效尚待游戏内回归；不含后来新增的挖尸消失、面板去边框 |
 | 想要入口和尼拉塞克方向提示，不要专用符文音效 | **[v1.3.1：导航版](https://github.com/letianFang/d2_mod/releases/download/archive-2026-10-17/FarmHub-v1.3.1.zip)** | 保留快速操作；已取消崔凡克到憎恨囚牢的入口高亮 |
 | 不要入口导航和符文音效，只要传送、崔凡克视野及快速操作 | **[v1.2.3：刷议会基础版](https://github.com/letianFang/d2_mod/releases/download/archive-2026-10-17/FarmHub-v1.2.3.zip)** | 人物点击开局修复后尚待游戏内回归 |
 | 只需要第四幕刷宝传送菜单和其他幕返回入口 | **[v1.0.4：仅传送版](https://github.com/letianFang/d2_mod/releases/download/archive-2026-10-17/FarmHub-v1.0.4.zip)** | 不含崔凡克场景、人物点击开局、暂停菜单快速退出、导航和专用音效 |
-| 想要挖尸后消失、去面板边框，以及国服尸体显示的启动说明 | 查看 [main 分支的当前工程](https://github.com/letianFang/d2_mod/tree/main) | **这 18 个历史 ZIP 均不含新尸体/边框资源。** 新改动已通过静态检查，游戏内效果仍待测试；不要把 v1.4.0 当作当前工程的完整打包版本 |
 
 每个发布包都是一个完整版本，只选一个安装，不要叠加多个版本。功能是累积的，“导航版”也包含此前的传送、场景与快速操作，不是只包含导航的插件。
 
@@ -22,6 +24,7 @@
 
 | 压缩包 | 包含功能或本版变化 | 选择提示 |
 | --- | --- | --- |
+| [FarmHub-v1.5.0.zip](https://github.com/letianFang/d2_mod/releases/download/v1.5.0/FarmHub-v1.5.0.zip) | v1.4.0 全部功能，加合并材料页、自动重塑、尸体显示与隐藏、去除面板边框 | 当前推荐版本 |
 | [FarmHub-v1.0.0.zip](https://github.com/letianFang/d2_mod/releases/download/archive-2026-10-17/FarmHub-v1.0.0.zip) | 第四幕刷宝传送菜单、其他幕返回第四幕入口 | 最早版本；使用独立存档目录，未带数据版本标记；仅供历史留档 |
 | [FarmHub-v1.0.1.zip](https://github.com/letianFang/d2_mod/releases/download/archive-2026-10-17/FarmHub-v1.0.1.zip) | 传送功能；改为沿用原版存档、设置和键位 | 未带数据版本标记；仅供历史留档 |
 | [FarmHub-v1.0.2.zip](https://github.com/letianFang/d2_mod/releases/download/archive-2026-10-17/FarmHub-v1.0.2.zip) | 传送功能；加入 build 93854 版本标记 | 标记末尾含换行，存在版本检测问题；不建议选用 |
@@ -73,5 +76,7 @@
 
    该参数独立于历史压缩包；它本身不会加入“挖尸后隐藏已使用尸体”和“移除面板边框”资源。
 5. 启动后选择离线角色。传送菜单只允许使用角色在当前难度已解锁的传送点；人物模型点击进入地狱也不会解锁难度。
+
+从 v1.5.0 之前的早期测试版升级时，务必先移走旧的 `mods\FarmHub` 或使用 `install.ps1`，否则残留文件会让仓库面板错位。
 
 安装脚本及更详细的兼容、存档和操作说明，见 [仓库 README](https://github.com/letianFang/d2_mod#readme)。历史 ZIP 内的 README 保持当时版本，下载选择以本页说明为准。

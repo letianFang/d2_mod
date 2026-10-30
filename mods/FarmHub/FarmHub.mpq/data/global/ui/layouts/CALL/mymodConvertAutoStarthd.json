@@ -1,0 +1,18 @@
+{
+    "type": "HoradricCubePanel",
+    "name": "CALL/mymodConvertAutoStart",
+    "fields": {
+        "priority": 9999
+    },
+    "children": [
+        {
+            "type": "TimerWidget",
+            "name": "Timer10",
+            "fields": {
+                "time": 0.1,
+                "loop": true,
+                "message": "PanelManager:OpenPanel:CALL/mymodConvert"
+            }
+        }
+    ]
+}
