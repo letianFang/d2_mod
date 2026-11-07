@@ -1,0 +1,13 @@
+{
+  "build": "93854",
+  "language": "zhCN",
+  "labelledBases": 506,
+  "rules": "e1335b24d17c6081347c3a63be77444d038f76a8a8ab79fb2d69f7e61b21e8e7",
+  "originalSha256": {
+    "data/local/lng/strings/item-names.json": "843ff48c26aefa6efed7995b486e2e53553a802ae4af9a52c2b367fea302525a"
+  },
+  "files": {
+    "data/local/lng/strings/item-names.json": "a8618905ab622ec20e8e9efeb64d4f1ef208b4cc9c22f7d5732323e497cc9028"
+  },
+  "runtimeVerification": "pending"
+}

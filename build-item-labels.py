@@ -131,6 +131,8 @@ def build_strings():
     missing = sorted(set(rules) - found)
     assert not missing, f'base names missing from item-names.json: {missing}'
     data = json.dumps(entries, indent=2, ensure_ascii=False) + '\n'
+    if b'\r\n' in original:
+        data = data.replace('\n', '\r\n')
     data = (b'\xef\xbb\xbf' if bom else b'') + data.encode('utf-8')
     target = MOD / STRINGS
     target.parent.mkdir(parents=True, exist_ok=True)
