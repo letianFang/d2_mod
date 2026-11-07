@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parent
 SOURCE = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / '.reference-mdm/MDM.mpq'
 TARGET = ROOT / 'mods/FarmHub/FarmHub.mpq'
 TAB_LABEL = '材料'
-TRANSMUTE_INTERVAL = 0.9  # The looping timer adds up to 0.1s, giving about one transmute per second.
+TRANSMUTE_INTERVAL = 0.4  # The looping timer adds up to 0.1s, giving about one transmute every 0.5s.
 LAYOUT = 'data/global/ui/layouts/bankexpansionlayouthd.json'
 TIMER_START = 'data/global/ui/layouts/CALL/mymodConvertAutoStarthd.json'
 TIMER_STEP = 'data/global/ui/layouts/CALL/mymodConverthd.json'
@@ -132,7 +132,7 @@ def build():
         'tabLabel': TAB_LABEL,
         'slotCount': slot_count,
         'transmuteIntervalSeconds': TRANSMUTE_INTERVAL,
-        'runtimeVerification': 'confirmed by user 2026-10-30',
+        'runtimeVerification': 'confirmed by user 2026-10-30 at ~1s; 0.5s interval pending',
         'removedFiles': RETIRED,
         'originalSha256': {name: sha(data) for name, data in sorted(originals.items())},
         'files': {name: sha((TARGET / name).read_bytes())

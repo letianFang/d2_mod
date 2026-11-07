@@ -4,8 +4,8 @@
   "source": "MDM mod (author 暗黑2阿檬), local copy; no license file found",
   "tabLabel": "材料",
   "slotCount": 91,
-  "transmuteIntervalSeconds": 0.9,
-  "runtimeVerification": "confirmed by user 2026-10-30",
+  "transmuteIntervalSeconds": 0.4,
+  "runtimeVerification": "confirmed by user 2026-10-30 at ~1s; 0.5s interval pending",
   "removedFiles": [
     "data/global/ui/layouts/bankoriginallayouthd.json",
     "data/hd/global/ui/panel/stash/stashpanel_bg_personal.sprite",
@@ -28,7 +28,7 @@
   },
   "files": {
     "data/global/ui/layouts/CALL/mymodConvertAutoStarthd.json": "24DDD3D7943693F7C1FA160A0C2332C0023B38B029923F6F5E144CABA8B648FD",
-    "data/global/ui/layouts/CALL/mymodConverthd.json": "C6B838E791E8BABA4F08468F3FDE4BBAAC36E1AA40156FCB73620269D8AD946B",
+    "data/global/ui/layouts/CALL/mymodConverthd.json": "F13C276F1458F0E82CE983B53F89E5DE7A0F49F66C52D8F2E6950D385A045451",
     "data/global/ui/layouts/bankexpansionlayouthd.json": "47DE8AB6D784A8E902151756D85206BEBD74484BF121D237A833A32A9352AED8",
     "data/hd/global/ui/panel/stash/additionalstash/panel_bg_craft.lowend.sprite": "95BA5BB003461BCE6E48C009310A2B311F8D74164C577470E47AE004B4DFCCBC",
     "data/hd/global/ui/panel/stash/additionalstash/panel_bg_craft.sprite": "66535DE4501004813F2C8A80D68227C3DF6359F70CCE3B2A4FF938441B58C936"

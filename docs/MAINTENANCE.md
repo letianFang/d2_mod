@@ -58,9 +58,11 @@
 - 原版 overlay 行号和目录参考 [blizzhackers/d2data](https://github.com/blizzhackers/d2data)（其 `states` 数据与本工程 93854 原表逐格一致）。
 - 尚未在游戏内确认：文字的高度、大小，是否随状态结束立即消失（`hardKillOnDestroy: true`）。
 
-### 崔凡克火蛇冷色化（未实现）
+### 崔凡克火蛇隐藏（未实现）
 
-议会成员的技能是 `Hydra`，召唤 `hydra1`–`hydra3`，火蛇的 `HydraMissile` 发射 `hydra` 飞弹；原版高清 `missiles.json` 把 `hydra` 映射到通用的 `fireball` 模型，与法师火球等共用，因此不能直接改 `fireball.json`。实现前需要从 93854 客户端提取以下文件放进 `.original-build-93854/`：`data\hd\missiles\missiles.json`、`data\hd\missiles\fireball.json`、`data\hd\character\monsters.json`、`data\hd\character\enemy\hydra1.json`（及 `hydra2`、`hydra3`、对应子目录）。
+只做高清显示调整，不改 `monstats.txt`、`skills.txt` 等任何影响怪物行为的数据表。议会成员召唤的 `hydra1`–`hydra3` 与法师九头蛇是同一怪物，隐藏后法师九头蛇也看不见；火蛇的 `hydra` 飞弹在原版高清 `missiles.json` 中映射到与法师火球共用的 `fireball` 模型，只能在完整的原版 `missiles.json` 中把 `hydra` 单独改为 `null`，不能改 `fireball.json`。
+
+实现前需要从 93854 客户端提取以下文件放进 `.original-build-93854/`：`data\hd\missiles\missiles.json`、`data\hd\character\monsters.json`、`data\hd\character\enemy\hydra1.json`、`hydra2.json`、`hydra3.json`。
 
 ### 合并材料页
 
@@ -72,7 +74,7 @@
 与 MDM 的不同：
 
 - 标签文字为“材料”。
-- 重塑间隔由约 0.3 秒改为约 1 秒（`TRANSMUTE_INTERVAL`）。
+- 重塑间隔由约 0.3 秒改为约 0.5 秒（`TRANSMUTE_INTERVAL = 0.4`，加上开始面板 0.1 秒的循环定时器）。v1.5.0 时为约 1 秒。
 - `withdraw_button`（提取）移到屏幕外隐藏，不删除控件。
 - 对齐 `ua1`–`ua5` 的横向位置，消除 MDM 中 8 像素的点击区重叠。
 - 不带入 MDM 的自定义金币按钮、额外翻页箭头和方块下方重复的 7、8 号符文格。
@@ -180,7 +182,7 @@ powershell -ExecutionPolicy Bypass -File .\verify.ps1
 - 分别检查原版与扩展暂停布局；检查高清/低配置资源及不同分辨率下人物点击区是否仍覆盖模型。
 - 保存退出后重新开局，确认角色进度与掉落物品正常保存。
 - 战斗指挥后角色和佣兵腰部附近显示 SKILL，战斗体能后显示 LIFE，两者同时存在时上下排列不重叠；buff 结束、死亡后文字消失；吼叫施放特效正常。
-- “材料”页显示既有的符文、宝石和材料数量；放入、取出、自动入库、方块合成、合成后保存重开都正常；个人和共享页可正常存取；勾选自动重塑后约每秒重塑一次，取消勾选、关闭仓库或切换标签页后不再继续；过往赛季勾选框不与其他控件重叠。
+- “材料”页显示既有的符文、宝石和材料数量；放入、取出、自动入库、方块合成、合成后保存重开都正常；个人和共享页可正常存取；勾选自动重塑后约每 0.5 秒重塑一次，取消勾选、关闭仓库或切换标签页后不再继续；过往赛季勾选框不与其他控件重叠。
 
 ## 验证记录
 
