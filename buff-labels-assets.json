@@ -1,0 +1,42 @@
+{
+  "build": "93854",
+  "labels": {
+    "battlecommand": {
+      "text": "SKILL",
+      "rgb": [
+        255,
+        205,
+        60
+      ],
+      "textureCentre": 0.4,
+      "overlay": "data/hd/overlays/common/battlecommand.json"
+    },
+    "battleorders": {
+      "text": "LIFE",
+      "rgb": [
+        255,
+        85,
+        85
+      ],
+      "textureCentre": 0.6,
+      "overlay": "data/hd/overlays/common/battleorders.json"
+    }
+  },
+  "labelHeight": 1.0,
+  "labelScale": 0.5,
+  "template": {
+    "particle": "data/hd/directionarrows/particles/directionarrows_0045.particles",
+    "texture": "data/hd/directionarrows/textures/directionarrows_0045.texture",
+    "particleSha256": "720a9c2cd6359e1c08ad50c12e6aa2059b5ee08cad7110a99e322949c05e7a42"
+  },
+  "tablesChanged": [],
+  "files": {
+    "data/hd/directionarrows/textures/farmhub_bc_skilltext.texture": "2c724348ec62ae77d2eb9999b8dd23a219f70ed163f9028dce4562d5237a036c",
+    "data/hd/directionarrows/particles/farmhub_bc_skilltext.particles": "28c35824f29c21956cab3740467fa7b60aeee015a1e5706720047e2465ed3bad",
+    "data/hd/overlays/common/battlecommand.json": "5c6d6a2e5dc0621d29e2f722cffe022dc2fd279a16f3e2cd4a246016c11c13b2",
+    "data/hd/directionarrows/textures/farmhub_bo_life_text.texture": "826df258aee7c5bbf2de29b80090f517f9a2430f5bb773c66ac10c1b9025784d",
+    "data/hd/directionarrows/particles/farmhub_bo_life_text.particles": "aebd84016f190bcb4e8cece67dc306e9316205d2dd940a5e24f0ae8735fc04c2",
+    "data/hd/overlays/common/battleorders.json": "b3d05030f853fa1fcfd8736a1099e3c81f785f97a4ecc4ebde8911fb1665acbc"
+  },
+  "runtimeVerification": "pending"
+}

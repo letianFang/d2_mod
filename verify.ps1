@@ -229,4 +229,23 @@ if ($autoStart.name -ne 'CALL/mymodConvertAutoStart' -or $autoStep.name -ne 'CAL
     @($autoStep.children | Where-Object { $_.fields.message -eq 'BankPanelMessage:Convert' -and $_.fields.time -eq $stashMerge.transmuteIntervalSeconds }).Count -ne 1) {
     throw 'The auto-transmute timer panels are incorrect.'
 }
-Write-Host 'Verification passed: existing FarmHub features, navigation, high-rune audio, used corpse visibility, borderless panels, merged stash tab, and asset hashes.'
+$buffLabels = Get-Content -LiteralPath (Join-Path $PSScriptRoot 'buff-labels-assets.json') -Raw | ConvertFrom-Json
+foreach ($file in $buffLabels.files.PSObject.Properties) {
+    if ((Get-FileHash -LiteralPath (Join-Path $modRoot $file.Name)).Hash -ne $file.Value) {
+        throw "Buff label asset hash mismatch: $($file.Name)"
+    }
+}
+foreach ($label in $buffLabels.labels.PSObject.Properties) {
+    $warcry = @($states | Where-Object state -eq $label.Name)
+    if ($warcry.Count -ne 1 -or $warcry[0].overlay1 -ne $label.Name) {
+        throw "Buff label state no longer uses its vanilla overlay: $($label.Name)"
+    }
+    $overlay = Get-Content -LiteralPath (Join-Path $modRoot $label.Value.overlay) -Raw | ConvertFrom-Json
+    $particle = @($overlay.entities.components | Where-Object type -eq 'VfxDefinitionComponent')
+    if ($overlay.type -ne 'OverlayDefinition' -or $particle.Count -ne 1 -or
+        $overlay.dependencies.particles.path -notcontains $particle[0].filename -or
+        -not (Test-Path -LiteralPath (Join-Path $modRoot $particle[0].filename) -PathType Leaf)) {
+        throw "Buff label overlay is incorrect: $($label.Name)"
+    }
+}
+Write-Host 'Verification passed: existing FarmHub features, navigation, high-rune audio, used corpse visibility, borderless panels, merged stash tab, Battle Orders/Command labels, and asset hashes.'

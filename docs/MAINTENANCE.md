@@ -48,6 +48,20 @@
 
 `build-farming-visibility.py` 和 `farming-visibility-assets.json` 记录构建方式、原文件及输出哈希。
 
+### 战斗体能 / 战斗指挥文字
+
+原版 `states.txt` 中，`battleorders`、`battlecommand` 两个状态的 `overlay1` 分别是同名 overlay；`overlay.txt` 把这两行的 `Character` 设为 `common`。因此高清画面读取 `data\hd\overlays\common\battleorders.json` 和 `battlecommand.json`。本功能直接覆盖这两个文件，原来的持续光圈换成文字，不改任何数据表，施放特效 `battleorderscast`、`battlecommandcast` 保持原版。
+
+- 文字是面向镜头的贴片：粒子文件是 `directionarrows_0045.particles` 的逐字节副本，只把其中唯一一处贴图路径换成等长的新路径（`farmhub_bc_skilltext`、`farmhub_bo_life_text`）。路径长度必须保持 20 个字符的文件名，否则会破坏 PopcornFX 二进制。
+- 贴图沿用方向箭头的 `.texture` 文件头：BC3、1024×1024、8 级 mipmap，alpha 全为 255，按叠加方式显示，黑色即透明。SKILL 画在贴图上半部，LIFE 画在下半部，两者同时出现时上下排列。
+- 高度和大小由 `build-buff-labels.py` 的 `LABEL_HEIGHT`（距脚底高度）和 `LABEL_SCALE` 控制，改完重新运行脚本即可，`buff-labels-assets.json` 同步记录哈希。
+- 原版 overlay 行号和目录参考 [blizzhackers/d2data](https://github.com/blizzhackers/d2data)（其 `states` 数据与本工程 93854 原表逐格一致）。
+- 尚未在游戏内确认：文字的高度、大小，是否随状态结束立即消失（`hardKillOnDestroy: true`）。
+
+### 崔凡克火蛇冷色化（未实现）
+
+议会成员的技能是 `Hydra`，召唤 `hydra1`–`hydra3`，火蛇的 `HydraMissile` 发射 `hydra` 飞弹；原版高清 `missiles.json` 把 `hydra` 映射到通用的 `fireball` 模型，与法师火球等共用，因此不能直接改 `fireball.json`。实现前需要从 93854 客户端提取以下文件放进 `.original-build-93854/`：`data\hd\missiles\missiles.json`、`data\hd\missiles\fireball.json`、`data\hd\character\monsters.json`、`data\hd\character\enemy\hydra1.json`（及 `hydra2`、`hydra3`、对应子目录）。
+
 ### 合并材料页
 
 做法参考本机 MDM Mod（作者：暗黑2阿檬，适配 build 93854）：
@@ -87,7 +101,7 @@ powershell -ExecutionPolicy Bypass -File .\verify.ps1
 
 1. 启动一次未加载模组的游戏，确认客户端已完成更新。
 2. 记录客户端显示的新数据版本号。
-3. 从当前客户端重新提取最新版 `data\global\DataVersionBuild.txt`、`data\global\excel\` 下的 `actinfo.txt`、`misc.txt`、`sounds.txt`、`states.txt`，界面文件 `mainmenupanelhd.json`、`pauselayouthd.json`、`pauselayoutgardenhd.json`、`panelborderspanelhd.json`、`bankexpansionlayouthd.json`，以及崔凡克 `travn.json` 和四种 `nihl*.json`。
+3. 从当前客户端重新提取最新版 `data\global\DataVersionBuild.txt`、`data\global\excel\` 下的 `actinfo.txt`、`misc.txt`、`sounds.txt`、`states.txt`，界面文件 `mainmenupanelhd.json`、`pauselayouthd.json`、`pauselayoutgardenhd.json`、`panelborderspanelhd.json`、`bankexpansionlayouthd.json`，以及崔凡克 `travn.json` 和四种 `nihl*.json`；同时确认新版 `states.txt` 中 `battleorders`、`battlecommand` 的 `overlay1` 和 `overlay.txt` 中的 `Character` 未变。
 4. 以新版数据表为基础，重新应用传送点映射、符文音效和尸体状态改动；不要用旧表覆盖新版表。
 5. 以新版界面和场景文件为基础，重新合并人物点击进入地狱、崔凡克通透布局和合并材料页；不要长期沿用旧版本的完整资源文件。
 6. 确认 `DataVersionBuild.txt` 与客户端版本完全一致。
@@ -124,6 +138,8 @@ powershell -ExecutionPolicy Bypass -File .\verify.ps1
 | `data\hd\roomtiles\*.json`、`data\hd\env\porory\beacon\` | 入口光柱、光圈与纹理。 |
 | `data\hd\env\preset\expansion\wildtemple\nihl{n,e,s,w}.json`、`data\hd\directionarrows\` | 四种布局及方向箭头。 |
 | `data\hd\nickname\textures\graphic\` | 两张兼容纹理，补齐粒子中残留的材质引用。 |
+| `data\hd\overlays\common\battleorders.json`、`battlecommand.json` | 战斗体能 LIFE、战斗指挥 SKILL 文字；覆盖原版持续光圈。由 `build-buff-labels.py` 生成。 |
+| `data\hd\directionarrows\particles\farmhub_*`、`textures\farmhub_*` | 文字贴片粒子和 BC3 贴图；粒子只允许改等长贴图路径。 |
 | `data\global\ui\layouts\bankexpansionlayouthd.json` | 合并页布局；全部 `AdvancedStashSlotWidget` 位于 `advancedstash_gems`，`advancedstash_materials` 和 `advancedstash_runes` 必须保留为空容器。 |
 | `data\global\ui\layouts\CALL\mymodConvert*hd.json` | 自动重塑定时面板；面板 `name` 必须与勾选框消息和文件路径一致。 |
 | `data\hd\global\ui\panel\stash\additionalstash\panel_bg_craft*.sprite` | 合并页背景，格子框已画在贴图中，移动格子时要同步修改；高清与 `lowend` 版本应一起维护。 |
@@ -163,6 +179,7 @@ powershell -ExecutionPolicy Bypass -File .\verify.ps1
 - 暂停菜单外点击保存退出；菜单内设置和返回按钮正常，日常点击不会触发退出。
 - 分别检查原版与扩展暂停布局；检查高清/低配置资源及不同分辨率下人物点击区是否仍覆盖模型。
 - 保存退出后重新开局，确认角色进度与掉落物品正常保存。
+- 战斗指挥后角色和佣兵腰部附近显示 SKILL，战斗体能后显示 LIFE，两者同时存在时上下排列不重叠；buff 结束、死亡后文字消失；吼叫施放特效正常。
 - “材料”页显示既有的符文、宝石和材料数量；放入、取出、自动入库、方块合成、合成后保存重开都正常；个人和共享页可正常存取；勾选自动重塑后约每秒重塑一次，取消勾选、关闭仓库或切换标签页后不再继续；过往赛季勾选框不与其他控件重叠。
 
 ## 验证记录

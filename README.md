@@ -7,6 +7,15 @@ FarmHub 是《暗黑破坏神 II：狱火重生》（D2R）的离线数据模组
 - **实现方式：** 只替换游戏数据和界面资源，没有内存读取、DLL 注入或外部运行程序
 - **下载：** [最新版本](https://github.com/letianFang/d2_mod/releases/latest)｜[按功能选择历史版本](docs/DOWNLOADS.md)
 
+## 测试中：战斗体能 / 战斗指挥文字提示
+
+野蛮人吼完以后，身上有战斗指挥（加技能）时，人物腰部附近显示金色 **SKILL**；有战斗体能（加血）时显示红色 **LIFE**。同时有两个 buff 时，SKILL 在上、LIFE 在下。佣兵身上同样显示。哪个字没出现，就说明对应的 buff 没上，可以补吼一次。
+
+- 原版这两个 buff 的持续光圈换成了这两行文字；吼叫时的施放特效不变。
+- 只改高清显示，不改任何数据表，buff 的效果和持续时间不变。
+- 怪物身上带这两个状态时也会显示。
+- 文字的高度、大小尚待游戏内确认。
+
 ## v1.5.0 新增功能
 
 ### 符文、宝石、材料合并页
@@ -46,6 +55,7 @@ FarmHub 是《暗黑破坏神 II：狱火重生》（D2R）的离线数据模组
 | 大符文音效 | 26 号 Vex 至 33 号 Zod 掉落时播放专用提示音 |
 | 尸体与面板 | 恢复尸体显示、隐藏已使用的尸体、去除面板外侧边框 |
 | 合并材料页 | 符文、宝石、材料和方块同屏，支持自动重塑 |
+| BO 文字提示（测试中） | 战斗指挥显示 SKILL、战斗体能显示 LIFE，角色和佣兵都显示 |
 
 ## 安装
 
@@ -130,6 +140,7 @@ E:\Diablo II Resurrected\mods\FarmHub\FarmHub.mpq\modinfo.json
 
 | 版本 | 主要变更 |
 | --- | --- |
+| 未发布 | 战斗指挥、战斗体能状态以 SKILL / LIFE 文字显示在腰部附近（待游戏内测试）。 |
 | `v1.5.0` | 合并符文、宝石、材料堆叠页并保持原版面板大小；增加自动重塑勾选框；隐藏“材料”页的提取按钮；恢复国服尸体显示；隐藏已使用的尸体；去除面板外侧边框。 |
 | `v1.4.0` | 增加 26–33 号符文专用掉落音效。 |
 | `v1.3.1` | 取消崔凡克到憎恨囚牢的入口高亮，避免干扰刷议会。 |
@@ -146,6 +157,7 @@ E:\Diablo II Resurrected\mods\FarmHub\FarmHub.mpq\modinfo.json
 
 - **MDM（作者：暗黑2阿檬）：** 合并页的布局方法、背景贴图和自动重塑的定时面板做法，以及 26–33 号符文音效。MDM 未附带许可证，相关资源的权利归原作者所有。
 - **[lukezord/d2r-advanced](https://github.com/lukezord/d2r-advanced)：** 入口提示和方向箭头资源。
+- **[blizzhackers/d2data](https://github.com/blizzhackers/d2data)：** 用来核对原版 `overlay.txt` 中 buff 光圈对应的高清资源目录。
 - **[JCY Mod](https://github.com/jcymeow/jcy#使用)：** `-assettestmode 1` 启动参数的说明。
 
 模组开发和发布流程见[维护文档](docs/MAINTENANCE.md)。
