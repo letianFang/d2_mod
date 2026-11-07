@@ -8,7 +8,7 @@
         205,
         60
       ],
-      "textureCentre": 0.4,
+      "textureCentre": 0.448,
       "overlay": "data/hd/overlays/common/battlecommand.json"
     },
     "battleorders": {
@@ -18,12 +18,13 @@
         85,
         85
       ],
-      "textureCentre": 0.6,
+      "textureCentre": 0.552,
       "overlay": "data/hd/overlays/common/battleorders.json"
     }
   },
-  "labelHeight": 1.0,
-  "labelScale": 0.5,
+  "labelHeight": 1.6,
+  "labelScale": 1.0,
+  "textLeft": 0.62,
   "template": {
     "particle": "data/hd/directionarrows/particles/directionarrows_0045.particles",
     "texture": "data/hd/directionarrows/textures/directionarrows_0045.texture",
@@ -31,12 +32,12 @@
   },
   "tablesChanged": [],
   "files": {
-    "data/hd/directionarrows/textures/farmhub_bc_skilltext.texture": "2c724348ec62ae77d2eb9999b8dd23a219f70ed163f9028dce4562d5237a036c",
+    "data/hd/directionarrows/textures/farmhub_bc_skilltext.texture": "419e68c252af71776a4dd50b5545e18c89f69185379cbbe5b3a794e7a1825157",
     "data/hd/directionarrows/particles/farmhub_bc_skilltext.particles": "28c35824f29c21956cab3740467fa7b60aeee015a1e5706720047e2465ed3bad",
-    "data/hd/overlays/common/battlecommand.json": "5c6d6a2e5dc0621d29e2f722cffe022dc2fd279a16f3e2cd4a246016c11c13b2",
-    "data/hd/directionarrows/textures/farmhub_bo_life_text.texture": "826df258aee7c5bbf2de29b80090f517f9a2430f5bb773c66ac10c1b9025784d",
+    "data/hd/overlays/common/battlecommand.json": "776a3a1cfbb1c6a409e85b8cd34fc44319a7db5f3bdc545122835ade14e54c8d",
+    "data/hd/directionarrows/textures/farmhub_bo_life_text.texture": "1bc3ec412459c4d43f86118a10d0dd49a2037410389b7f73bd0015cbea12e596",
     "data/hd/directionarrows/particles/farmhub_bo_life_text.particles": "aebd84016f190bcb4e8cece67dc306e9316205d2dd940a5e24f0ae8735fc04c2",
-    "data/hd/overlays/common/battleorders.json": "b3d05030f853fa1fcfd8736a1099e3c81f785f97a4ecc4ebde8911fb1665acbc"
+    "data/hd/overlays/common/battleorders.json": "e7d356e97b6716afbe428456e9ff8a8be4c1bbee4aa56af8f65d68fb0a61d512"
   },
   "runtimeVerification": "pending"
 }

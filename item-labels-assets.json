@@ -1,13 +1,18 @@
 {
   "build": "93854",
   "language": "zhCN",
+  "labels": [
+    "\u666e",
+    "\u6269",
+    "\u7cbe"
+  ],
   "labelledBases": 506,
-  "rules": "e1335b24d17c6081347c3a63be77444d038f76a8a8ab79fb2d69f7e61b21e8e7",
+  "rules": "4d0546dc62b5450e47b5ddfc2aa8d00b3dc485b46fa68b8cf16459781186087a",
   "originalSha256": {
     "data/local/lng/strings/item-names.json": "843ff48c26aefa6efed7995b486e2e53553a802ae4af9a52c2b367fea302525a"
   },
   "files": {
-    "data/local/lng/strings/item-names.json": "a8618905ab622ec20e8e9efeb64d4f1ef208b4cc9c22f7d5732323e497cc9028"
+    "data/local/lng/strings/item-names.json": "d2e80f5e061707f795038446fc8f1d75a7854d4e1a896e856a0a56ce4151e0e4"
   },
   "runtimeVerification": "pending"
 }

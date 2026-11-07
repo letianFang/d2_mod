@@ -54,29 +54,30 @@
 
 - 文字是面向镜头的贴片：粒子文件是 `directionarrows_0045.particles` 的逐字节副本，只把其中唯一一处贴图路径换成等长的新路径（`farmhub_bc_skilltext`、`farmhub_bo_life_text`）。路径长度必须保持 20 个字符的文件名，否则会破坏 PopcornFX 二进制。
 - 贴图沿用方向箭头的 `.texture` 文件头：BC3、1024×1024、8 级 mipmap，alpha 全为 255，按叠加方式显示，黑色即透明。SKILL 画在贴图上半部，LIFE 画在下半部，两者同时出现时上下排列。
-- 高度和大小由 `build-buff-labels.py` 的 `LABEL_HEIGHT`（距脚底高度）和 `LABEL_SCALE` 控制，改完重新运行脚本即可，`buff-labels-assets.json` 同步记录哈希。
+- 位置和大小由 `build-buff-labels.py` 控制：`LABEL_HEIGHT`（贴片中心距脚底的高度）、`LABEL_SCALE`（贴片缩放）、`TEXT_LEFT`（文字在贴图中的左边缘，0.5 为人物中心）和 `GLYPH_HEIGHT`（字高像素）。改完重新运行脚本即可，`buff-labels-assets.json` 同步记录哈希。
+- 2026-11-07 第一次游戏内测试：`LABEL_HEIGHT = 1.0`、`LABEL_SCALE = 0.5`、文字居中时，字落在脚底，大小合适。场景中墙高约 3.8–7.6 个单位，人物约 3 个单位高，因此改为高度 1.6、缩放 1.0，字高减半以保持大小，文字移到贴图右侧，显示在身体右边。
 - 原版 overlay 行号和目录参考 [blizzhackers/d2data](https://github.com/blizzhackers/d2data)（其 `states` 数据与本工程 93854 原表逐格一致）。
 - 尚未在游戏内确认：文字的高度、大小，是否随状态结束立即消失（`hardKillOnDestroy: true`）。
 
-### 隐藏火蛇
+### 火蛇显示调整
 
 只改高清显示，不改 `monstats.txt`、`skills.txt`、`missiles.txt` 等任何影响怪物行为的数据表。
 
-- `data\hd\missiles\missiles.json`：原版把 `hydra` 飞弹映射到与法师火弹、骷髅法师、陷阱共用的 `firebolt` 模型。只把 `hydra` 一项改为 `"null"`（原版不可见飞弹的写法，已有 88 项），`firebolt` 保持不变。
+- `data\hd\missiles\missiles.json`：原版把 `hydra` 飞弹映射到与法师火弹、骷髅法师、陷阱共用的 `firebolt` 模型。只把 `hydra` 一项改为原版 `icebolt` 模型（冰弹、冰系骷髅法师、青蛙也用它），火弹显示为青色；`firebolt`、`icebolt` 本身不变。伤害仍是火焰。
 - `data\hd\character\enemy\hydra1`–`hydra3.json`：只保留 `entity_root`，删除 `entity_torso`（本体模型）、`entity_spine*_vfx`（身上火焰）和 `entity_vfx_decal`（地面焦痕）。依赖列表保持原样，动作文件可能仍会引用。
-- 命中火花 `fireexplode`（高清 `fire_arrow_explode_2`）与火弹、火焰箭共用，不隐藏。
-- `hydra1`–`hydra3` 也是法师九头蛇召唤的怪物，因此法师九头蛇在高清下同样不可见。
-- `build-hydra-hide.py` 先确认能逐字节复现原版紧凑 JSON 再写出；`hydra-hide-assets.json` 记录原文件与输出哈希。
-- 尚未在游戏内确认：火蛇发射时动作文件里是否还有残留特效。
+- 命中火花 `fireexplode`（高清 `fire_arrow_explode_2`）与火弹、火焰箭共用，不修改。
+- `hydra1`–`hydra3` 也是法师九头蛇召唤的怪物，法师九头蛇在高清下同样显示。
+- 把火蛇本体改成青色需要它的贴图（`data\hd\character\enemy\hydra1\textures\`）和身上火焰粒子的替代方案，目前未提取。
+- `build-hydra-display.py` 先确认能逐字节复现原版紧凑 JSON 再写出；`hydra-display-assets.json` 记录原文件与输出哈希。
 
-### 底材等级和有用孔数
+### 底材等级
 
-只修改 `data\local\lng\strings\item-names.json` 中底材名称（键为 `armor.txt`/`weapons.txt` 的 `namestr`）的 `zhCN` 文字，在后面追加 `[普通]`/`[扩展]`/`[精华]` 和有用孔数。地面标签、未鉴定物品和所有品质都显示底材名，因此鉴定前即可看到。
+只修改 `data\local\lng\strings\item-names.json` 中底材名称（键为 `armor.txt`/`weapons.txt` 的 `namestr`）的 `zhCN` 文字，在后面追加 `[普]`/`[扩]`/`[精]`。地面标签、未鉴定物品和所有品质都显示底材名，因此鉴定前即可看到。
 
-- 等级：底材代码等于 `normcode`/`ubercode`/`ultracode` 时分别为普通、扩展、精华。
-- 有用孔数：对 `POPULAR_RUNEWORDS` 中每个完整符文之语，若底材类型（含 `Equiv1`/`Equiv2` 上级）命中其 `itype` 且不命中 `etype`，并且所需符文数 ≤ min(`gemsockets`, 类型 `MaxSockets3`)，则计入该孔数。实际能打出的孔数还受物品等级限制，这里按上限计算。
+- 等级：底材代码等于 `normcode`/`ubercode`/`ultracode` 时分别为普、扩、精。
 - 规则由 `python build-item-labels.py rules <d2data 的 json/base 目录>` 生成 `item-label-rules.json`，数据来自 [blizzhackers/d2data](https://github.com/blizzhackers/d2data)，与 93854 原表一致。
-- 名称文件由 `python build-item-labels.py` 生成，需要先从客户端提取原版 `data\local\lng\strings\item-names.json` 放进 `.original-build-93854/`；脚本会检查规则里的每个底材键都存在。生成后 `item-labels-assets.json` 记录哈希，`verify.ps1` 自动校验。
+- 名称文件由 `python build-item-labels.py` 从 `.original-build-93854/` 中的原版 `item-names.json` 生成；原版重新序列化后逐字节一致，因此只有底材名改变。`item-labels-assets.json` 记录哈希，`verify.ps1` 自动校验。
+- 曾经尝试同时显示“有用孔数”，用户测试后要求只保留等级。
 - 客户端更新后必须重新提取 `item-names.json` 再生成，旧文件会覆盖新版本的物品名称。
 
 ### 合并材料页
@@ -157,8 +158,8 @@ powershell -ExecutionPolicy Bypass -File .\verify.ps1
 | `data\hd\nickname\textures\graphic\` | 两张兼容纹理，补齐粒子中残留的材质引用。 |
 | `data\hd\overlays\common\battleorders.json`、`battlecommand.json` | 战斗体能 LIFE、战斗指挥 SKILL 文字；覆盖原版持续光圈。由 `build-buff-labels.py` 生成。 |
 | `data\hd\directionarrows\particles\farmhub_*`、`textures\farmhub_*` | 文字贴片粒子和 BC3 贴图；粒子只允许改等长贴图路径。 |
-| `data\hd\missiles\missiles.json`、`data\hd\character\enemy\hydra1`–`hydra3.json` | 隐藏火蛇及其火弹；由 `build-hydra-hide.py` 从原版生成，`missiles.json` 只改 `hydra` 一项。 |
-| `data\local\lng\strings\item-names.json` | 底材名后的等级和有用孔数；由 `build-item-labels.py` 从原版文件生成，只改 `zhCN`。 |
+| `data\hd\missiles\missiles.json`、`data\hd\character\enemy\hydra1`–`hydra3.json` | 火蛇本体不显示、火弹用冰弹外观；由 `build-hydra-display.py` 从原版生成，`missiles.json` 只改 `hydra` 一项。 |
+| `data\local\lng\strings\item-names.json` | 底材名后的 [普]/[扩]/[精]；由 `build-item-labels.py` 从原版文件生成，只改 `zhCN`。 |
 | `data\global\ui\layouts\bankexpansionlayouthd.json` | 合并页布局；全部 `AdvancedStashSlotWidget` 位于 `advancedstash_gems`，`advancedstash_materials` 和 `advancedstash_runes` 必须保留为空容器。 |
 | `data\global\ui\layouts\CALL\mymodConvert*hd.json` | 自动重塑定时面板；面板 `name` 必须与勾选框消息和文件路径一致。 |
 | `data\hd\global\ui\panel\stash\additionalstash\panel_bg_craft*.sprite` | 合并页背景，格子框已画在贴图中，移动格子时要同步修改；高清与 `lowend` 版本应一起维护。 |
@@ -194,12 +195,12 @@ powershell -ExecutionPolicy Bypass -File .\verify.ps1
 - 启动无版本不匹配警告，离线角色、原键位与快速施法设置正常。
 - 地狱已解锁角色点击模型可开局且无文字提示；普通/噩梦仍可由原按钮手动选择。
 - 第四幕九个传送槽位正确，新增目的地遵守当前难度解锁状态，其他四幕可返回群魔堡垒。
-- 崔凡克高清议会区域视野改善，怪物和原路线正常；看不到火蛇和它的火弹，法师火弹、骷髅法师等其他火弹正常显示。
-- 地上的武器和护甲底材名后显示等级和有用孔数，未鉴定和各品质物品都显示。
+- 崔凡克高清议会区域视野改善，怪物和原路线正常；看不到火蛇本体，火蛇的火弹显示为青色冰弹，法师火弹、骷髅法师等其他火弹正常显示。
+- 地上的武器和护甲底材名后显示 [普]/[扩]/[精]，未鉴定和各品质物品都显示。
 - 暂停菜单外点击保存退出；菜单内设置和返回按钮正常，日常点击不会触发退出。
 - 分别检查原版与扩展暂停布局；检查高清/低配置资源及不同分辨率下人物点击区是否仍覆盖模型。
 - 保存退出后重新开局，确认角色进度与掉落物品正常保存。
-- 战斗指挥后角色和佣兵腰部附近显示 SKILL，战斗体能后显示 LIFE，两者同时存在时上下排列不重叠；buff 结束、死亡后文字消失；吼叫施放特效正常。
+- 战斗指挥后角色和佣兵腰部右侧显示 SKILL，战斗体能后显示 LIFE，两者同时存在时上下排列不重叠；buff 结束、死亡后文字消失；吼叫施放特效正常。
 - “材料”页显示既有的符文、宝石和材料数量；放入、取出、自动入库、方块合成、合成后保存重开都正常；个人和共享页可正常存取；勾选自动重塑后约每 0.5 秒重塑一次，取消勾选、关闭仓库或切换标签页后不再继续；过往赛季勾选框不与其他控件重叠。
 
 ## 验证记录

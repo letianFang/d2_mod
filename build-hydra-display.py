@@ -1,12 +1,13 @@
-"""Hide hydras and their fire bolts in HD. Display only.
+"""Hide hydras and draw their fire bolts in cold cyan in HD. Display only.
 
 Monster behavior and damage are untouched: no data table is changed. The
-hydras still spawn and still hit; they are just not drawn in HD.
+hydras still spawn and their bolts still deal fire damage; only the HD
+visuals change.
 
 * data/hd/missiles/missiles.json maps the `hydra` missile to the shared
-  `firebolt` model. Only that one entry becomes "null", the value vanilla uses
-  for invisible missiles (88 entries already). Fire Bolt, skeleton mages and
-  traps keep `firebolt`.
+  `firebolt` model. Only that one entry is pointed at vanilla's `icebolt`
+  model (already used by Ice Bolt, cold skeleton mages and frogs), so the
+  bolts look cyan. Fire Bolt, skeleton mages and traps keep `firebolt`.
 * data/hd/character/enemy/hydra1-3.json keep only `entity_root` (unit root,
   skeleton, variant, preload, transform). The body model, the four to six
   attached fire particles and the ground decal entities are removed, so
@@ -15,7 +16,8 @@ hydras still spawn and still hit; they are just not drawn in HD.
 
 The hit flash (`fireexplode`, shared with Fire Bolt and Fire Arrow) is left
 alone. hydra1-3 are also the Sorceress's Hydra summons, so those disappear in
-HD too.
+HD too. Recolouring the hydra body needs its textures and particles, which
+are not extracted yet.
 """
 import hashlib
 import json
@@ -25,6 +27,7 @@ ROOT = Path(__file__).resolve().parent
 BASE = ROOT / '.original-build-93854'
 MOD = ROOT / 'mods/FarmHub/FarmHub.mpq'
 MISSILES = 'data/hd/missiles/missiles.json'
+HYDRA_BOLT_MODEL = 'icebolt'
 HYDRAS = [f'data/hd/character/enemy/hydra{i}.json' for i in (1, 2, 3)]
 
 
@@ -56,8 +59,8 @@ def build():
     originals, files = {}, {}
 
     raw, missiles = load(MISSILES)
-    assert missiles['hydra'] == 'firebolt'
-    missiles['hydra'] = 'null'
+    assert missiles['hydra'] == 'firebolt' and missiles['icebolt'] == HYDRA_BOLT_MODEL
+    missiles['hydra'] = HYDRA_BOLT_MODEL
     files[MISSILES] = dump(missiles, raw)
     originals[MISSILES] = raw
 
@@ -76,7 +79,7 @@ def build():
         write(relative, data)
     manifest = {
         'build': '93854',
-        'missile': {'hydra': {'before': 'firebolt', 'after': 'null'}},
+        'missile': {'hydra': {'before': 'firebolt', 'after': HYDRA_BOLT_MODEL}},
         'removedEntities': removed,
         'notHidden': 'fireexplode hit flash (shared with Fire Bolt and Fire Arrow)',
         'tablesChanged': [],
@@ -84,8 +87,8 @@ def build():
         'files': {k: sha(v) for k, v in files.items()},
         'runtimeVerification': 'pending',
     }
-    (ROOT / 'hydra-hide-assets.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
-    print('Hid hydras and their fire bolts in HD.')
+    (ROOT / 'hydra-display-assets.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
+    print('Hid hydras and gave their bolts the cyan Ice Bolt look in HD.')
 
 
 if __name__ == '__main__':

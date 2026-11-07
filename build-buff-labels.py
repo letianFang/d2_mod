@@ -5,7 +5,8 @@ states.txt gives state `battleorders` overlay `battleorders` and state
 `battlecommand` overlay `battlecommand`; overlay.txt puts both in Character
 `common`, so D2R reads data/hd/overlays/common/<overlay>.json. No data table is
 changed. Every unit holding the state (player, mercenary, monsters) shows the
-label for as long as the state lasts.
+label for as long as the state lasts. The words sit right of the billboard
+centre, so they appear beside the body at waist height instead of on it.
 
 The label is a camera-facing billboard: a byte copy of the Nihlathak direction
 arrow particle with only its texture path changed (same length), plus a BC3
@@ -27,17 +28,20 @@ TEMPLATE_TEXTURE = 'data/hd/directionarrows/textures/directionarrows_0045.textur
 TEMPLATE_SAMPLER = TEMPLATE_TEXTURE.encode('ascii')
 
 # Height above the unit's feet and billboard scale. Tune these after in-game checks.
-LABEL_HEIGHT = 1.0
-LABEL_SCALE = 0.5
+# 2026-11-07 test: height 1.0 / scale 0.5 drew the words at the feet with a good size.
+# A character is about 3 units tall (preset walls are 3.8-7.6), so the waist is about 1.6.
+LABEL_HEIGHT = 1.6
+LABEL_SCALE = 1.0
 
 SIZE = 1024
-GLYPH_HEIGHT = 150
+GLYPH_HEIGHT = 75  # 150 px at scale 0.5 had a good size; keep the same size in the world
+TEXT_LEFT = 0.62  # left edge of the words; the billboard centre (0.5) is on the unit, so this is beside the body
 STROKE = 0.17  # stroke width as a fraction of glyph height
 
 LABELS = {
     # overlay name: (text, RGB, vertical centre in the texture as a fraction of its height, file stem)
-    'battlecommand': ('SKILL', (255, 205, 60), 0.40, 'farmhub_bc_skilltext'),
-    'battleorders': ('LIFE', (255, 85, 85), 0.60, 'farmhub_bo_life_text'),
+    'battlecommand': ('SKILL', (255, 205, 60), 0.448, 'farmhub_bc_skilltext'),
+    'battleorders': ('LIFE', (255, 85, 85), 0.552, 'farmhub_bo_life_text'),
 }
 
 # Glyphs as polylines in a box of width w and height 1 (y grows downwards).
@@ -84,7 +88,8 @@ def render(text, colour, centre):
     gap = 0.32 * h
     widths = [GLYPH_WIDTH[c] * h + stroke for c in text]
     total = sum(widths) + gap * (len(text) - 1)
-    left = (SIZE - total) / 2 + stroke / 2
+    left = TEXT_LEFT * SIZE + stroke / 2
+    assert left + total < SIZE - stroke, 'label runs off the texture'
     top = centre * SIZE - h / 2
     segments = []
     x = left
@@ -249,6 +254,7 @@ def build():
         'labels': labels,
         'labelHeight': LABEL_HEIGHT,
         'labelScale': LABEL_SCALE,
+        'textLeft': TEXT_LEFT,
         'template': {'particle': TEMPLATE_PARTICLE, 'texture': TEMPLATE_TEXTURE,
                      'particleSha256': sha(particle_template)},
         'tablesChanged': [],
