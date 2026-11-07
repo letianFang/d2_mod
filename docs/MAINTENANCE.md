@@ -58,11 +58,16 @@
 - 原版 overlay 行号和目录参考 [blizzhackers/d2data](https://github.com/blizzhackers/d2data)（其 `states` 数据与本工程 93854 原表逐格一致）。
 - 尚未在游戏内确认：文字的高度、大小，是否随状态结束立即消失（`hardKillOnDestroy: true`）。
 
-### 崔凡克火蛇隐藏（未实现）
+### 隐藏火蛇
 
-只做高清显示调整，不改 `monstats.txt`、`skills.txt` 等任何影响怪物行为的数据表。议会成员召唤的 `hydra1`–`hydra3` 与法师九头蛇是同一怪物，隐藏后法师九头蛇也看不见；火蛇的 `hydra` 飞弹在原版高清 `missiles.json` 中映射到与法师火球共用的 `fireball` 模型，只能在完整的原版 `missiles.json` 中把 `hydra` 单独改为 `null`，不能改 `fireball.json`。
+只改高清显示，不改 `monstats.txt`、`skills.txt`、`missiles.txt` 等任何影响怪物行为的数据表。
 
-实现前需要从 93854 客户端提取以下文件放进 `.original-build-93854/`：`data\hd\missiles\missiles.json`、`data\hd\character\monsters.json`、`data\hd\character\enemy\hydra1.json`、`hydra2.json`、`hydra3.json`。
+- `data\hd\missiles\missiles.json`：原版把 `hydra` 飞弹映射到与法师火弹、骷髅法师、陷阱共用的 `firebolt` 模型。只把 `hydra` 一项改为 `"null"`（原版不可见飞弹的写法，已有 88 项），`firebolt` 保持不变。
+- `data\hd\character\enemy\hydra1`–`hydra3.json`：只保留 `entity_root`，删除 `entity_torso`（本体模型）、`entity_spine*_vfx`（身上火焰）和 `entity_vfx_decal`（地面焦痕）。依赖列表保持原样，动作文件可能仍会引用。
+- 命中火花 `fireexplode`（高清 `fire_arrow_explode_2`）与火弹、火焰箭共用，不隐藏。
+- `hydra1`–`hydra3` 也是法师九头蛇召唤的怪物，因此法师九头蛇在高清下同样不可见。
+- `build-hydra-hide.py` 先确认能逐字节复现原版紧凑 JSON 再写出；`hydra-hide-assets.json` 记录原文件与输出哈希。
+- 尚未在游戏内确认：火蛇发射时动作文件里是否还有残留特效。
 
 ### 底材等级和有用孔数
 
@@ -113,7 +118,7 @@ powershell -ExecutionPolicy Bypass -File .\verify.ps1
 
 1. 启动一次未加载模组的游戏，确认客户端已完成更新。
 2. 记录客户端显示的新数据版本号。
-3. 从当前客户端重新提取最新版 `data\global\DataVersionBuild.txt`、`data\global\excel\` 下的 `actinfo.txt`、`misc.txt`、`sounds.txt`、`states.txt`，界面文件 `mainmenupanelhd.json`、`pauselayouthd.json`、`pauselayoutgardenhd.json`、`panelborderspanelhd.json`、`bankexpansionlayouthd.json`，名称文件 `data\local\lng\strings\item-names.json`，以及崔凡克 `travn.json` 和四种 `nihl*.json`；同时确认新版 `states.txt` 中 `battleorders`、`battlecommand` 的 `overlay1` 和 `overlay.txt` 中的 `Character` 未变。
+3. 从当前客户端重新提取最新版 `data\global\DataVersionBuild.txt`、`data\global\excel\` 下的 `actinfo.txt`、`misc.txt`、`sounds.txt`、`states.txt`，界面文件 `mainmenupanelhd.json`、`pauselayouthd.json`、`pauselayoutgardenhd.json`、`panelborderspanelhd.json`、`bankexpansionlayouthd.json`，名称文件 `data\local\lng\strings\item-names.json`，高清 `data\hd\missiles\missiles.json` 与 `data\hd\character\enemy\hydra1`–`hydra3.json`，以及崔凡克 `travn.json` 和四种 `nihl*.json`；同时确认新版 `states.txt` 中 `battleorders`、`battlecommand` 的 `overlay1` 和 `overlay.txt` 中的 `Character` 未变。
 4. 以新版数据表为基础，重新应用传送点映射、符文音效和尸体状态改动；不要用旧表覆盖新版表。
 5. 以新版界面和场景文件为基础，重新合并人物点击进入地狱、崔凡克通透布局和合并材料页；不要长期沿用旧版本的完整资源文件。
 6. 确认 `DataVersionBuild.txt` 与客户端版本完全一致。
@@ -152,6 +157,7 @@ powershell -ExecutionPolicy Bypass -File .\verify.ps1
 | `data\hd\nickname\textures\graphic\` | 两张兼容纹理，补齐粒子中残留的材质引用。 |
 | `data\hd\overlays\common\battleorders.json`、`battlecommand.json` | 战斗体能 LIFE、战斗指挥 SKILL 文字；覆盖原版持续光圈。由 `build-buff-labels.py` 生成。 |
 | `data\hd\directionarrows\particles\farmhub_*`、`textures\farmhub_*` | 文字贴片粒子和 BC3 贴图；粒子只允许改等长贴图路径。 |
+| `data\hd\missiles\missiles.json`、`data\hd\character\enemy\hydra1`–`hydra3.json` | 隐藏火蛇及其火弹；由 `build-hydra-hide.py` 从原版生成，`missiles.json` 只改 `hydra` 一项。 |
 | `data\local\lng\strings\item-names.json` | 底材名后的等级和有用孔数；由 `build-item-labels.py` 从原版文件生成，只改 `zhCN`。 |
 | `data\global\ui\layouts\bankexpansionlayouthd.json` | 合并页布局；全部 `AdvancedStashSlotWidget` 位于 `advancedstash_gems`，`advancedstash_materials` 和 `advancedstash_runes` 必须保留为空容器。 |
 | `data\global\ui\layouts\CALL\mymodConvert*hd.json` | 自动重塑定时面板；面板 `name` 必须与勾选框消息和文件路径一致。 |
@@ -188,7 +194,8 @@ powershell -ExecutionPolicy Bypass -File .\verify.ps1
 - 启动无版本不匹配警告，离线角色、原键位与快速施法设置正常。
 - 地狱已解锁角色点击模型可开局且无文字提示；普通/噩梦仍可由原按钮手动选择。
 - 第四幕九个传送槽位正确，新增目的地遵守当前难度解锁状态，其他四幕可返回群魔堡垒。
-- 崔凡克高清议会区域视野改善，怪物和原路线正常。
+- 崔凡克高清议会区域视野改善，怪物和原路线正常；看不到火蛇和它的火弹，法师火弹、骷髅法师等其他火弹正常显示。
+- 地上的武器和护甲底材名后显示等级和有用孔数，未鉴定和各品质物品都显示。
 - 暂停菜单外点击保存退出；菜单内设置和返回按钮正常，日常点击不会触发退出。
 - 分别检查原版与扩展暂停布局；检查高清/低配置资源及不同分辨率下人物点击区是否仍覆盖模型。
 - 保存退出后重新开局，确认角色进度与掉落物品正常保存。

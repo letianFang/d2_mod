@@ -257,4 +257,20 @@ if (Test-Path -LiteralPath $itemLabelsPath -PathType Leaf) {
         }
     }
 }
-Write-Host 'Verification passed: existing FarmHub features, navigation, high-rune audio, used corpse visibility, borderless panels, merged stash tab, Battle Orders/Command labels, and asset hashes.'
+$hydraHide = Get-Content -LiteralPath (Join-Path $PSScriptRoot 'hydra-hide-assets.json') -Raw | ConvertFrom-Json
+foreach ($file in $hydraHide.files.PSObject.Properties) {
+    if ((Get-FileHash -LiteralPath (Join-Path $modRoot $file.Name)).Hash -ne $file.Value) {
+        throw "Hydra hide asset hash mismatch: $($file.Name)"
+    }
+}
+$hdMissiles = [System.IO.File]::ReadAllText((Join-Path $modRoot 'data/hd/missiles/missiles.json'), [System.Text.Encoding]::UTF8) | ConvertFrom-Json
+if ($hdMissiles.hydra -ne 'null' -or $hdMissiles.firebolt -ne 'firebolt') {
+    throw 'Only the hydra missile may be hidden; Fire Bolt must keep its model.'
+}
+foreach ($hydraFile in $hydraHide.removedEntities.PSObject.Properties.Name) {
+    $hydraUnit = [System.IO.File]::ReadAllText((Join-Path $modRoot $hydraFile), [System.Text.Encoding]::UTF8) | ConvertFrom-Json
+    if (@($hydraUnit.entities).Count -ne 1 -or $hydraUnit.entities[0].name -ne 'entity_root') {
+        throw "Hydra unit must keep only entity_root: $hydraFile"
+    }
+}
+Write-Host 'Verification passed: existing FarmHub features, navigation, high-rune audio, used corpse visibility, borderless panels, merged stash tab, Battle Orders/Command labels, hidden hydras, item labels, and asset hashes.'

@@ -1,0 +1,54 @@
+{
+  "build": "93854",
+  "missile": {
+    "hydra": {
+      "before": "firebolt",
+      "after": "null"
+    }
+  },
+  "removedEntities": {
+    "data/hd/character/enemy/hydra1.json": [
+      "entity_torso",
+      "entity_spine05_vfx",
+      "entity_spine06_vfx",
+      "entity_spine07_vfx",
+      "entity_spine08_vfx",
+      "entity_vfx_decal"
+    ],
+    "data/hd/character/enemy/hydra2.json": [
+      "entity_torso",
+      "entity_spine05_vfx",
+      "entity_spine06_vfx",
+      "entity_spine07_vfx",
+      "entity_spine08_vfx",
+      "entity_spine09_vfx",
+      "entity_spine10_vfx",
+      "entity_vfx_decal"
+    ],
+    "data/hd/character/enemy/hydra3.json": [
+      "entity_torso",
+      "entity_spine05_vfx",
+      "entity_spine06_vfx",
+      "entity_spine07_vfx",
+      "entity_spine08_vfx",
+      "entity_spine09_vfx",
+      "entity_spine10_vfx",
+      "entity_vfx_decal"
+    ]
+  },
+  "notHidden": "fireexplode hit flash (shared with Fire Bolt and Fire Arrow)",
+  "tablesChanged": [],
+  "originalSha256": {
+    "data/hd/missiles/missiles.json": "6c1756ac9dfea8228fa1f88dfe4a219b8d88318cec2977d58d6d5f7021fdb00b",
+    "data/hd/character/enemy/hydra1.json": "1ab50fed8370c24dda0d096e984e31d60c67e34cbe91cf0bc8960083f0d64f72",
+    "data/hd/character/enemy/hydra2.json": "2dd0ffb1dc2d966d6f4919c14f07b287d6d24b6858786b151ee877720b66d69c",
+    "data/hd/character/enemy/hydra3.json": "887ed320b8c15a2a96f7eaf2c89c1dc4da27c2d3c647c8bd4a93de6675e82e42"
+  },
+  "files": {
+    "data/hd/missiles/missiles.json": "2e2801364a995789c53d5c403216a3961f5af951e3dba0cec631603b5259577d",
+    "data/hd/character/enemy/hydra1.json": "1cc7b073d3fa18cdea7d9d5477b1018ba0c401ebee1634b7bfb6ea764f8954db",
+    "data/hd/character/enemy/hydra2.json": "2573db88a7a625686d9a780717e08ffad7ed80df79858e8ea25ca2153ae2e62e",
+    "data/hd/character/enemy/hydra3.json": "9339ddcf42cb88fe95345e6849f49089fd05b7aa07e407d0b05ef813163a0b0c"
+  },
+  "runtimeVerification": "pending"
+}
