@@ -21,7 +21,8 @@ Copy-Item -LiteralPath $source -Destination $modsRoot -Recurse -Force
 
 # Remove only the explicitly retired resources; the game then uses its originals.
 $stashMerge = Get-Content -LiteralPath (Join-Path $PSScriptRoot 'stash-merge-assets.json') -Raw -Encoding UTF8 | ConvertFrom-Json
-$retiredFiles = @('data\hd\roomtiles\act_3_travincal_to_mephisto.json') + @($stashMerge.removedFiles)
+$buffLabels = Get-Content -LiteralPath (Join-Path $PSScriptRoot 'buff-labels-assets.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+$retiredFiles = @('data\hd\roomtiles\act_3_travincal_to_mephisto.json') + @($stashMerge.removedFiles) + @($buffLabels.removedFiles)
 foreach ($retiredFile in $retiredFiles) {
     $retiredPath = Join-Path $destination "FarmHub.mpq\$retiredFile"
     if (Test-Path -LiteralPath $retiredPath -PathType Leaf) {

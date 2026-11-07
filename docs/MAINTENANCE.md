@@ -48,16 +48,17 @@
 
 `build-farming-visibility.py` 和 `farming-visibility-assets.json` 记录构建方式、原文件及输出哈希。
 
-### 战斗体能 / 战斗指挥文字
+### 战斗体能 / 战斗指挥提示（MDM3C 移植）
 
-原版 `states.txt` 中，`battleorders`、`battlecommand` 两个状态的 `overlay1` 分别是同名 overlay；`overlay.txt` 把这两行的 `Character` 设为 `common`。因此高清画面读取 `data\hd\overlays\common\battleorders.json` 和 `battlecommand.json`。本功能直接覆盖这两个文件，原来的持续光圈换成文字，不改任何数据表，施放特效 `battleorderscast`、`battlecommandcast` 保持原版。
+来源是本机 `E:\磨刀门MOD\MDM3C.7z`（作者：暗黑2阿檬），经维护者确认使用此版本。`E:\磨刀门MOD\MDM` 解压版没有这两个战吼的显示覆盖。只移植战斗指挥、战斗体能，不导入其他战吼、刺客集气或游戏数据表。
 
-- 文字是面向镜头的贴片：粒子文件是 `directionarrows_0045.particles` 的逐字节副本，只把其中唯一一处贴图路径换成等长的新路径（`farmhub_bc_skilltext`、`farmhub_bo_life_text`）。路径长度必须保持 20 个字符的文件名，否则会破坏 PopcornFX 二进制。
-- 贴图沿用方向箭头的 `.texture` 文件头：BC3、1024×1024、8 级 mipmap，alpha 全为 255，按叠加方式显示，黑色即透明。SKILL 画在贴图上半部，LIFE 画在下半部，两者同时出现时上下排列。
-- 位置和大小由 `build-buff-labels.py` 控制：`LABEL_HEIGHT`（贴片中心距脚底的高度）、`LABEL_SCALE`（贴片缩放）、`TEXT_LEFT`（文字在贴图中的左边缘，0.5 为人物中心）和 `GLYPH_HEIGHT`（字高像素）。改完重新运行脚本即可，`buff-labels-assets.json` 同步记录哈希。
-- 2026-11-07 第一次游戏内测试：`LABEL_HEIGHT = 1.0`、`LABEL_SCALE = 0.5`、文字居中时，字落在脚底，大小合适。场景中墙高约 3.8–7.6 个单位，人物约 3 个单位高，因此改为高度 1.6、缩放 1.0，字高减半以保持大小，文字移到贴图右侧，显示在身体右边。
-- 原版 overlay 行号和目录参考 [blizzhackers/d2data](https://github.com/blizzhackers/d2data)（其 `states` 数据与本工程 93854 原表逐格一致）。
-- 尚未在游戏内确认：文字的高度、大小，是否随状态结束立即消失（`hardKillOnDestroy: true`）。
+- 从当前客户端 CASC 提取 `data/hd/overlays/common/battlecommand.json`、`battleorders.json`，保存到 `.original-build-93854/`。`build-buff-labels.py` 以这两个文件为基础，仅替换 VFX 组件、加入 MDM3C 的 Transform 组件和更新对应粒子/贴图依赖；保留原文件其余字节及实体 ID。构建中用回退替换断言确认无额外改动。
+- `buff_skill.particles`、`buff_hp.particles` 和 `buff_skillup_0000000.texture`、`buff_hpup_0000000000.texture` 与 MDM3C 逐字节一致。显示红色 `Skill ↑` / `HP ↑`，贴图中分别位于上部/下部。保留 MDM3C 的位置 `(122, 95, 116)`、单位缩放、单位四元数和 `inheritOnlyPosition: true`；不按场景单位猜测或重新换算这些坐标。
+- 粒子唯一的活动采样器 `__sampler_0` 指向对应移植贴图。文件中其余 nickname 材质字符串是方向箭头模板残留的编辑器元数据；不因此覆盖共享的白色或 NPC 贴图。
+- `states.txt` 中两个状态仍分别引用原版同名 overlay，buff 效果与持续时间不变。施放特效 `battlecommandcast`、`battleorderscast` 不改，组件 `hardKillOnDestroy: true` 用于状态结束时清理图标。角色、佣兵及其他获得相同状态的单位共享显示。
+- `buff-labels-assets.json` 记录六个来源文件、两个客户端基线及六个输出文件的 SHA-256。四个旧 `farmhub_bc_skilltext` / `farmhub_bo_life_text` 贴图和粒子列入 `removedFiles`，构建和安装时清理。
+- 重建：从 `MDM3C.7z` 解压上述六个来源文件，运行 `python build-buff-labels.py --source-root "解压路径/MDM3C/MDM3C.mpq"`。仅使用 Python 标准库；无需重新生成或编辑二进制贴图/粒子。
+- `verify.ps1` 校验来源二进制一致性、输出和基线哈希、状态映射、Transform、贴图采样器及旧资源清理。本次只做静态检查，需游戏内确认大小、位置、两种状态分别获得/消失、死亡后清理及佣兵显示。
 
 ### 火蛇显示调整
 
@@ -156,8 +157,8 @@ powershell -ExecutionPolicy Bypass -File .\verify.ps1
 | `data\hd\roomtiles\*.json`、`data\hd\env\porory\beacon\` | 入口光柱、光圈与纹理。 |
 | `data\hd\env\preset\expansion\wildtemple\nihl{n,e,s,w}.json`、`data\hd\directionarrows\` | 四种布局及方向箭头。 |
 | `data\hd\nickname\textures\graphic\` | 两张兼容纹理，补齐粒子中残留的材质引用。 |
-| `data\hd\overlays\common\battleorders.json`、`battlecommand.json` | 战斗体能 LIFE、战斗指挥 SKILL 文字；覆盖原版持续光圈。由 `build-buff-labels.py` 生成。 |
-| `data\hd\directionarrows\particles\farmhub_*`、`textures\farmhub_*` | 文字贴片粒子和 BC3 贴图；粒子只允许改等长贴图路径。 |
+| `data\hd\overlays\common\battleorders.json`、`battlecommand.json` | MDM3C 红色 HP ↑ / Skill ↑ 提示；覆盖原版持续光圈。由 `build-buff-labels.py` 移植，依赖 `buff_hp` / `buff_skill` 粒子及对应贴图。 |
+| `data\hd\directionarrows\particles\buff_{hp,skill}.particles`、`textures\buff_*up_*.texture` | MDM3C 原始战吼贴片粒子和贴图，逐字节复制；旧 `farmhub_bc_skilltext` / `farmhub_bo_life_text` 已退役。 |
 | `data\hd\missiles\missiles.json`、`data\hd\character\enemy\hydra1`–`hydra3.json` | 火蛇本体不显示、火弹用冰弹外观；由 `build-hydra-display.py` 从原版生成，`missiles.json` 只改 `hydra` 一项。 |
 | `data\local\lng\strings\item-names.json` | 底材名后的 [普]/[扩]/[精]；由 `build-item-labels.py` 从原版文件生成，只改 `zhCN`。 |
 | `data\global\ui\layouts\bankexpansionlayouthd.json` | 合并页布局；全部 `AdvancedStashSlotWidget` 位于 `advancedstash_gems`，`advancedstash_materials` 和 `advancedstash_runes` 必须保留为空容器。 |
@@ -185,7 +186,7 @@ powershell -ExecutionPolicy Bypass -File .\verify.ps1
    powershell -ExecutionPolicy Bypass -File .\install.ps1 -D2RPath "E:\Diablo II Resurrected"
    ```
 
-5. 安装脚本只覆盖文件，并清理脚本和 `stash-merge-assets.json` 中明确列出的退役资源。若本次删除或改名了其他文件，要把它们加入退役列表，不能删除存档。
+5. 安装脚本只覆盖文件，并清理脚本、`stash-merge-assets.json` 和 `buff-labels-assets.json` 中明确列出的退役资源。若本次删除或改名了其他文件，要把它们加入退役列表，不能删除存档。
 6. 对本次修改的文件比较工程与安装目录的 SHA-256，确认资源确实同步。
 7. 完全重启游戏，完成下方回归测试，再发布包含 `mods`、`docs`、`README.md`、`install.ps1`、`verify.ps1`、全部 `*-assets.json` 和 `build-*.py` 的新版本压缩包。
 8. 更新 README 的变更记录和 `docs/DOWNLOADS.md`。历史 ZIP 内的 README 保持当时版本。
@@ -200,9 +201,10 @@ powershell -ExecutionPolicy Bypass -File .\verify.ps1
 - 暂停菜单外点击保存退出；菜单内设置和返回按钮正常，日常点击不会触发退出。
 - 分别检查原版与扩展暂停布局；检查高清/低配置资源及不同分辨率下人物点击区是否仍覆盖模型。
 - 保存退出后重新开局，确认角色进度与掉落物品正常保存。
-- 战斗指挥后角色和佣兵腰部右侧显示 SKILL，战斗体能后显示 LIFE，两者同时存在时上下排列不重叠；buff 结束、死亡后文字消失；吼叫施放特效正常。
+- 战斗指挥后角色和佣兵显示红色 Skill ↑，战斗体能后显示红色 HP ↑；同时存在时两行不重叠，位置与大小符合 MDM3C；分别等待 buff 结束及死亡后确认对应提示消失；吼叫施放特效正常。
 - “材料”页显示既有的符文、宝石和材料数量；放入、取出、自动入库、方块合成、合成后保存重开都正常；个人和共享页可正常存取；勾选自动重塑后约每 0.5 秒重塑一次，取消勾选、关闭仓库或切换标签页后不再继续；过往赛季勾选框不与其他控件重叠。
 
 ## 验证记录
 
+- 2026-11-07：经维护者确认移植 MDM3C 的 Skill ↑ / HP ↑；完整静态检查及重复构建一致性通过，游戏内显示待确认。
 - 2026-10-30：用户确认当前工程全部功能的游戏内测试正常，包括合并材料页和自动重塑。

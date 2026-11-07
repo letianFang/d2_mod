@@ -1,43 +1,88 @@
 {
   "build": "93854",
+  "source": "MDM3C.7z (author 暗黑2阿檬), local copy",
+  "sourceSha256": {
+    "data/hd/overlays/common/battlecommand.json": "0f14e94e4209cfc34494fa72bdd757e6a7559165705e184e659d9167bf87edc1",
+    "data/hd/overlays/common/battleorders.json": "3f322dc22bb7267fa9878eab77984005c28456603baf568c0029c2b513fb5a39",
+    "data/hd/directionarrows/particles/buff_skill.particles": "23ffe0591ee8493170ad777b968a0d727fa907f83464c2b446e35f4f4c00adc2",
+    "data/hd/directionarrows/particles/buff_hp.particles": "432225fb7b1aab797c51c45347626b0aa7910c2f1943f06e2171d3385556b22c",
+    "data/hd/directionarrows/textures/buff_skillup_0000000.texture": "3267049777be210082931625f0c03afab6cae18876d025bf4dd0597820fbdacb",
+    "data/hd/directionarrows/textures/buff_hpup_0000000000.texture": "6c6c3037b0cac336db2418d3d0bd5234337ae896552c7fa2146e0eeba1a2f1d4"
+  },
+  "originalSha256": {
+    "data/hd/overlays/common/battlecommand.json": "125847be7d4f96d9a4ba8f31ca26a1379dc835228a17e30c05b541a61c28402c",
+    "data/hd/overlays/common/battleorders.json": "48d2a50ead761d895cbc73f22ac9547d7c99f0953ff88b04fde616180983f2d9"
+  },
   "labels": {
     "battlecommand": {
-      "text": "SKILL",
-      "rgb": [
-        255,
-        205,
-        60
-      ],
-      "textureCentre": 0.448,
-      "overlay": "data/hd/overlays/common/battlecommand.json"
+      "text": "Skill ↑",
+      "overlay": "data/hd/overlays/common/battlecommand.json",
+      "particle": "data/hd/directionarrows/particles/buff_skill.particles",
+      "texture": "data/hd/directionarrows/textures/buff_skillup_0000000.texture",
+      "transform": {
+        "type": "TransformDefinitionComponent",
+        "name": "entity_vfx_BaalTaunt_TransformDefinition",
+        "position": {
+          "x": 122,
+          "y": 95,
+          "z": 116
+        },
+        "orientation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "inheritOnlyPosition": true
+      }
     },
     "battleorders": {
-      "text": "LIFE",
-      "rgb": [
-        255,
-        85,
-        85
-      ],
-      "textureCentre": 0.552,
-      "overlay": "data/hd/overlays/common/battleorders.json"
+      "text": "HP ↑",
+      "overlay": "data/hd/overlays/common/battleorders.json",
+      "particle": "data/hd/directionarrows/particles/buff_hp.particles",
+      "texture": "data/hd/directionarrows/textures/buff_hpup_0000000000.texture",
+      "transform": {
+        "type": "TransformDefinitionComponent",
+        "name": "entity_vfx_BaalTaunt_TransformDefinition",
+        "position": {
+          "x": 122,
+          "y": 95,
+          "z": 116
+        },
+        "orientation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "inheritOnlyPosition": true
+      }
     }
   },
-  "labelHeight": 1.6,
-  "labelScale": 1.0,
-  "textLeft": 0.62,
-  "template": {
-    "particle": "data/hd/directionarrows/particles/directionarrows_0045.particles",
-    "texture": "data/hd/directionarrows/textures/directionarrows_0045.texture",
-    "particleSha256": "720a9c2cd6359e1c08ad50c12e6aa2059b5ee08cad7110a99e322949c05e7a42"
-  },
   "tablesChanged": [],
+  "removedFiles": [
+    "data/hd/directionarrows/particles/farmhub_bc_skilltext.particles",
+    "data/hd/directionarrows/particles/farmhub_bo_life_text.particles",
+    "data/hd/directionarrows/textures/farmhub_bc_skilltext.texture",
+    "data/hd/directionarrows/textures/farmhub_bo_life_text.texture"
+  ],
   "files": {
-    "data/hd/directionarrows/textures/farmhub_bc_skilltext.texture": "419e68c252af71776a4dd50b5545e18c89f69185379cbbe5b3a794e7a1825157",
-    "data/hd/directionarrows/particles/farmhub_bc_skilltext.particles": "28c35824f29c21956cab3740467fa7b60aeee015a1e5706720047e2465ed3bad",
-    "data/hd/overlays/common/battlecommand.json": "776a3a1cfbb1c6a409e85b8cd34fc44319a7db5f3bdc545122835ade14e54c8d",
-    "data/hd/directionarrows/textures/farmhub_bo_life_text.texture": "1bc3ec412459c4d43f86118a10d0dd49a2037410389b7f73bd0015cbea12e596",
-    "data/hd/directionarrows/particles/farmhub_bo_life_text.particles": "aebd84016f190bcb4e8cece67dc306e9316205d2dd940a5e24f0ae8735fc04c2",
-    "data/hd/overlays/common/battleorders.json": "e7d356e97b6716afbe428456e9ff8a8be4c1bbee4aa56af8f65d68fb0a61d512"
+    "data/hd/directionarrows/particles/buff_hp.particles": "432225fb7b1aab797c51c45347626b0aa7910c2f1943f06e2171d3385556b22c",
+    "data/hd/directionarrows/particles/buff_skill.particles": "23ffe0591ee8493170ad777b968a0d727fa907f83464c2b446e35f4f4c00adc2",
+    "data/hd/directionarrows/textures/buff_hpup_0000000000.texture": "6c6c3037b0cac336db2418d3d0bd5234337ae896552c7fa2146e0eeba1a2f1d4",
+    "data/hd/directionarrows/textures/buff_skillup_0000000.texture": "3267049777be210082931625f0c03afab6cae18876d025bf4dd0597820fbdacb",
+    "data/hd/overlays/common/battlecommand.json": "4d664f7666acb2906e330b346151e758760249d4e726004c2700f3b1bea879de",
+    "data/hd/overlays/common/battleorders.json": "8a082fd45f39e3a5fd93692b0ca2363390f247ebc489d8607070571efd7ff58f"
   },
   "runtimeVerification": "pending"
 }

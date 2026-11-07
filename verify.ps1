@@ -230,6 +230,16 @@ if ($autoStart.name -ne 'CALL/mymodConvertAutoStart' -or $autoStep.name -ne 'CAL
     throw 'The auto-transmute timer panels are incorrect.'
 }
 $buffLabels = Get-Content -LiteralPath (Join-Path $PSScriptRoot 'buff-labels-assets.json') -Raw | ConvertFrom-Json
+foreach ($file in $buffLabels.originalSha256.PSObject.Properties) {
+    if ((Get-FileHash -LiteralPath (Join-Path $PSScriptRoot ".original-build-93854/$($file.Name)")).Hash -ne $file.Value) {
+        throw "Buff overlay baseline mismatch: $($file.Name)"
+    }
+}
+foreach ($removedFile in $buffLabels.removedFiles) {
+    if (Test-Path -LiteralPath (Join-Path $modRoot $removedFile)) {
+        throw "Retired buff label still exists: $removedFile"
+    }
+}
 foreach ($file in $buffLabels.files.PSObject.Properties) {
     if ((Get-FileHash -LiteralPath (Join-Path $modRoot $file.Name)).Hash -ne $file.Value) {
         throw "Buff label asset hash mismatch: $($file.Name)"
@@ -243,9 +253,27 @@ foreach ($label in $buffLabels.labels.PSObject.Properties) {
     $overlay = Get-Content -LiteralPath (Join-Path $modRoot $label.Value.overlay) -Raw | ConvertFrom-Json
     $particle = @($overlay.entities.components | Where-Object type -eq 'VfxDefinitionComponent')
     if ($overlay.type -ne 'OverlayDefinition' -or $particle.Count -ne 1 -or
+        $particle[0].filename -ne $label.Value.particle -or -not $particle[0].hardKillOnDestroy -or
         $overlay.dependencies.particles.path -notcontains $particle[0].filename -or
         -not (Test-Path -LiteralPath (Join-Path $modRoot $particle[0].filename) -PathType Leaf)) {
         throw "Buff label overlay is incorrect: $($label.Name)"
+    }
+    $transform = @($overlay.entities.components | Where-Object type -eq 'TransformDefinitionComponent')
+    if ($transform.Count -ne 1 -or $transform[0].position.x -ne 122 -or
+        $transform[0].position.y -ne 95 -or $transform[0].position.z -ne 116 -or
+        $transform[0].scale.x -ne 1 -or $transform[0].scale.y -ne 1 -or $transform[0].scale.z -ne 1 -or
+        -not $transform[0].inheritOnlyPosition -or
+        $overlay.dependencies.textures.path -notcontains $label.Value.texture) {
+        throw "MDM3C buff transform/texture mismatch: $($label.Name)"
+    }
+    foreach ($asset in @($label.Value.particle, $label.Value.texture)) {
+        if ((Get-FileHash -LiteralPath (Join-Path $modRoot $asset)).Hash -ne $buffLabels.sourceSha256.$asset) {
+            throw "MDM3C source asset is not byte-identical: $asset"
+        }
+    }
+    $particleBytes = [IO.File]::ReadAllBytes((Join-Path $modRoot $label.Value.particle))
+    if (-not [Text.Encoding]::ASCII.GetString($particleBytes).Contains("__sampler_0=$($label.Value.texture)")) {
+        throw "MDM3C buff texture sampler mismatch: $($label.Name)"
     }
 }
 $itemLabelsPath = Join-Path $PSScriptRoot 'item-labels-assets.json'
