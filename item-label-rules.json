@@ -1,0 +1,6347 @@
+{
+  "source": "https://github.com/blizzhackers/d2data json/base (armor, weapons, itemtypes, runes)",
+  "popularRunewords": [
+    "Spirit",
+    "Insight",
+    "Infinity",
+    "Call to Arms",
+    "Grief",
+    "Breath of the Dying",
+    "Last Wish",
+    "Beast",
+    "Doom",
+    "Heart of the Oak",
+    "Faith",
+    "Fortitude",
+    "Pride",
+    "Obedience",
+    "Hand of Justice",
+    "Death",
+    "Destruction",
+    "Eternity",
+    "Silence",
+    "Phoenix",
+    "Crescent Moon",
+    "Oath",
+    "Kingslayer",
+    "Lawbringer",
+    "Memory",
+    "White",
+    "Mosaic",
+    "Enigma",
+    "Chains of Honor",
+    "Treachery",
+    "Smoke",
+    "Stealth",
+    "Duress",
+    "Bramble",
+    "Bone",
+    "Lionheart",
+    "Exile",
+    "Dream",
+    "Sanctuary",
+    "Ancients' Pledge",
+    "Rhyme",
+    "Lore",
+    "Delirium"
+  ],
+  "rules": {
+    "2ax": {
+      "code": "2ax",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Death",
+          "Doom",
+          "Eternity",
+          "Grief"
+        ]
+      }
+    },
+    "2hs": {
+      "code": "2hs",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ]
+      }
+    },
+    "6bs": {
+      "code": "6bs",
+      "tier": "精华",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Heart of the Oak",
+          "Insight",
+          "Memory",
+          "Phoenix"
+        ]
+      }
+    },
+    "6cb": {
+      "code": "6cb",
+      "tier": "精华",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ]
+      }
+    },
+    "6cs": {
+      "code": "6cs",
+      "tier": "精华",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Heart of the Oak",
+          "Insight",
+          "Memory",
+          "Phoenix"
+        ]
+      }
+    },
+    "6hb": {
+      "code": "6hb",
+      "tier": "精华",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ]
+      }
+    },
+    "6hx": {
+      "code": "6hx",
+      "tier": "精华",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "6l7": {
+      "code": "6l7",
+      "tier": "精华",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "6lb": {
+      "code": "6lb",
+      "tier": "精华",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms"
+        ]
+      }
+    },
+    "6ls": {
+      "code": "6ls",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "6lw": {
+      "code": "6lw",
+      "tier": "精华",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "6lx": {
+      "code": "6lx",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "6mx": {
+      "code": "6mx",
+      "tier": "精华",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ]
+      }
+    },
+    "6rx": {
+      "code": "6rx",
+      "tier": "精华",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms"
+        ]
+      }
+    },
+    "6s7": {
+      "code": "6s7",
+      "tier": "精华",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms"
+        ]
+      }
+    },
+    "6sb": {
+      "code": "6sb",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "6ss": {
+      "code": "6ss",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "6sw": {
+      "code": "6sw",
+      "tier": "精华",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms"
+        ]
+      }
+    },
+    "6ws": {
+      "code": "6ws",
+      "tier": "精华",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Heart of the Oak",
+          "Insight",
+          "Memory",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms",
+          "Eternity"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "72a": {
+      "code": "72a",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Death",
+          "Doom",
+          "Eternity",
+          "Grief"
+        ]
+      }
+    },
+    "72h": {
+      "code": "72h",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ]
+      }
+    },
+    "7ar": {
+      "code": "7ar",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Mosaic"
+        ]
+      }
+    },
+    "7ax": {
+      "code": "7ax",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix"
+        ]
+      }
+    },
+    "7b7": {
+      "code": "7b7",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "7b8": {
+      "code": "7b8",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "7ba": {
+      "code": "7ba",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Death",
+          "Doom",
+          "Eternity",
+          "Grief"
+        ]
+      }
+    },
+    "7bk": {
+      "code": "7bk",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "7bl": {
+      "code": "7bl",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "7br": {
+      "code": "7br",
+      "tier": "精华",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Phoenix",
+          "Pride"
+        ],
+        "5": [
+          "Call to Arms",
+          "Eternity",
+          "Obedience"
+        ]
+      }
+    },
+    "7bs": {
+      "code": "7bs",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "7bt": {
+      "code": "7bt",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Death",
+          "Doom",
+          "Eternity",
+          "Grief"
+        ]
+      }
+    },
+    "7bw": {
+      "code": "7bw",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "White"
+        ]
+      }
+    },
+    "7cl": {
+      "code": "7cl",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "7cm": {
+      "code": "7cm",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "7cr": {
+      "code": "7cr",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix",
+          "Spirit"
+        ],
+        "5": [
+          "Call to Arms",
+          "Death",
+          "Destruction",
+          "Eternity",
+          "Grief"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Last Wish",
+          "Silence"
+        ]
+      }
+    },
+    "7cs": {
+      "code": "7cs",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "7dg": {
+      "code": "7dg",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "7di": {
+      "code": "7di",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "7fb": {
+      "code": "7fb",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix",
+          "Spirit"
+        ],
+        "5": [
+          "Call to Arms",
+          "Death",
+          "Destruction",
+          "Eternity",
+          "Grief"
+        ]
+      }
+    },
+    "7fc": {
+      "code": "7fc",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "7fl": {
+      "code": "7fl",
+      "tier": "精华",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Heart of the Oak",
+          "Oath",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms",
+          "Eternity"
+        ]
+      }
+    },
+    "7ga": {
+      "code": "7ga",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Death",
+          "Doom",
+          "Eternity",
+          "Grief"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Last Wish",
+          "Silence"
+        ]
+      }
+    },
+    "7gd": {
+      "code": "7gd",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix",
+          "Spirit"
+        ],
+        "5": [
+          "Call to Arms",
+          "Death",
+          "Destruction",
+          "Eternity",
+          "Grief"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Last Wish",
+          "Silence"
+        ]
+      }
+    },
+    "7gi": {
+      "code": "7gi",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Death",
+          "Doom",
+          "Eternity",
+          "Grief"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Last Wish",
+          "Silence"
+        ]
+      }
+    },
+    "7gl": {
+      "code": "7gl",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "7gm": {
+      "code": "7gm",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Doom",
+          "Eternity"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Last Wish",
+          "Silence"
+        ]
+      }
+    },
+    "7gs": {
+      "code": "7gs",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "7gw": {
+      "code": "7gw",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "White"
+        ]
+      }
+    },
+    "7h7": {
+      "code": "7h7",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Insight",
+          "Phoenix",
+          "Pride"
+        ],
+        "5": [
+          "Call to Arms",
+          "Destruction",
+          "Doom",
+          "Eternity",
+          "Obedience"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "7ha": {
+      "code": "7ha",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "7ja": {
+      "code": "7ja",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "7kr": {
+      "code": "7kr",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "7la": {
+      "code": "7la",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix"
+        ]
+      }
+    },
+    "7ls": {
+      "code": "7ls",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "7lw": {
+      "code": "7lw",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Mosaic"
+        ]
+      }
+    },
+    "7m7": {
+      "code": "7m7",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Doom",
+          "Eternity"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Last Wish",
+          "Silence"
+        ]
+      }
+    },
+    "7ma": {
+      "code": "7ma",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "7mp": {
+      "code": "7mp",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Death",
+          "Doom",
+          "Eternity",
+          "Grief"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Last Wish",
+          "Silence"
+        ]
+      }
+    },
+    "7mt": {
+      "code": "7mt",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "7o7": {
+      "code": "7o7",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ]
+      }
+    },
+    "7p7": {
+      "code": "7p7",
+      "tier": "精华",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Phoenix",
+          "Pride"
+        ],
+        "5": [
+          "Call to Arms",
+          "Eternity",
+          "Obedience"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "7pa": {
+      "code": "7pa",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Insight",
+          "Phoenix",
+          "Pride"
+        ],
+        "5": [
+          "Call to Arms",
+          "Destruction",
+          "Doom",
+          "Eternity",
+          "Obedience"
+        ]
+      }
+    },
+    "7pi": {
+      "code": "7pi",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "7qr": {
+      "code": "7qr",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Mosaic"
+        ]
+      }
+    },
+    "7qs": {
+      "code": "7qs",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Lawbringer"
+        ]
+      }
+    },
+    "7s7": {
+      "code": "7s7",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "7s8": {
+      "code": "7s8",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Insight",
+          "Phoenix",
+          "Pride"
+        ],
+        "5": [
+          "Call to Arms",
+          "Destruction",
+          "Doom",
+          "Eternity",
+          "Obedience"
+        ]
+      }
+    },
+    "7sb": {
+      "code": "7sb",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "7sc": {
+      "code": "7sc",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "7sm": {
+      "code": "7sm",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "7sp": {
+      "code": "7sp",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "7sr": {
+      "code": "7sr",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "7ss": {
+      "code": "7ss",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "7st": {
+      "code": "7st",
+      "tier": "精华",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Phoenix",
+          "Pride"
+        ],
+        "5": [
+          "Call to Arms",
+          "Eternity",
+          "Obedience"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "7ta": {
+      "code": "7ta",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "7tk": {
+      "code": "7tk",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "7tr": {
+      "code": "7tr",
+      "tier": "精华",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Phoenix",
+          "Pride"
+        ]
+      }
+    },
+    "7ts": {
+      "code": "7ts",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "7tw": {
+      "code": "7tw",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Mosaic"
+        ]
+      }
+    },
+    "7vo": {
+      "code": "7vo",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Insight",
+          "Phoenix",
+          "Pride"
+        ]
+      }
+    },
+    "7wa": {
+      "code": "7wa",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Death",
+          "Doom",
+          "Eternity",
+          "Grief"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Last Wish",
+          "Silence"
+        ]
+      }
+    },
+    "7wb": {
+      "code": "7wb",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Mosaic"
+        ]
+      }
+    },
+    "7wc": {
+      "code": "7wc",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Insight",
+          "Phoenix",
+          "Pride"
+        ],
+        "5": [
+          "Call to Arms",
+          "Destruction",
+          "Doom",
+          "Eternity",
+          "Obedience"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "7wd": {
+      "code": "7wd",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ]
+      }
+    },
+    "7wh": {
+      "code": "7wh",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Phoenix"
+        ]
+      }
+    },
+    "7wn": {
+      "code": "7wn",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "White"
+        ]
+      }
+    },
+    "7ws": {
+      "code": "7ws",
+      "tier": "精华",
+      "sockets": {
+        "3": [
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Eternity"
+        ]
+      }
+    },
+    "7xf": {
+      "code": "7xf",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "7yw": {
+      "code": "7yw",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "White"
+        ]
+      }
+    },
+    "8bs": {
+      "code": "8bs",
+      "tier": "扩展",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Heart of the Oak",
+          "Insight",
+          "Memory",
+          "Phoenix"
+        ]
+      }
+    },
+    "8cb": {
+      "code": "8cb",
+      "tier": "扩展",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ]
+      }
+    },
+    "8cs": {
+      "code": "8cs",
+      "tier": "扩展",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Heart of the Oak",
+          "Insight",
+          "Memory",
+          "Phoenix"
+        ]
+      }
+    },
+    "8hb": {
+      "code": "8hb",
+      "tier": "扩展",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ]
+      }
+    },
+    "8hx": {
+      "code": "8hx",
+      "tier": "扩展",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "8l8": {
+      "code": "8l8",
+      "tier": "扩展",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "8lb": {
+      "code": "8lb",
+      "tier": "扩展",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms"
+        ]
+      }
+    },
+    "8ls": {
+      "code": "8ls",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "8lw": {
+      "code": "8lw",
+      "tier": "扩展",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "8lx": {
+      "code": "8lx",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "8mx": {
+      "code": "8mx",
+      "tier": "扩展",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ]
+      }
+    },
+    "8rx": {
+      "code": "8rx",
+      "tier": "扩展",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms"
+        ]
+      }
+    },
+    "8s8": {
+      "code": "8s8",
+      "tier": "扩展",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms"
+        ]
+      }
+    },
+    "8sb": {
+      "code": "8sb",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "8ss": {
+      "code": "8ss",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "8sw": {
+      "code": "8sw",
+      "tier": "扩展",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms"
+        ]
+      }
+    },
+    "8ws": {
+      "code": "8ws",
+      "tier": "扩展",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Heart of the Oak",
+          "Insight",
+          "Memory",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms",
+          "Eternity"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "92a": {
+      "code": "92a",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Death",
+          "Doom",
+          "Eternity",
+          "Grief"
+        ]
+      }
+    },
+    "92h": {
+      "code": "92h",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ]
+      }
+    },
+    "9ar": {
+      "code": "9ar",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Mosaic"
+        ]
+      }
+    },
+    "9ax": {
+      "code": "9ax",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix"
+        ]
+      }
+    },
+    "9b7": {
+      "code": "9b7",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ]
+      }
+    },
+    "9b8": {
+      "code": "9b8",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "9b9": {
+      "code": "9b9",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "9ba": {
+      "code": "9ba",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Death",
+          "Doom",
+          "Eternity",
+          "Grief"
+        ]
+      }
+    },
+    "9bk": {
+      "code": "9bk",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "9bl": {
+      "code": "9bl",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "9br": {
+      "code": "9br",
+      "tier": "扩展",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Phoenix",
+          "Pride"
+        ],
+        "5": [
+          "Call to Arms",
+          "Eternity",
+          "Obedience"
+        ]
+      }
+    },
+    "9bs": {
+      "code": "9bs",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "9bt": {
+      "code": "9bt",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Death",
+          "Doom",
+          "Eternity",
+          "Grief"
+        ]
+      }
+    },
+    "9bw": {
+      "code": "9bw",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "White"
+        ]
+      }
+    },
+    "9cl": {
+      "code": "9cl",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "9cm": {
+      "code": "9cm",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "9cr": {
+      "code": "9cr",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix",
+          "Spirit"
+        ],
+        "5": [
+          "Call to Arms",
+          "Death",
+          "Destruction",
+          "Eternity",
+          "Grief"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Last Wish",
+          "Silence"
+        ]
+      }
+    },
+    "9cs": {
+      "code": "9cs",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "9dg": {
+      "code": "9dg",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "9di": {
+      "code": "9di",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "9fb": {
+      "code": "9fb",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix",
+          "Spirit"
+        ],
+        "5": [
+          "Call to Arms",
+          "Death",
+          "Destruction",
+          "Eternity",
+          "Grief"
+        ]
+      }
+    },
+    "9fc": {
+      "code": "9fc",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "9fl": {
+      "code": "9fl",
+      "tier": "扩展",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Heart of the Oak",
+          "Oath",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms",
+          "Eternity"
+        ]
+      }
+    },
+    "9ga": {
+      "code": "9ga",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Death",
+          "Doom",
+          "Eternity",
+          "Grief"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Last Wish",
+          "Silence"
+        ]
+      }
+    },
+    "9gd": {
+      "code": "9gd",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix",
+          "Spirit"
+        ],
+        "5": [
+          "Call to Arms",
+          "Death",
+          "Destruction",
+          "Eternity",
+          "Grief"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Last Wish",
+          "Silence"
+        ]
+      }
+    },
+    "9gi": {
+      "code": "9gi",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Death",
+          "Doom",
+          "Eternity",
+          "Grief"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Last Wish",
+          "Silence"
+        ]
+      }
+    },
+    "9gl": {
+      "code": "9gl",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "9gm": {
+      "code": "9gm",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Doom",
+          "Eternity"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Last Wish",
+          "Silence"
+        ]
+      }
+    },
+    "9gs": {
+      "code": "9gs",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "9gw": {
+      "code": "9gw",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "White"
+        ]
+      }
+    },
+    "9h9": {
+      "code": "9h9",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Insight",
+          "Phoenix",
+          "Pride"
+        ],
+        "5": [
+          "Call to Arms",
+          "Destruction",
+          "Doom",
+          "Eternity",
+          "Obedience"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "9ha": {
+      "code": "9ha",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "9ja": {
+      "code": "9ja",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "9kr": {
+      "code": "9kr",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "9la": {
+      "code": "9la",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix"
+        ]
+      }
+    },
+    "9ls": {
+      "code": "9ls",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "9lw": {
+      "code": "9lw",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Mosaic"
+        ]
+      }
+    },
+    "9m9": {
+      "code": "9m9",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Doom",
+          "Eternity"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Last Wish",
+          "Silence"
+        ]
+      }
+    },
+    "9ma": {
+      "code": "9ma",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "9mp": {
+      "code": "9mp",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Death",
+          "Doom",
+          "Eternity",
+          "Grief"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Last Wish",
+          "Silence"
+        ]
+      }
+    },
+    "9mt": {
+      "code": "9mt",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "9p9": {
+      "code": "9p9",
+      "tier": "扩展",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Phoenix",
+          "Pride"
+        ],
+        "5": [
+          "Call to Arms",
+          "Eternity",
+          "Obedience"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "9pa": {
+      "code": "9pa",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Insight",
+          "Phoenix",
+          "Pride"
+        ],
+        "5": [
+          "Call to Arms",
+          "Destruction",
+          "Doom",
+          "Eternity",
+          "Obedience"
+        ]
+      }
+    },
+    "9pi": {
+      "code": "9pi",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "9qr": {
+      "code": "9qr",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Mosaic"
+        ]
+      }
+    },
+    "9qs": {
+      "code": "9qs",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Lawbringer"
+        ]
+      }
+    },
+    "9s8": {
+      "code": "9s8",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Insight",
+          "Phoenix",
+          "Pride"
+        ],
+        "5": [
+          "Call to Arms",
+          "Destruction",
+          "Doom",
+          "Eternity",
+          "Obedience"
+        ]
+      }
+    },
+    "9s9": {
+      "code": "9s9",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "9sb": {
+      "code": "9sb",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "9sc": {
+      "code": "9sc",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "9sm": {
+      "code": "9sm",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "9sp": {
+      "code": "9sp",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "9sr": {
+      "code": "9sr",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "9ss": {
+      "code": "9ss",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "9st": {
+      "code": "9st",
+      "tier": "扩展",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Phoenix",
+          "Pride"
+        ],
+        "5": [
+          "Call to Arms",
+          "Eternity",
+          "Obedience"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "9ta": {
+      "code": "9ta",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "9tk": {
+      "code": "9tk",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "9tr": {
+      "code": "9tr",
+      "tier": "扩展",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Phoenix",
+          "Pride"
+        ]
+      }
+    },
+    "9ts": {
+      "code": "9ts",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "9tw": {
+      "code": "9tw",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Mosaic"
+        ]
+      }
+    },
+    "9vo": {
+      "code": "9vo",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Insight",
+          "Phoenix",
+          "Pride"
+        ]
+      }
+    },
+    "9wa": {
+      "code": "9wa",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Death",
+          "Doom",
+          "Eternity",
+          "Grief"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Last Wish",
+          "Silence"
+        ]
+      }
+    },
+    "9wb": {
+      "code": "9wb",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "9wc": {
+      "code": "9wc",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Insight",
+          "Phoenix",
+          "Pride"
+        ],
+        "5": [
+          "Call to Arms",
+          "Destruction",
+          "Doom",
+          "Eternity",
+          "Obedience"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "9wd": {
+      "code": "9wd",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ]
+      }
+    },
+    "9wh": {
+      "code": "9wh",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Phoenix"
+        ]
+      }
+    },
+    "9wn": {
+      "code": "9wn",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "9ws": {
+      "code": "9ws",
+      "tier": "扩展",
+      "sockets": {
+        "3": [
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Eternity"
+        ]
+      }
+    },
+    "9xf": {
+      "code": "9xf",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "9yw": {
+      "code": "9yw",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "White"
+        ]
+      }
+    },
+    "aar": {
+      "code": "aar",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ],
+        "4": [
+          "Bramble",
+          "Chains of Honor",
+          "Fortitude"
+        ]
+      }
+    },
+    "am1": {
+      "code": "am1",
+      "tier": "普通",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms"
+        ]
+      }
+    },
+    "am2": {
+      "code": "am2",
+      "tier": "普通",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms"
+        ]
+      }
+    },
+    "am3": {
+      "code": "am3",
+      "tier": "普通",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Phoenix",
+          "Pride"
+        ],
+        "5": [
+          "Call to Arms",
+          "Eternity",
+          "Obedience"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "am4": {
+      "code": "am4",
+      "tier": "普通",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Phoenix",
+          "Pride"
+        ],
+        "5": [
+          "Call to Arms",
+          "Eternity",
+          "Obedience"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "am5": {
+      "code": "am5",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "am6": {
+      "code": "am6",
+      "tier": "扩展",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms"
+        ]
+      }
+    },
+    "am7": {
+      "code": "am7",
+      "tier": "扩展",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms"
+        ]
+      }
+    },
+    "am8": {
+      "code": "am8",
+      "tier": "扩展",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Phoenix",
+          "Pride"
+        ],
+        "5": [
+          "Call to Arms",
+          "Eternity",
+          "Obedience"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "am9": {
+      "code": "am9",
+      "tier": "扩展",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Phoenix",
+          "Pride"
+        ],
+        "5": [
+          "Call to Arms",
+          "Eternity",
+          "Obedience"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "ama": {
+      "code": "ama",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "amb": {
+      "code": "amb",
+      "tier": "精华",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms"
+        ]
+      }
+    },
+    "amc": {
+      "code": "amc",
+      "tier": "精华",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms"
+        ]
+      }
+    },
+    "amd": {
+      "code": "amd",
+      "tier": "精华",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Phoenix",
+          "Pride"
+        ],
+        "5": [
+          "Call to Arms",
+          "Eternity",
+          "Obedience"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "ame": {
+      "code": "ame",
+      "tier": "精华",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Phoenix",
+          "Pride"
+        ],
+        "5": [
+          "Call to Arms",
+          "Eternity",
+          "Obedience"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "amf": {
+      "code": "amf",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "axe": {
+      "code": "axe",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix"
+        ]
+      }
+    },
+    "axf": {
+      "code": "axf",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "ba1": {
+      "code": "ba1",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "ba2": {
+      "code": "ba2",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "ba3": {
+      "code": "ba3",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "ba4": {
+      "code": "ba4",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "ba5": {
+      "code": "ba5",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "ba6": {
+      "code": "ba6",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "ba7": {
+      "code": "ba7",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "ba8": {
+      "code": "ba8",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "ba9": {
+      "code": "ba9",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "baa": {
+      "code": "baa",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "bab": {
+      "code": "bab",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "bac": {
+      "code": "bac",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "bad": {
+      "code": "bad",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "bae": {
+      "code": "bae",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "baf": {
+      "code": "baf",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "bal": {
+      "code": "bal",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "bar": {
+      "code": "bar",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ]
+      }
+    },
+    "bax": {
+      "code": "bax",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Death",
+          "Doom",
+          "Eternity",
+          "Grief"
+        ]
+      }
+    },
+    "bhm": {
+      "code": "bhm",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Lore"
+        ]
+      }
+    },
+    "bkf": {
+      "code": "bkf",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "bld": {
+      "code": "bld",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "brn": {
+      "code": "brn",
+      "tier": "普通",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Phoenix",
+          "Pride"
+        ],
+        "5": [
+          "Call to Arms",
+          "Eternity",
+          "Obedience"
+        ]
+      }
+    },
+    "brs": {
+      "code": "brs",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ]
+      }
+    },
+    "bsd": {
+      "code": "bsd",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "bsh": {
+      "code": "bsh",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ]
+      }
+    },
+    "bst": {
+      "code": "bst",
+      "tier": "普通",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Heart of the Oak",
+          "Insight",
+          "Memory",
+          "Phoenix"
+        ]
+      }
+    },
+    "bsw": {
+      "code": "bsw",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "btl": {
+      "code": "btl",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Mosaic"
+        ]
+      }
+    },
+    "btx": {
+      "code": "btx",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Death",
+          "Doom",
+          "Eternity",
+          "Grief"
+        ]
+      }
+    },
+    "buc": {
+      "code": "buc",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "bwn": {
+      "code": "bwn",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "White"
+        ]
+      }
+    },
+    "cap": {
+      "code": "cap",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Lore"
+        ]
+      }
+    },
+    "cbw": {
+      "code": "cbw",
+      "tier": "普通",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ]
+      }
+    },
+    "ces": {
+      "code": "ces",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "chn": {
+      "code": "chn",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ]
+      }
+    },
+    "ci0": {
+      "code": "ci0",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Lore"
+        ]
+      }
+    },
+    "ci1": {
+      "code": "ci1",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Lore"
+        ]
+      }
+    },
+    "ci2": {
+      "code": "ci2",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "ci3": {
+      "code": "ci3",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "clb": {
+      "code": "clb",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "clm": {
+      "code": "clm",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "clw": {
+      "code": "clw",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Mosaic"
+        ]
+      }
+    },
+    "crn": {
+      "code": "crn",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "crs": {
+      "code": "crs",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix",
+          "Spirit"
+        ],
+        "5": [
+          "Call to Arms",
+          "Death",
+          "Destruction",
+          "Eternity",
+          "Grief"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Last Wish",
+          "Silence"
+        ]
+      }
+    },
+    "cst": {
+      "code": "cst",
+      "tier": "普通",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Heart of the Oak",
+          "Insight",
+          "Memory",
+          "Phoenix"
+        ]
+      }
+    },
+    "d33": {
+      "code": "d33",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "dgr": {
+      "code": "dgr",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "dir": {
+      "code": "dir",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "dr1": {
+      "code": "dr1",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "dr2": {
+      "code": "dr2",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "dr3": {
+      "code": "dr3",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "dr4": {
+      "code": "dr4",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "dr5": {
+      "code": "dr5",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "dr6": {
+      "code": "dr6",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "dr7": {
+      "code": "dr7",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "dr8": {
+      "code": "dr8",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "dr9": {
+      "code": "dr9",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "dra": {
+      "code": "dra",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "drb": {
+      "code": "drb",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "drc": {
+      "code": "drc",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "drd": {
+      "code": "drd",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "dre": {
+      "code": "dre",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "drf": {
+      "code": "drf",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "fhl": {
+      "code": "fhl",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Lore"
+        ]
+      }
+    },
+    "fla": {
+      "code": "fla",
+      "tier": "普通",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Heart of the Oak",
+          "Oath",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms",
+          "Eternity"
+        ]
+      }
+    },
+    "flb": {
+      "code": "flb",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix",
+          "Spirit"
+        ],
+        "5": [
+          "Call to Arms",
+          "Death",
+          "Destruction",
+          "Eternity",
+          "Grief"
+        ]
+      }
+    },
+    "flc": {
+      "code": "flc",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "fld": {
+      "code": "fld",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ]
+      }
+    },
+    "ful": {
+      "code": "ful",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ],
+        "4": [
+          "Bramble",
+          "Chains of Honor",
+          "Fortitude"
+        ]
+      }
+    },
+    "g33": {
+      "code": "g33",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "gax": {
+      "code": "gax",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Death",
+          "Doom",
+          "Eternity",
+          "Grief"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Last Wish",
+          "Silence"
+        ]
+      }
+    },
+    "ghm": {
+      "code": "ghm",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "gis": {
+      "code": "gis",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "gix": {
+      "code": "gix",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Death",
+          "Doom",
+          "Eternity",
+          "Grief"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Last Wish",
+          "Silence"
+        ]
+      }
+    },
+    "glv": {
+      "code": "glv",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "gma": {
+      "code": "gma",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Doom",
+          "Eternity"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Last Wish",
+          "Silence"
+        ]
+      }
+    },
+    "gpl": {
+      "code": "gpl",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "gpm": {
+      "code": "gpm",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "gps": {
+      "code": "gps",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "gsc": {
+      "code": "gsc",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Lawbringer"
+        ]
+      }
+    },
+    "gsd": {
+      "code": "gsd",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix",
+          "Spirit"
+        ],
+        "5": [
+          "Call to Arms",
+          "Death",
+          "Destruction",
+          "Eternity",
+          "Grief"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Last Wish",
+          "Silence"
+        ]
+      }
+    },
+    "gth": {
+      "code": "gth",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ],
+        "4": [
+          "Bramble",
+          "Chains of Honor",
+          "Fortitude"
+        ]
+      }
+    },
+    "gts": {
+      "code": "gts",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ]
+      }
+    },
+    "gwn": {
+      "code": "gwn",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "White"
+        ]
+      }
+    },
+    "hal": {
+      "code": "hal",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Insight",
+          "Phoenix",
+          "Pride"
+        ],
+        "5": [
+          "Call to Arms",
+          "Destruction",
+          "Doom",
+          "Eternity",
+          "Obedience"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "hax": {
+      "code": "hax",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "hbl": {
+      "code": "hbl",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "hbt": {
+      "code": "hbt",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "hbw": {
+      "code": "hbw",
+      "tier": "普通",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ]
+      }
+    },
+    "hdm": {
+      "code": "hdm",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "hfh": {
+      "code": "hfh",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Doom",
+          "Eternity"
+        ]
+      }
+    },
+    "hgl": {
+      "code": "hgl",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "hla": {
+      "code": "hla",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ]
+      }
+    },
+    "hlm": {
+      "code": "hlm",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Lore"
+        ]
+      }
+    },
+    "hst": {
+      "code": "hst",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "hxb": {
+      "code": "hxb",
+      "tier": "普通",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "jav": {
+      "code": "jav",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "kit": {
+      "code": "kit",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ]
+      }
+    },
+    "kri": {
+      "code": "kri",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "ktr": {
+      "code": "ktr",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "lax": {
+      "code": "lax",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix"
+        ]
+      }
+    },
+    "lbb": {
+      "code": "lbb",
+      "tier": "普通",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "lbl": {
+      "code": "lbl",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "lbt": {
+      "code": "lbt",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "lbw": {
+      "code": "lbw",
+      "tier": "普通",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms"
+        ]
+      }
+    },
+    "lea": {
+      "code": "lea",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ]
+      }
+    },
+    "leg": {
+      "code": "leg",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "lgl": {
+      "code": "lgl",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "lrg": {
+      "code": "lrg",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ]
+      }
+    },
+    "lsd": {
+      "code": "lsd",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "lst": {
+      "code": "lst",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "ltp": {
+      "code": "ltp",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ]
+      }
+    },
+    "lwb": {
+      "code": "lwb",
+      "tier": "普通",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "lxb": {
+      "code": "lxb",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "mac": {
+      "code": "mac",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "mau": {
+      "code": "mau",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Doom",
+          "Eternity"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Last Wish",
+          "Silence"
+        ]
+      }
+    },
+    "mbl": {
+      "code": "mbl",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "mbt": {
+      "code": "mbt",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "mgl": {
+      "code": "mgl",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "mpi": {
+      "code": "mpi",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Death",
+          "Doom",
+          "Eternity",
+          "Grief"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Last Wish",
+          "Silence"
+        ]
+      }
+    },
+    "msf": {
+      "code": "msf",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "msk": {
+      "code": "msk",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "mst": {
+      "code": "mst",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "mxb": {
+      "code": "mxb",
+      "tier": "普通",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ]
+      }
+    },
+    "ne1": {
+      "code": "ne1",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ]
+      }
+    },
+    "ne2": {
+      "code": "ne2",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ]
+      }
+    },
+    "ne3": {
+      "code": "ne3",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ]
+      }
+    },
+    "ne4": {
+      "code": "ne4",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ]
+      }
+    },
+    "ne5": {
+      "code": "ne5",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ]
+      }
+    },
+    "ne6": {
+      "code": "ne6",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ]
+      }
+    },
+    "ne7": {
+      "code": "ne7",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ]
+      }
+    },
+    "ne8": {
+      "code": "ne8",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ]
+      }
+    },
+    "ne9": {
+      "code": "ne9",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ]
+      }
+    },
+    "nea": {
+      "code": "nea",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ]
+      }
+    },
+    "neb": {
+      "code": "neb",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ]
+      }
+    },
+    "ned": {
+      "code": "ned",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ]
+      }
+    },
+    "nee": {
+      "code": "nee",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ]
+      }
+    },
+    "nef": {
+      "code": "nef",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ]
+      }
+    },
+    "neg": {
+      "code": "neg",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ]
+      }
+    },
+    "ob1": {
+      "code": "ob1",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "ob2": {
+      "code": "ob2",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "ob3": {
+      "code": "ob3",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "ob4": {
+      "code": "ob4",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "ob5": {
+      "code": "ob5",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "ob6": {
+      "code": "ob6",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "ob7": {
+      "code": "ob7",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "ob8": {
+      "code": "ob8",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "ob9": {
+      "code": "ob9",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "oba": {
+      "code": "oba",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "obb": {
+      "code": "obb",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "obc": {
+      "code": "obc",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "obd": {
+      "code": "obd",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "obe": {
+      "code": "obe",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "obf": {
+      "code": "obf",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "opl": {
+      "code": "opl",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "opm": {
+      "code": "opm",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "ops": {
+      "code": "ops",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "pa1": {
+      "code": "pa1",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ],
+        "4": [
+          "Exile",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "pa2": {
+      "code": "pa2",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ],
+        "4": [
+          "Exile",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "pa3": {
+      "code": "pa3",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ],
+        "4": [
+          "Exile",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "pa4": {
+      "code": "pa4",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ],
+        "4": [
+          "Exile",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "pa5": {
+      "code": "pa5",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ],
+        "4": [
+          "Exile",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "pa6": {
+      "code": "pa6",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ],
+        "4": [
+          "Exile",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "pa7": {
+      "code": "pa7",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ],
+        "4": [
+          "Exile",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "pa8": {
+      "code": "pa8",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ],
+        "4": [
+          "Exile",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "pa9": {
+      "code": "pa9",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ],
+        "4": [
+          "Exile",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "paa": {
+      "code": "paa",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ],
+        "4": [
+          "Exile",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "pab": {
+      "code": "pab",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ],
+        "4": [
+          "Exile",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "pac": {
+      "code": "pac",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ],
+        "4": [
+          "Exile",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "pad": {
+      "code": "pad",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ],
+        "4": [
+          "Exile",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "pae": {
+      "code": "pae",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ],
+        "4": [
+          "Exile",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "paf": {
+      "code": "paf",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ],
+        "4": [
+          "Exile",
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "pax": {
+      "code": "pax",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Insight",
+          "Phoenix",
+          "Pride"
+        ],
+        "5": [
+          "Call to Arms",
+          "Destruction",
+          "Doom",
+          "Eternity",
+          "Obedience"
+        ]
+      }
+    },
+    "pik": {
+      "code": "pik",
+      "tier": "普通",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Phoenix",
+          "Pride"
+        ],
+        "5": [
+          "Call to Arms",
+          "Eternity",
+          "Obedience"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "pil": {
+      "code": "pil",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "plt": {
+      "code": "plt",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ]
+      }
+    },
+    "qui": {
+      "code": "qui",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ]
+      }
+    },
+    "rng": {
+      "code": "rng",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ]
+      }
+    },
+    "rxb": {
+      "code": "rxb",
+      "tier": "普通",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms"
+        ]
+      }
+    },
+    "sbb": {
+      "code": "sbb",
+      "tier": "普通",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms"
+        ]
+      }
+    },
+    "sbr": {
+      "code": "sbr",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "sbw": {
+      "code": "sbw",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "scl": {
+      "code": "scl",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ]
+      }
+    },
+    "scm": {
+      "code": "scm",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "scp": {
+      "code": "scp",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "scy": {
+      "code": "scy",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Insight",
+          "Phoenix",
+          "Pride"
+        ],
+        "5": [
+          "Call to Arms",
+          "Destruction",
+          "Doom",
+          "Eternity",
+          "Obedience"
+        ]
+      }
+    },
+    "skp": {
+      "code": "skp",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Lore"
+        ]
+      }
+    },
+    "skr": {
+      "code": "skr",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Mosaic"
+        ]
+      }
+    },
+    "sml": {
+      "code": "sml",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ]
+      }
+    },
+    "spc": {
+      "code": "spc",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "spk": {
+      "code": "spk",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ]
+      }
+    },
+    "spl": {
+      "code": "spl",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ]
+      }
+    },
+    "spr": {
+      "code": "spr",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "spt": {
+      "code": "spt",
+      "tier": "普通",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Phoenix",
+          "Pride"
+        ],
+        "5": [
+          "Call to Arms",
+          "Eternity",
+          "Obedience"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "ssd": {
+      "code": "ssd",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "ssp": {
+      "code": "ssp",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "sst": {
+      "code": "sst",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "stu": {
+      "code": "stu",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ]
+      }
+    },
+    "swb": {
+      "code": "swb",
+      "tier": "普通",
+      "sockets": {
+        "4": [
+          "Faith",
+          "Fortitude",
+          "Hand of Justice",
+          "Insight",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms"
+        ]
+      }
+    },
+    "tax": {
+      "code": "tax",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "tbl": {
+      "code": "tbl",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "tbt": {
+      "code": "tbt",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "tgl": {
+      "code": "tgl",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "tkf": {
+      "code": "tkf",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "tow": {
+      "code": "tow",
+      "tier": "普通",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ]
+      }
+    },
+    "tri": {
+      "code": "tri",
+      "tier": "普通",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Phoenix",
+          "Pride"
+        ]
+      }
+    },
+    "tsp": {
+      "code": "tsp",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "uap": {
+      "code": "uap",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Lore"
+        ]
+      }
+    },
+    "uar": {
+      "code": "uar",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ],
+        "4": [
+          "Bramble",
+          "Chains of Honor",
+          "Fortitude"
+        ]
+      }
+    },
+    "ucl": {
+      "code": "ucl",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ],
+        "4": [
+          "Bramble",
+          "Chains of Honor",
+          "Fortitude"
+        ]
+      }
+    },
+    "uea": {
+      "code": "uea",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ],
+        "4": [
+          "Bramble",
+          "Chains of Honor",
+          "Fortitude"
+        ]
+      }
+    },
+    "uh9": {
+      "code": "uh9",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "uhb": {
+      "code": "uhb",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "uhc": {
+      "code": "uhc",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "uhg": {
+      "code": "uhg",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "uhl": {
+      "code": "uhl",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Lore"
+        ]
+      }
+    },
+    "uhm": {
+      "code": "uhm",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "uhn": {
+      "code": "uhn",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ],
+        "4": [
+          "Bramble",
+          "Chains of Honor",
+          "Fortitude"
+        ]
+      }
+    },
+    "uit": {
+      "code": "uit",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ],
+        "4": [
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "ukp": {
+      "code": "ukp",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Lore"
+        ]
+      }
+    },
+    "ula": {
+      "code": "ula",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ],
+        "4": [
+          "Bramble",
+          "Chains of Honor",
+          "Fortitude"
+        ]
+      }
+    },
+    "ulb": {
+      "code": "ulb",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "ulc": {
+      "code": "ulc",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "uld": {
+      "code": "uld",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ],
+        "4": [
+          "Bramble",
+          "Chains of Honor",
+          "Fortitude"
+        ]
+      }
+    },
+    "ulg": {
+      "code": "ulg",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "ulm": {
+      "code": "ulm",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Lore"
+        ]
+      }
+    },
+    "ult": {
+      "code": "ult",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ],
+        "4": [
+          "Bramble",
+          "Chains of Honor",
+          "Fortitude"
+        ]
+      }
+    },
+    "umb": {
+      "code": "umb",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "umc": {
+      "code": "umc",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "umg": {
+      "code": "umg",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "uml": {
+      "code": "uml",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ]
+      }
+    },
+    "ung": {
+      "code": "ung",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ],
+        "4": [
+          "Bramble",
+          "Chains of Honor",
+          "Fortitude"
+        ]
+      }
+    },
+    "uow": {
+      "code": "uow",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ],
+        "4": [
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "upk": {
+      "code": "upk",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ]
+      }
+    },
+    "upl": {
+      "code": "upl",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ],
+        "4": [
+          "Bramble",
+          "Chains of Honor",
+          "Fortitude"
+        ]
+      }
+    },
+    "urg": {
+      "code": "urg",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ]
+      }
+    },
+    "urn": {
+      "code": "urn",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "urs": {
+      "code": "urs",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ],
+        "4": [
+          "Bramble",
+          "Chains of Honor",
+          "Fortitude"
+        ]
+      }
+    },
+    "ush": {
+      "code": "ush",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ]
+      }
+    },
+    "usk": {
+      "code": "usk",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "utb": {
+      "code": "utb",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "utc": {
+      "code": "utc",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "utg": {
+      "code": "utg",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "uth": {
+      "code": "uth",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ],
+        "4": [
+          "Bramble",
+          "Chains of Honor",
+          "Fortitude"
+        ]
+      }
+    },
+    "utp": {
+      "code": "utp",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ],
+        "4": [
+          "Bramble",
+          "Chains of Honor",
+          "Fortitude"
+        ]
+      }
+    },
+    "uts": {
+      "code": "uts",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ],
+        "4": [
+          "Phoenix",
+          "Spirit"
+        ]
+      }
+    },
+    "utu": {
+      "code": "utu",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ],
+        "4": [
+          "Bramble",
+          "Chains of Honor",
+          "Fortitude"
+        ]
+      }
+    },
+    "uuc": {
+      "code": "uuc",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ]
+      }
+    },
+    "uui": {
+      "code": "uui",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ],
+        "4": [
+          "Bramble",
+          "Chains of Honor",
+          "Fortitude"
+        ]
+      }
+    },
+    "uul": {
+      "code": "uul",
+      "tier": "精华",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ],
+        "4": [
+          "Bramble",
+          "Chains of Honor",
+          "Fortitude"
+        ]
+      }
+    },
+    "uvb": {
+      "code": "uvb",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "uvc": {
+      "code": "uvc",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "uvg": {
+      "code": "uvg",
+      "tier": "精华",
+      "sockets": {}
+    },
+    "vbl": {
+      "code": "vbl",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "vbt": {
+      "code": "vbt",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "vgl": {
+      "code": "vgl",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "vou": {
+      "code": "vou",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Insight",
+          "Phoenix",
+          "Pride"
+        ]
+      }
+    },
+    "wax": {
+      "code": "wax",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Kingslayer",
+          "Oath",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Death",
+          "Doom",
+          "Eternity",
+          "Grief"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Last Wish",
+          "Silence"
+        ]
+      }
+    },
+    "whm": {
+      "code": "whm",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Phoenix"
+        ]
+      }
+    },
+    "wnd": {
+      "code": "wnd",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "wrb": {
+      "code": "wrb",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "wsc": {
+      "code": "wsc",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Crescent Moon"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Infinity",
+          "Insight",
+          "Phoenix",
+          "Pride"
+        ],
+        "5": [
+          "Call to Arms",
+          "Destruction",
+          "Doom",
+          "Eternity",
+          "Obedience"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "wsd": {
+      "code": "wsd",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Crescent Moon",
+          "Lawbringer"
+        ]
+      }
+    },
+    "wsp": {
+      "code": "wsp",
+      "tier": "普通",
+      "sockets": {
+        "3": [
+          "Lawbringer"
+        ],
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Phoenix"
+        ],
+        "5": [
+          "Beast",
+          "Call to Arms",
+          "Eternity"
+        ]
+      }
+    },
+    "wst": {
+      "code": "wst",
+      "tier": "普通",
+      "sockets": {
+        "4": [
+          "Fortitude",
+          "Hand of Justice",
+          "Heart of the Oak",
+          "Insight",
+          "Memory",
+          "Phoenix"
+        ],
+        "5": [
+          "Call to Arms",
+          "Eternity"
+        ],
+        "6": [
+          "Breath of the Dying",
+          "Silence"
+        ]
+      }
+    },
+    "xap": {
+      "code": "xap",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Lore"
+        ]
+      }
+    },
+    "xar": {
+      "code": "xar",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ],
+        "4": [
+          "Bramble",
+          "Chains of Honor",
+          "Fortitude"
+        ]
+      }
+    },
+    "xcl": {
+      "code": "xcl",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ]
+      }
+    },
+    "xea": {
+      "code": "xea",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ]
+      }
+    },
+    "xh9": {
+      "code": "xh9",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Lore"
+        ]
+      }
+    },
+    "xhb": {
+      "code": "xhb",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "xhg": {
+      "code": "xhg",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "xhl": {
+      "code": "xhl",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Lore"
+        ]
+      }
+    },
+    "xhm": {
+      "code": "xhm",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "xhn": {
+      "code": "xhn",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ]
+      }
+    },
+    "xit": {
+      "code": "xit",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ]
+      }
+    },
+    "xkp": {
+      "code": "xkp",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Lore"
+        ]
+      }
+    },
+    "xla": {
+      "code": "xla",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ]
+      }
+    },
+    "xlb": {
+      "code": "xlb",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "xld": {
+      "code": "xld",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ]
+      }
+    },
+    "xlg": {
+      "code": "xlg",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "xlm": {
+      "code": "xlm",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Lore"
+        ]
+      }
+    },
+    "xlt": {
+      "code": "xlt",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ]
+      }
+    },
+    "xmb": {
+      "code": "xmb",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "xmg": {
+      "code": "xmg",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "xml": {
+      "code": "xml",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ]
+      }
+    },
+    "xng": {
+      "code": "xng",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ]
+      }
+    },
+    "xow": {
+      "code": "xow",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ]
+      }
+    },
+    "xpk": {
+      "code": "xpk",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ]
+      }
+    },
+    "xpl": {
+      "code": "xpl",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ]
+      }
+    },
+    "xrg": {
+      "code": "xrg",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ]
+      }
+    },
+    "xrn": {
+      "code": "xrn",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "xrs": {
+      "code": "xrs",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ]
+      }
+    },
+    "xsh": {
+      "code": "xsh",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ]
+      }
+    },
+    "xsk": {
+      "code": "xsk",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Lore"
+        ],
+        "3": [
+          "Delirium",
+          "Dream"
+        ]
+      }
+    },
+    "xtb": {
+      "code": "xtb",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "xtg": {
+      "code": "xtg",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "xth": {
+      "code": "xth",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ],
+        "4": [
+          "Bramble",
+          "Chains of Honor",
+          "Fortitude"
+        ]
+      }
+    },
+    "xtp": {
+      "code": "xtp",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ]
+      }
+    },
+    "xts": {
+      "code": "xts",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Rhyme"
+        ],
+        "3": [
+          "Ancients' Pledge",
+          "Dream",
+          "Sanctuary"
+        ]
+      }
+    },
+    "xtu": {
+      "code": "xtu",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ]
+      }
+    },
+    "xuc": {
+      "code": "xuc",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "xui": {
+      "code": "xui",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ]
+      }
+    },
+    "xul": {
+      "code": "xul",
+      "tier": "扩展",
+      "sockets": {
+        "2": [
+          "Smoke",
+          "Stealth"
+        ],
+        "3": [
+          "Bone",
+          "Duress",
+          "Enigma",
+          "Lionheart",
+          "Treachery"
+        ],
+        "4": [
+          "Bramble",
+          "Chains of Honor",
+          "Fortitude"
+        ]
+      }
+    },
+    "xvb": {
+      "code": "xvb",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "xvg": {
+      "code": "xvg",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "ywn": {
+      "code": "ywn",
+      "tier": "普通",
+      "sockets": {}
+    },
+    "zhb": {
+      "code": "zhb",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "zlb": {
+      "code": "zlb",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "zmb": {
+      "code": "zmb",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "ztb": {
+      "code": "ztb",
+      "tier": "扩展",
+      "sockets": {}
+    },
+    "zvb": {
+      "code": "zvb",
+      "tier": "扩展",
+      "sockets": {}
+    }
+  }
+}

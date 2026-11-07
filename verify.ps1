@@ -248,4 +248,13 @@ foreach ($label in $buffLabels.labels.PSObject.Properties) {
         throw "Buff label overlay is incorrect: $($label.Name)"
     }
 }
+$itemLabelsPath = Join-Path $PSScriptRoot 'item-labels-assets.json'
+if (Test-Path -LiteralPath $itemLabelsPath -PathType Leaf) {
+    $itemLabels = [System.IO.File]::ReadAllText($itemLabelsPath, [System.Text.Encoding]::UTF8) | ConvertFrom-Json
+    foreach ($file in $itemLabels.files.PSObject.Properties) {
+        if ((Get-FileHash -LiteralPath (Join-Path $modRoot $file.Name)).Hash -ne $file.Value) {
+            throw "Item label strings hash mismatch: $($file.Name)"
+        }
+    }
+}
 Write-Host 'Verification passed: existing FarmHub features, navigation, high-rune audio, used corpse visibility, borderless panels, merged stash tab, Battle Orders/Command labels, and asset hashes.'

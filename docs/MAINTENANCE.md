@@ -64,6 +64,16 @@
 
 实现前需要从 93854 客户端提取以下文件放进 `.original-build-93854/`：`data\hd\missiles\missiles.json`、`data\hd\character\monsters.json`、`data\hd\character\enemy\hydra1.json`、`hydra2.json`、`hydra3.json`。
 
+### 底材等级和有用孔数
+
+只修改 `data\local\lng\strings\item-names.json` 中底材名称（键为 `armor.txt`/`weapons.txt` 的 `namestr`）的 `zhCN` 文字，在后面追加 `[普通]`/`[扩展]`/`[精华]` 和有用孔数。地面标签、未鉴定物品和所有品质都显示底材名，因此鉴定前即可看到。
+
+- 等级：底材代码等于 `normcode`/`ubercode`/`ultracode` 时分别为普通、扩展、精华。
+- 有用孔数：对 `POPULAR_RUNEWORDS` 中每个完整符文之语，若底材类型（含 `Equiv1`/`Equiv2` 上级）命中其 `itype` 且不命中 `etype`，并且所需符文数 ≤ min(`gemsockets`, 类型 `MaxSockets3`)，则计入该孔数。实际能打出的孔数还受物品等级限制，这里按上限计算。
+- 规则由 `python build-item-labels.py rules <d2data 的 json/base 目录>` 生成 `item-label-rules.json`，数据来自 [blizzhackers/d2data](https://github.com/blizzhackers/d2data)，与 93854 原表一致。
+- 名称文件由 `python build-item-labels.py` 生成，需要先从客户端提取原版 `data\local\lng\strings\item-names.json` 放进 `.original-build-93854/`；脚本会检查规则里的每个底材键都存在。生成后 `item-labels-assets.json` 记录哈希，`verify.ps1` 自动校验。
+- 客户端更新后必须重新提取 `item-names.json` 再生成，旧文件会覆盖新版本的物品名称。
+
 ### 合并材料页
 
 做法参考本机 MDM Mod（作者：暗黑2阿檬，适配 build 93854）：
@@ -103,7 +113,7 @@ powershell -ExecutionPolicy Bypass -File .\verify.ps1
 
 1. 启动一次未加载模组的游戏，确认客户端已完成更新。
 2. 记录客户端显示的新数据版本号。
-3. 从当前客户端重新提取最新版 `data\global\DataVersionBuild.txt`、`data\global\excel\` 下的 `actinfo.txt`、`misc.txt`、`sounds.txt`、`states.txt`，界面文件 `mainmenupanelhd.json`、`pauselayouthd.json`、`pauselayoutgardenhd.json`、`panelborderspanelhd.json`、`bankexpansionlayouthd.json`，以及崔凡克 `travn.json` 和四种 `nihl*.json`；同时确认新版 `states.txt` 中 `battleorders`、`battlecommand` 的 `overlay1` 和 `overlay.txt` 中的 `Character` 未变。
+3. 从当前客户端重新提取最新版 `data\global\DataVersionBuild.txt`、`data\global\excel\` 下的 `actinfo.txt`、`misc.txt`、`sounds.txt`、`states.txt`，界面文件 `mainmenupanelhd.json`、`pauselayouthd.json`、`pauselayoutgardenhd.json`、`panelborderspanelhd.json`、`bankexpansionlayouthd.json`，名称文件 `data\local\lng\strings\item-names.json`，以及崔凡克 `travn.json` 和四种 `nihl*.json`；同时确认新版 `states.txt` 中 `battleorders`、`battlecommand` 的 `overlay1` 和 `overlay.txt` 中的 `Character` 未变。
 4. 以新版数据表为基础，重新应用传送点映射、符文音效和尸体状态改动；不要用旧表覆盖新版表。
 5. 以新版界面和场景文件为基础，重新合并人物点击进入地狱、崔凡克通透布局和合并材料页；不要长期沿用旧版本的完整资源文件。
 6. 确认 `DataVersionBuild.txt` 与客户端版本完全一致。
@@ -142,6 +152,7 @@ powershell -ExecutionPolicy Bypass -File .\verify.ps1
 | `data\hd\nickname\textures\graphic\` | 两张兼容纹理，补齐粒子中残留的材质引用。 |
 | `data\hd\overlays\common\battleorders.json`、`battlecommand.json` | 战斗体能 LIFE、战斗指挥 SKILL 文字；覆盖原版持续光圈。由 `build-buff-labels.py` 生成。 |
 | `data\hd\directionarrows\particles\farmhub_*`、`textures\farmhub_*` | 文字贴片粒子和 BC3 贴图；粒子只允许改等长贴图路径。 |
+| `data\local\lng\strings\item-names.json` | 底材名后的等级和有用孔数；由 `build-item-labels.py` 从原版文件生成，只改 `zhCN`。 |
 | `data\global\ui\layouts\bankexpansionlayouthd.json` | 合并页布局；全部 `AdvancedStashSlotWidget` 位于 `advancedstash_gems`，`advancedstash_materials` 和 `advancedstash_runes` 必须保留为空容器。 |
 | `data\global\ui\layouts\CALL\mymodConvert*hd.json` | 自动重塑定时面板；面板 `name` 必须与勾选框消息和文件路径一致。 |
 | `data\hd\global\ui\panel\stash\additionalstash\panel_bg_craft*.sprite` | 合并页背景，格子框已画在贴图中，移动格子时要同步修改；高清与 `lowend` 版本应一起维护。 |
