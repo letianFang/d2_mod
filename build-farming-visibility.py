@@ -1,10 +1,10 @@
-"""Build minimal corpse/panel overrides from the local CN build 93854."""
+"""Build minimal corpse/panel overrides from the local CN build 95039."""
 import hashlib
 import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-BASE = ROOT / '.original-build-93854'
+BASE = ROOT / '.original-build-95039'
 MOD = ROOT / 'mods/FarmHub/FarmHub.mpq'
 
 
@@ -50,7 +50,7 @@ def build():
     }
     (MOD / panel_path).write_text(json.dumps(panel, indent=4) + '\n', encoding='utf-8')
     manifest = {
-        'build': '93854',
+        'build': '95039',
         'launchArguments': '-mod FarmHub -txt -assettestmode 1',
         'corpseScope': 'all areas; used corpses only',
         'stateChange': {'state': 'corpse_noselect', 'id': 118, 'column': 'hide', 'before': '', 'after': '1'},
@@ -61,7 +61,7 @@ def build():
     }
     (ROOT / 'farming-visibility-assets.json').write_text(
         json.dumps(manifest, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
-    print('Built used-corpse visibility and borderless mouse/keyboard panels for CN 93854.')
+    print('Built used-corpse visibility and borderless mouse/keyboard panels for CN 95039.')
 
 
 if __name__ == '__main__':

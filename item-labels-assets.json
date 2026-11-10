@@ -1,5 +1,5 @@
 {
-  "build": "93854",
+  "build": "95039",
   "language": "zhCN",
   "labels": [
     "\u666e",
@@ -9,10 +9,10 @@
   "labelledBases": 506,
   "rules": "4d0546dc62b5450e47b5ddfc2aa8d00b3dc485b46fa68b8cf16459781186087a",
   "originalSha256": {
-    "data/local/lng/strings/item-names.json": "843ff48c26aefa6efed7995b486e2e53553a802ae4af9a52c2b367fea302525a"
+    "data/local/lng/strings/item-names.json": "e170dbef74dd3608b19532c4397253b65c094599f756b9b1684f377de1d1c4c2"
   },
   "files": {
-    "data/local/lng/strings/item-names.json": "d2e80f5e061707f795038446fc8f1d75a7854d4e1a896e856a0a56ce4151e0e4"
+    "data/local/lng/strings/item-names.json": "91328115772ce76144103728943507debb62997effdfa468676ce29cc12dbf07"
   },
   "runtimeVerification": "pending"
 }

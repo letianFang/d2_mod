@@ -1,4 +1,4 @@
-"""Port MDM3C Skill/HP icons onto extracted build 93854 overlays (stdlib only)."""
+"""Port MDM3C Skill/HP icons onto extracted build 95039 overlays (stdlib only)."""
 import argparse
 import copy
 import hashlib
@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-BASE = ROOT / '.original-build-93854'
+BASE = ROOT / '.original-build-95039'
 MOD = ROOT / 'mods/FarmHub/FarmHub.mpq'
 SOURCE_HASHES = {
     'data/hd/overlays/common/battlecommand.json': '0f14e94e4209cfc34494fa72bdd757e6a7559165705e184e659d9167bf87edc1',
@@ -96,7 +96,7 @@ def build(source_root):
     for relative in REMOVED:
         (MOD / relative).unlink(missing_ok=True)
     manifest = {
-        'build': '93854', 'source': 'MDM3C.7z (author 暗黑2阿檬), local copy',
+        'build': '95039', 'source': 'MDM3C.7z (author 暗黑2阿檬), local copy',
         'sourceSha256': SOURCE_HASHES, 'originalSha256': originals,
         'labels': labels, 'tablesChanged': [], 'removedFiles': REMOVED,
         'files': {p: sha(data) for p, data in sorted(outputs.items())},

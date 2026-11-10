@@ -1,4 +1,4 @@
-"""Build the merged rune/gem/material stash tab from a local MDM mod copy (CN build 93854)."""
+"""Build the merged rune/gem/material stash tab from a local MDM mod copy (CN build 95039)."""
 import csv
 import hashlib
 import json
@@ -127,7 +127,7 @@ def build():
 
     manifest = {
         'version': '1.5.0',
-        'build': '93854',
+        'build': '95039',
         'source': 'MDM mod (author 暗黑2阿檬), local copy; no license file found',
         'tabLabel': TAB_LABEL,
         'slotCount': slot_count,

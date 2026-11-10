@@ -8,11 +8,11 @@ Two steps:
 
     python build-item-labels.py rules <d2data json/base directory>
         Writes item-label-rules.json from the armor and weapons data of
-        blizzhackers/d2data, whose tables match CN build 93854.
+        blizzhackers/d2data, whose tables match CN build 95039.
 
     python build-item-labels.py
         Reads the client's original strings from
-        .original-build-93854/data/local/lng/strings/item-names.json and writes
+        .original-build-95039/data/local/lng/strings/item-names.json and writes
         the labelled copy into the mod.
 
 The tier is the column of normcode/ubercode/ultracode that equals the base's
@@ -24,7 +24,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-BASE = ROOT / '.original-build-93854'
+BASE = ROOT / '.original-build-95039'
 MOD = ROOT / 'mods/FarmHub/FarmHub.mpq'
 STRINGS = 'data/local/lng/strings/item-names.json'
 RULES = ROOT / 'item-label-rules.json'
@@ -60,7 +60,7 @@ def build_rules(source):
 def build_strings():
     source = BASE / STRINGS
     if not source.is_file():
-        sys.exit(f'Extract {STRINGS} from the CN 93854 client into {BASE.name}/ first.')
+        sys.exit(f'Extract {STRINGS} from the CN 95039 client into {BASE.name}/ first.')
     original = source.read_bytes()
     bom = original.startswith(b'\xef\xbb\xbf')
     entries = json.loads(original.decode('utf-8-sig'))
@@ -84,7 +84,7 @@ def build_strings():
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_bytes(data)
     manifest = {
-        'build': '93854',
+        'build': '95039',
         'language': LANGUAGE,
         'labels': list(TIERS.values()),
         'labelledBases': len(found),

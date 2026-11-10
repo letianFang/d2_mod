@@ -16,10 +16,10 @@ if ($manifest.name -ne 'FarmHub' -or $manifest.savepath -ne '../') {
 }
 
 $dataVersionBytes = [System.IO.File]::ReadAllBytes($dataVersionPath)
-$expectedDataVersionBytes = [System.Text.Encoding]::ASCII.GetBytes('93854')
+$expectedDataVersionBytes = [System.Text.Encoding]::ASCII.GetBytes('95039')
 if ($dataVersionBytes.Length -ne $expectedDataVersionBytes.Length -or
     (Compare-Object $dataVersionBytes $expectedDataVersionBytes -SyncWindow 0)) {
-    throw 'DataVersionBuild.txt must be exactly five ASCII bytes: 93854 (no BOM or newline).'
+    throw 'DataVersionBuild.txt must be exactly five ASCII bytes: 95039 (no BOM or newline).'
 }
 
 $rows = @(Import-Csv -LiteralPath $tablePath -Delimiter "`t")
@@ -231,7 +231,7 @@ if ($autoStart.name -ne 'CALL/mymodConvertAutoStart' -or $autoStep.name -ne 'CAL
 }
 $buffLabels = Get-Content -LiteralPath (Join-Path $PSScriptRoot 'buff-labels-assets.json') -Raw | ConvertFrom-Json
 foreach ($file in $buffLabels.originalSha256.PSObject.Properties) {
-    if ((Get-FileHash -LiteralPath (Join-Path $PSScriptRoot ".original-build-93854/$($file.Name)")).Hash -ne $file.Value) {
+    if ((Get-FileHash -LiteralPath (Join-Path $PSScriptRoot ".original-build-95039/$($file.Name)")).Hash -ne $file.Value) {
         throw "Buff overlay baseline mismatch: $($file.Name)"
     }
 }
@@ -301,4 +301,32 @@ foreach ($hydraFile in $hydraHide.removedEntities.PSObject.Properties.Name) {
         throw "Hydra unit must keep only entity_root: $hydraFile"
     }
 }
-Write-Host 'Verification passed: existing FarmHub features, navigation, high-rune audio, used corpse visibility, borderless panels, merged stash tab, Battle Orders/Command labels, hidden hydras with cyan bolts, item tiers, and asset hashes.'
+$clientUpdate = Get-Content -LiteralPath (Join-Path $PSScriptRoot 'client-update-assets.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+if ($clientUpdate.build -ne '95039' -or @($clientUpdate.originalSha256.PSObject.Properties).Count -ne 37 -or
+    @($clientUpdate.files.PSObject.Properties).Count -ne 61) {
+    throw 'Client update audit is incomplete or has the wrong build.'
+}
+foreach ($file in $clientUpdate.originalSha256.PSObject.Properties) {
+    if ((Get-FileHash -LiteralPath (Join-Path $PSScriptRoot "$($clientUpdate.baseline)/$($file.Name)")).Hash -ne $file.Value) {
+        throw "Current client baseline hash mismatch: $($file.Name)"
+    }
+}
+foreach ($file in $clientUpdate.files.PSObject.Properties) {
+    if ((Get-FileHash -LiteralPath (Join-Path $modRoot $file.Name)).Hash -ne $file.Value) {
+        throw "Current client output hash mismatch: $($file.Name)"
+    }
+}
+if (Test-Path -LiteralPath (Join-Path $modRoot 'data/hd/character/enemy/councilmember1.json')) {
+    throw 'Updated council model must be loaded from the client, without a stale override.'
+}
+$originalNames = @(Get-Content -LiteralPath (Join-Path $PSScriptRoot "$($clientUpdate.baseline)/data/local/lng/strings/item-names.json") -Raw -Encoding UTF8 | ConvertFrom-Json)
+$modNames = @(Get-Content -LiteralPath (Join-Path $modRoot 'data/local/lng/strings/item-names.json') -Raw -Encoding UTF8 | ConvertFrom-Json)
+if ($originalNames.Count -ne $modNames.Count) { throw 'Item name entry count changed.' }
+for ($i = 0; $i -lt $originalNames.Count; $i++) {
+    foreach ($field in $originalNames[$i].PSObject.Properties) {
+        if ($field.Name -ne 'zhCN' -and $modNames[$i].($field.Name) -cne $field.Value) {
+            throw "Client item localization changed outside zhCN: $i / $($field.Name)"
+        }
+    }
+}
+Write-Host 'Verification passed: CN 95039 baseline and outputs, official localization updates, existing FarmHub features, navigation, rune audio, corpse/panel visibility, stash, MDM3C warcries, hydra visuals, and item tiers.'

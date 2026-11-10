@@ -24,7 +24,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-BASE = ROOT / '.original-build-93854'
+BASE = ROOT / '.original-build-95039'
 MOD = ROOT / 'mods/FarmHub/FarmHub.mpq'
 MISSILES = 'data/hd/missiles/missiles.json'
 HYDRA_BOLT_MODEL = 'icebolt'
@@ -78,7 +78,7 @@ def build():
     for relative, data in files.items():
         write(relative, data)
     manifest = {
-        'build': '93854',
+        'build': '95039',
         'missile': {'hydra': {'before': 'firebolt', 'after': HYDRA_BOLT_MODEL}},
         'removedEntities': removed,
         'notHidden': 'fireexplode hit flash (shared with Fire Bolt and Fire Arrow)',

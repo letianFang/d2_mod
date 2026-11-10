@@ -9,4 +9,4 @@
 *.flac binary
 # Game assets and extraction baselines must retain exact bytes and hashes.
 /mods/** -text
-/.original-build-93854/** -text
+/.original-build-*/** -text

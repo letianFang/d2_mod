@@ -1,5 +1,5 @@
 {
-  "build": "93854",
+  "build": "95039",
   "launchArguments": "-mod FarmHub -txt -assettestmode 1",
   "corpseScope": "all areas; used corpses only",
   "stateChange": {

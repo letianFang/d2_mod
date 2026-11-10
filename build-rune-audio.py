@@ -1,4 +1,4 @@
-"""Merge MDM rune audio into freshly extracted build 93854 client tables."""
+"""Merge MDM rune audio into freshly extracted build 95039 client tables."""
 import argparse
 import csv
 import hashlib
@@ -10,10 +10,10 @@ import shutil
 ROOT = Path(__file__).resolve().parent
 parser = argparse.ArgumentParser()
 parser.add_argument('--source', type=Path, required=True, help='MDM.mpq directory')
-parser.add_argument('--original', type=Path, default=ROOT / '.original-build-93854')
+parser.add_argument('--original', type=Path, default=ROOT / '.original-build-95039')
 args = parser.parse_args()
 target = ROOT / 'mods/FarmHub/FarmHub.mpq'
-assert (args.original / 'data/global/DataVersionBuild.txt').read_bytes() == b'93854'
+assert (args.original / 'data/global/DataVersionBuild.txt').read_bytes() == b'95039'
 
 
 def read_table(path):
@@ -87,7 +87,7 @@ assert merged_sounds[:len(sound_rows)] == sound_rows
 assert len(merged_sounds) == len(sound_rows) + 8
 
 manifest = {
-    'version': '1.4.0', 'build': '93854', 'source': str(args.source),
+    'version': '1.4.0', 'build': '95039', 'source': str(args.source),
     'runes': runes, 'audioInfo': audio_info,
     'miscColumns': len(misc_headers), 'miscRows': len(misc_rows),
     'soundColumns': len(sound_headers), 'soundRows': len(merged_sounds),
