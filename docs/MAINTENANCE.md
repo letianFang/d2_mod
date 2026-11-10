@@ -2,7 +2,7 @@
 
 本文面向模组维护者，记录实现方式、资源对应、已知问题和发布流程。玩家使用说明见 [README](../README.md)。
 
-发布 ZIP 和历史备份统一放在 [GitHub Releases](https://github.com/letianFang/d2_mod/releases)，不作为仓库目录中的文件维护。仓库保留 `.original-build-93854/` 构建基线；不收录本机 `.tools/` 工具及 `.reference-*` 第三方参考检出。游戏存档不纳入此仓库。
+发布 ZIP 和历史备份统一放在 [GitHub Releases](https://github.com/letianFang/d2_mod/releases)，不作为仓库目录中的文件维护。仓库保留 `.original-build-95039/` 构建基线；不收录本机 `.tools/` 工具及 `.reference-*` 第三方参考检出。游戏存档不纳入此仓库。
 
 ## 实现说明
 
@@ -36,7 +36,7 @@
 
 音效提取自本机 `E:\磨刀门MOD\MDM\MDM\MDM.mpq\Data\HD\Global\sfx\item\high_rune_26.flac` 至 `high_rune_33.flac`，逐文件保留原音频。范围为 26 Vex、27 Ohm、28 Lo、29 Sur、30 Ber、31 Jah、32 Cham、33 Zod；Ist/Gul 及以下仍为原版掉落声音。各音频长度不同，Ber 提示约 6.6 秒。
 
-从 build 93854 客户端 CASC 中提取原版 `misc.txt`、`sounds.txt`，只修改八个符文的 `dropsound`，并在原声音表末尾追加八行专用音效记录及不冲突的 ID。拾取/使用声音 `usesound` 保留原版。没有导入磨刀门的符文模型、光柱、其他物品规则或完整数据表，不修改掉率。
+从 build 95039 客户端 CASC 中提取原版 `misc.txt`、`sounds.txt`，只修改八个符文的 `dropsound`，并在原声音表末尾追加八行专用音效记录及不冲突的 ID。拾取/使用声音 `usesound` 保留原版。没有导入磨刀门的符文模型、光柱、其他物品规则或完整数据表，不修改掉率。
 
 `rune-audio-assets.json` 记录音频和表哈希、符文范围、原表哈希及音频时长；`build-rune-audio.py` 可用提取后的当前客户端原表和 MDM 资源重建。复查时可将已有大号符文从背包丢到地上确认音效，再检查实际怪物掉落。提示遵守游戏的声音距离与播放限制，不能保证所有远处掉落都听得到。
 
@@ -48,9 +48,42 @@
 
 `build-farming-visibility.py` 和 `farming-visibility-assets.json` 记录构建方式、原文件及输出哈希。
 
+### 战斗体能 / 战斗指挥提示（MDM3C 移植）
+
+来源是本机 `E:\磨刀门MOD\MDM3C.7z`（作者：暗黑2阿檬），经维护者确认使用此版本。`E:\磨刀门MOD\MDM` 解压版没有这两个战吼的显示覆盖。只移植战斗指挥、战斗体能，不导入其他战吼、刺客集气或游戏数据表。
+
+- 从当前客户端 CASC 提取 `data/hd/overlays/common/battlecommand.json`、`battleorders.json`，保存到 `.original-build-95039/`。`build-buff-labels.py` 以这两个文件为基础，仅替换 VFX 组件、加入 MDM3C 的 Transform 组件和更新对应粒子/贴图依赖；保留原文件其余字节及实体 ID。构建中用回退替换断言确认无额外改动。
+- `buff_skill.particles`、`buff_hp.particles` 和 `buff_skillup_0000000.texture`、`buff_hpup_0000000000.texture` 与 MDM3C 逐字节一致。显示红色 `Skill ↑` / `HP ↑`，贴图中分别位于上部/下部。保留 MDM3C 的位置 `(122, 95, 116)`、单位缩放、单位四元数和 `inheritOnlyPosition: true`；不按场景单位猜测或重新换算这些坐标。
+- 粒子唯一的活动采样器 `__sampler_0` 指向对应移植贴图。文件中其余 nickname 材质字符串是方向箭头模板残留的编辑器元数据；不因此覆盖共享的白色或 NPC 贴图。
+- `states.txt` 中两个状态仍分别引用原版同名 overlay，buff 效果与持续时间不变。施放特效 `battlecommandcast`、`battleorderscast` 不改，组件 `hardKillOnDestroy: true` 用于状态结束时清理图标。角色、佣兵及其他获得相同状态的单位共享显示。
+- `buff-labels-assets.json` 记录六个来源文件、两个客户端基线及六个输出文件的 SHA-256。四个旧 `farmhub_bc_skilltext` / `farmhub_bo_life_text` 贴图和粒子列入 `removedFiles`，构建和安装时清理。
+- 重建：从 `MDM3C.7z` 解压上述六个来源文件，运行 `python build-buff-labels.py --source-root "解压路径/MDM3C/MDM3C.mpq"`。仅使用 Python 标准库；无需重新生成或编辑二进制贴图/粒子。
+- `verify.ps1` 校验来源二进制一致性、输出和基线哈希、状态映射、Transform、贴图采样器及旧资源清理。本次只做静态检查，需游戏内确认大小、位置、两种状态分别获得/消失、死亡后清理及佣兵显示。
+
+### 火蛇显示调整
+
+只改高清显示，不改 `monstats.txt`、`skills.txt`、`missiles.txt` 等任何影响怪物行为的数据表。
+
+- `data\hd\missiles\missiles.json`：原版把 `hydra` 飞弹映射到与法师火弹、骷髅法师、陷阱共用的 `firebolt` 模型。只把 `hydra` 一项改为原版 `icebolt` 模型（冰弹、冰系骷髅法师、青蛙也用它），火弹显示为青色；`firebolt`、`icebolt` 本身不变。伤害仍是火焰。
+- `data\hd\character\enemy\hydra1`–`hydra3.json`：只保留 `entity_root`，删除 `entity_torso`（本体模型）、`entity_spine*_vfx`（身上火焰）和 `entity_vfx_decal`（地面焦痕）。依赖列表保持原样，动作文件可能仍会引用。
+- 命中火花 `fireexplode`（高清 `fire_arrow_explode_2`）与火弹、火焰箭共用，不修改。
+- `hydra1`–`hydra3` 也是法师九头蛇召唤的怪物，法师九头蛇在高清下同样显示。
+- 把火蛇本体改成青色需要它的贴图（`data\hd\character\enemy\hydra1\textures\`）和身上火焰粒子的替代方案，目前未提取。
+- `build-hydra-display.py` 先确认能逐字节复现原版紧凑 JSON 再写出；`hydra-display-assets.json` 记录原文件与输出哈希。
+
+### 底材等级
+
+只修改 `data\local\lng\strings\item-names.json` 中底材名称（键为 `armor.txt`/`weapons.txt` 的 `namestr`）的 `zhCN` 文字，在后面追加 `[普]`/`[扩]`/`[精]`。地面标签、未鉴定物品和所有品质都显示底材名，因此鉴定前即可看到。
+
+- 等级：底材代码等于 `normcode`/`ubercode`/`ultracode` 时分别为普、扩、精。
+- 规则由 `python build-item-labels.py rules <d2data 的 json/base 目录>` 生成 `item-label-rules.json`，数据来自 [blizzhackers/d2data](https://github.com/blizzhackers/d2data)，与 95039 原表一致。
+- 名称文件由 `python build-item-labels.py` 从 `.original-build-95039/` 中的原版 `item-names.json` 生成；原版重新序列化后逐字节一致，因此只有底材名改变。`item-labels-assets.json` 记录哈希，`verify.ps1` 自动校验。
+- 曾经尝试同时显示“有用孔数”，用户测试后要求只保留等级。
+- 客户端更新后必须重新提取 `item-names.json` 再生成，旧文件会覆盖新版本的物品名称。
+
 ### 合并材料页
 
-做法参考本机 MDM Mod（作者：暗黑2阿檬，适配 build 93854）：
+做法参考本机 MDM Mod（作者：暗黑2阿檬，适配 build 95039）：
 
 - `bankexpansionlayouthd.json` 把全部 `AdvancedStashSlotWidget` 放进 `advancedstash_gems`，`advancedstash_materials`、`advancedstash_runes` 保留为空容器；第三个标签页的背景换成 `panel_bg_craft`。
 - 自动重塑不使用 DLL：勾选框发送 `PanelManager:TogglePanel:CALL/mymodConvertAutoStart`，该面板用循环 `TimerWidget` 反复打开 `CALL/mymodConvert`，后者定时发送原生的 `BankPanelMessage:Convert` 后自行卸载。
@@ -58,7 +91,7 @@
 与 MDM 的不同：
 
 - 标签文字为“材料”。
-- 重塑间隔由约 0.3 秒改为约 1 秒（`TRANSMUTE_INTERVAL`）。
+- 重塑间隔由约 0.3 秒改为约 0.5 秒（`TRANSMUTE_INTERVAL = 0.4`，加上开始面板 0.1 秒的循环定时器）。v1.5.0 时为约 1 秒。
 - `withdraw_button`（提取）移到屏幕外隐藏，不删除控件。
 - 对齐 `ua1`–`ua5` 的横向位置，消除 MDM 中 8 像素的点击区重叠。
 - 不带入 MDM 的自定义金币按钮、额外翻页箭头和方块下方重复的 7、8 号符文格。
@@ -81,22 +114,33 @@ powershell -ExecutionPolicy Bypass -File .\verify.ps1
 
 这是静态检查，不会启动游戏，也不能证明界面命中区域、场景显示或新客户端兼容性正确。通过后仍需要游戏内回归测试。
 
+## 95039 适配记录（2026-11-10）
+
+当前基线为 `.original-build-95039/`；`.original-build-93854/` 保留历史原文件，不覆盖。通过客户端 CASC 的两个实际 build 配置读取新旧资源，37 个文件的逐字节 SHA-256 对比记录于 `client-update-assets.json`：34 个相同，3 个变化。
+
+- 版本文件：`93854` → `95039`，使用客户端原始 5 字节 ASCII。
+- `item-names.json`：仅 7 个 Horazon 系列名称的 `esES` 去掉语法前缀。以新版原文重建 506 个中文底材后缀，其余语言、Key 和 ID 与新版客户端逐项一致。
+- `councilmember1.json`：纹理依赖列表更新。当前 MOD 不覆盖这个文件，无需迁移；保留客户端新版加载。不要因历史基线存在该文件而将其复制进 MOD。
+- `actinfo`、`misc`、`sounds`、`states`、`overlay`、`armor`、`weapons`、`skills`、`monstats`、菜单/仓库界面、火蛇/飞弹、战吼 overlay、崔凡克和四种尼拉塞克场景、七种楼梯资源等均已确认新旧原始文件相同，原有覆盖的其他 59 个文件逐字节保留。
+- 当前功能构建脚本和校验改用 95039 基线。`python build-client-update.py` 校验新版基线、重建中文标注并写入原始版本文件；同时断言其他覆盖仍与适配前提交 `5812f78` 相同。
+- `verify.ps1` 校验 37 个新版原文件、61 个输出文件、其他语言文本及全部既有功能。当前只完成静态校验；需游戏内确认版本提示消失、人物开局、传送、材料页/合成、BUFF 获得与消失、火蛇及入口显示正常。
+
 ## 游戏更新后的必要维护
 
 暴雪更新 D2R 后，本模组也需要同步检查。不要仅仅点击版本警告中的“继续”，因为客户端数据表结构或内容可能已经改变。
 
 1. 启动一次未加载模组的游戏，确认客户端已完成更新。
 2. 记录客户端显示的新数据版本号。
-3. 从当前客户端重新提取最新版 `data\global\DataVersionBuild.txt`、`data\global\excel\` 下的 `actinfo.txt`、`misc.txt`、`sounds.txt`、`states.txt`，界面文件 `mainmenupanelhd.json`、`pauselayouthd.json`、`pauselayoutgardenhd.json`、`panelborderspanelhd.json`、`bankexpansionlayouthd.json`，以及崔凡克 `travn.json` 和四种 `nihl*.json`。
+3. 从当前客户端重新提取最新版 `data\global\DataVersionBuild.txt`、`data\global\excel\` 下的 `actinfo.txt`、`misc.txt`、`sounds.txt`、`states.txt`，界面文件 `mainmenupanelhd.json`、`pauselayouthd.json`、`pauselayoutgardenhd.json`、`panelborderspanelhd.json`、`bankexpansionlayouthd.json`，名称文件 `data\local\lng\strings\item-names.json`，高清 `data\hd\missiles\missiles.json` 与 `data\hd\character\enemy\hydra1`–`hydra3.json`，以及崔凡克 `travn.json` 和四种 `nihl*.json`；同时确认新版 `states.txt` 中 `battleorders`、`battlecommand` 的 `overlay1` 和 `overlay.txt` 中的 `Character` 未变。
 4. 以新版数据表为基础，重新应用传送点映射、符文音效和尸体状态改动；不要用旧表覆盖新版表。
 5. 以新版界面和场景文件为基础，重新合并人物点击进入地狱、崔凡克通透布局和合并材料页；不要长期沿用旧版本的完整资源文件。
 6. 确认 `DataVersionBuild.txt` 与客户端版本完全一致。
 7. 运行 `verify.ps1`，通过后再启动模组，完成下方回归清单。
 
-`DataVersionBuild.txt` 有严格格式要求：内容只能是版本号本身，必须使用纯 ASCII、无 BOM，并且末尾不能有空格或换行。例如 build 93854 的正确文件恰好是以下 5 个字节：
+`DataVersionBuild.txt` 有严格格式要求：内容只能是版本号本身，必须使用纯 ASCII、无 BOM，并且末尾不能有空格或换行。例如 build 95039 的正确文件恰好是以下 5 个字节：
 
 ```text
-39 33 38 35 34
+39 35 30 33 39
 ```
 
 如果弹窗中的“当前数据版本”和“检测到的数据版本”看起来相同，但仍提示不匹配，通常就是版本文件包含了隐藏的 BOM、回车或换行。弹窗句号被挤到下一行也是末尾换行的明显特征。
@@ -124,6 +168,10 @@ powershell -ExecutionPolicy Bypass -File .\verify.ps1
 | `data\hd\roomtiles\*.json`、`data\hd\env\porory\beacon\` | 入口光柱、光圈与纹理。 |
 | `data\hd\env\preset\expansion\wildtemple\nihl{n,e,s,w}.json`、`data\hd\directionarrows\` | 四种布局及方向箭头。 |
 | `data\hd\nickname\textures\graphic\` | 两张兼容纹理，补齐粒子中残留的材质引用。 |
+| `data\hd\overlays\common\battleorders.json`、`battlecommand.json` | MDM3C 红色 HP ↑ / Skill ↑ 提示；覆盖原版持续光圈。由 `build-buff-labels.py` 移植，依赖 `buff_hp` / `buff_skill` 粒子及对应贴图。 |
+| `data\hd\directionarrows\particles\buff_{hp,skill}.particles`、`textures\buff_*up_*.texture` | MDM3C 原始战吼贴片粒子和贴图，逐字节复制；旧 `farmhub_bc_skilltext` / `farmhub_bo_life_text` 已退役。 |
+| `data\hd\missiles\missiles.json`、`data\hd\character\enemy\hydra1`–`hydra3.json` | 火蛇本体不显示、火弹用冰弹外观；由 `build-hydra-display.py` 从原版生成，`missiles.json` 只改 `hydra` 一项。 |
+| `data\local\lng\strings\item-names.json` | 底材名后的 [普]/[扩]/[精]；由 `build-item-labels.py` 从原版文件生成，只改 `zhCN`。 |
 | `data\global\ui\layouts\bankexpansionlayouthd.json` | 合并页布局；全部 `AdvancedStashSlotWidget` 位于 `advancedstash_gems`，`advancedstash_materials` 和 `advancedstash_runes` 必须保留为空容器。 |
 | `data\global\ui\layouts\CALL\mymodConvert*hd.json` | 自动重塑定时面板；面板 `name` 必须与勾选框消息和文件路径一致。 |
 | `data\hd\global\ui\panel\stash\additionalstash\panel_bg_craft*.sprite` | 合并页背景，格子框已画在贴图中，移动格子时要同步修改；高清与 `lowend` 版本应一起维护。 |
@@ -149,7 +197,7 @@ powershell -ExecutionPolicy Bypass -File .\verify.ps1
    powershell -ExecutionPolicy Bypass -File .\install.ps1 -D2RPath "E:\Diablo II Resurrected"
    ```
 
-5. 安装脚本只覆盖文件，并清理脚本和 `stash-merge-assets.json` 中明确列出的退役资源。若本次删除或改名了其他文件，要把它们加入退役列表，不能删除存档。
+5. 安装脚本只覆盖文件，并清理脚本、`stash-merge-assets.json` 和 `buff-labels-assets.json` 中明确列出的退役资源。若本次删除或改名了其他文件，要把它们加入退役列表，不能删除存档。
 6. 对本次修改的文件比较工程与安装目录的 SHA-256，确认资源确实同步。
 7. 完全重启游戏，完成下方回归测试，再发布包含 `mods`、`docs`、`README.md`、`install.ps1`、`verify.ps1`、全部 `*-assets.json` 和 `build-*.py` 的新版本压缩包。
 8. 更新 README 的变更记录和 `docs/DOWNLOADS.md`。历史 ZIP 内的 README 保持当时版本。
@@ -159,12 +207,17 @@ powershell -ExecutionPolicy Bypass -File .\verify.ps1
 - 启动无版本不匹配警告，离线角色、原键位与快速施法设置正常。
 - 地狱已解锁角色点击模型可开局且无文字提示；普通/噩梦仍可由原按钮手动选择。
 - 第四幕九个传送槽位正确，新增目的地遵守当前难度解锁状态，其他四幕可返回群魔堡垒。
-- 崔凡克高清议会区域视野改善，怪物和原路线正常。
+- 崔凡克高清议会区域视野改善，怪物和原路线正常；看不到火蛇本体，火蛇的火弹显示为青色冰弹，法师火弹、骷髅法师等其他火弹正常显示。
+- 地上的武器和护甲底材名后显示 [普]/[扩]/[精]，未鉴定和各品质物品都显示。
 - 暂停菜单外点击保存退出；菜单内设置和返回按钮正常，日常点击不会触发退出。
 - 分别检查原版与扩展暂停布局；检查高清/低配置资源及不同分辨率下人物点击区是否仍覆盖模型。
 - 保存退出后重新开局，确认角色进度与掉落物品正常保存。
-- “材料”页显示既有的符文、宝石和材料数量；放入、取出、自动入库、方块合成、合成后保存重开都正常；个人和共享页可正常存取；勾选自动重塑后约每秒重塑一次，取消勾选、关闭仓库或切换标签页后不再继续；过往赛季勾选框不与其他控件重叠。
+- 战斗指挥后角色和佣兵显示红色 Skill ↑，战斗体能后显示红色 HP ↑；同时存在时两行不重叠，位置与大小符合 MDM3C；分别等待 buff 结束及死亡后确认对应提示消失；吼叫施放特效正常。
+- “材料”页显示既有的符文、宝石和材料数量；放入、取出、自动入库、方块合成、合成后保存重开都正常；个人和共享页可正常存取；勾选自动重塑后约每 0.5 秒重塑一次，取消勾选、关闭仓库或切换标签页后不再继续；过往赛季勾选框不与其他控件重叠。
 
 ## 验证记录
 
+- 2026-11-10：适配 CN 95039，新旧 37 个原文件审计、构建及完整静态校验通过；更新后的游戏内回归待确认。
+
+- 2026-11-07：经维护者确认移植 MDM3C 的 Skill ↑ / HP ↑；完整静态检查及重复构建一致性通过，游戏内显示待确认。
 - 2026-10-30：用户确认当前工程全部功能的游戏内测试正常，包括合并材料页和自动重塑。

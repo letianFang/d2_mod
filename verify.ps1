@@ -16,10 +16,10 @@ if ($manifest.name -ne 'FarmHub' -or $manifest.savepath -ne '../') {
 }
 
 $dataVersionBytes = [System.IO.File]::ReadAllBytes($dataVersionPath)
-$expectedDataVersionBytes = [System.Text.Encoding]::ASCII.GetBytes('93854')
+$expectedDataVersionBytes = [System.Text.Encoding]::ASCII.GetBytes('95039')
 if ($dataVersionBytes.Length -ne $expectedDataVersionBytes.Length -or
     (Compare-Object $dataVersionBytes $expectedDataVersionBytes -SyncWindow 0)) {
-    throw 'DataVersionBuild.txt must be exactly five ASCII bytes: 93854 (no BOM or newline).'
+    throw 'DataVersionBuild.txt must be exactly five ASCII bytes: 95039 (no BOM or newline).'
 }
 
 $rows = @(Import-Csv -LiteralPath $tablePath -Delimiter "`t")
@@ -229,4 +229,104 @@ if ($autoStart.name -ne 'CALL/mymodConvertAutoStart' -or $autoStep.name -ne 'CAL
     @($autoStep.children | Where-Object { $_.fields.message -eq 'BankPanelMessage:Convert' -and $_.fields.time -eq $stashMerge.transmuteIntervalSeconds }).Count -ne 1) {
     throw 'The auto-transmute timer panels are incorrect.'
 }
-Write-Host 'Verification passed: existing FarmHub features, navigation, high-rune audio, used corpse visibility, borderless panels, merged stash tab, and asset hashes.'
+$buffLabels = Get-Content -LiteralPath (Join-Path $PSScriptRoot 'buff-labels-assets.json') -Raw | ConvertFrom-Json
+foreach ($file in $buffLabels.originalSha256.PSObject.Properties) {
+    if ((Get-FileHash -LiteralPath (Join-Path $PSScriptRoot ".original-build-95039/$($file.Name)")).Hash -ne $file.Value) {
+        throw "Buff overlay baseline mismatch: $($file.Name)"
+    }
+}
+foreach ($removedFile in $buffLabels.removedFiles) {
+    if (Test-Path -LiteralPath (Join-Path $modRoot $removedFile)) {
+        throw "Retired buff label still exists: $removedFile"
+    }
+}
+foreach ($file in $buffLabels.files.PSObject.Properties) {
+    if ((Get-FileHash -LiteralPath (Join-Path $modRoot $file.Name)).Hash -ne $file.Value) {
+        throw "Buff label asset hash mismatch: $($file.Name)"
+    }
+}
+foreach ($label in $buffLabels.labels.PSObject.Properties) {
+    $warcry = @($states | Where-Object state -eq $label.Name)
+    if ($warcry.Count -ne 1 -or $warcry[0].overlay1 -ne $label.Name) {
+        throw "Buff label state no longer uses its vanilla overlay: $($label.Name)"
+    }
+    $overlay = Get-Content -LiteralPath (Join-Path $modRoot $label.Value.overlay) -Raw | ConvertFrom-Json
+    $particle = @($overlay.entities.components | Where-Object type -eq 'VfxDefinitionComponent')
+    if ($overlay.type -ne 'OverlayDefinition' -or $particle.Count -ne 1 -or
+        $particle[0].filename -ne $label.Value.particle -or -not $particle[0].hardKillOnDestroy -or
+        $overlay.dependencies.particles.path -notcontains $particle[0].filename -or
+        -not (Test-Path -LiteralPath (Join-Path $modRoot $particle[0].filename) -PathType Leaf)) {
+        throw "Buff label overlay is incorrect: $($label.Name)"
+    }
+    $transform = @($overlay.entities.components | Where-Object type -eq 'TransformDefinitionComponent')
+    if ($transform.Count -ne 1 -or $transform[0].position.x -ne 122 -or
+        $transform[0].position.y -ne 95 -or $transform[0].position.z -ne 116 -or
+        $transform[0].scale.x -ne 1 -or $transform[0].scale.y -ne 1 -or $transform[0].scale.z -ne 1 -or
+        -not $transform[0].inheritOnlyPosition -or
+        $overlay.dependencies.textures.path -notcontains $label.Value.texture) {
+        throw "MDM3C buff transform/texture mismatch: $($label.Name)"
+    }
+    foreach ($asset in @($label.Value.particle, $label.Value.texture)) {
+        if ((Get-FileHash -LiteralPath (Join-Path $modRoot $asset)).Hash -ne $buffLabels.sourceSha256.$asset) {
+            throw "MDM3C source asset is not byte-identical: $asset"
+        }
+    }
+    $particleBytes = [IO.File]::ReadAllBytes((Join-Path $modRoot $label.Value.particle))
+    if (-not [Text.Encoding]::ASCII.GetString($particleBytes).Contains("__sampler_0=$($label.Value.texture)")) {
+        throw "MDM3C buff texture sampler mismatch: $($label.Name)"
+    }
+}
+$itemLabelsPath = Join-Path $PSScriptRoot 'item-labels-assets.json'
+if (Test-Path -LiteralPath $itemLabelsPath -PathType Leaf) {
+    $itemLabels = [System.IO.File]::ReadAllText($itemLabelsPath, [System.Text.Encoding]::UTF8) | ConvertFrom-Json
+    foreach ($file in $itemLabels.files.PSObject.Properties) {
+        if ((Get-FileHash -LiteralPath (Join-Path $modRoot $file.Name)).Hash -ne $file.Value) {
+            throw "Item label strings hash mismatch: $($file.Name)"
+        }
+    }
+}
+$hydraHide = Get-Content -LiteralPath (Join-Path $PSScriptRoot 'hydra-display-assets.json') -Raw | ConvertFrom-Json
+foreach ($file in $hydraHide.files.PSObject.Properties) {
+    if ((Get-FileHash -LiteralPath (Join-Path $modRoot $file.Name)).Hash -ne $file.Value) {
+        throw "Hydra hide asset hash mismatch: $($file.Name)"
+    }
+}
+$hdMissiles = [System.IO.File]::ReadAllText((Join-Path $modRoot 'data/hd/missiles/missiles.json'), [System.Text.Encoding]::UTF8) | ConvertFrom-Json
+if ($hdMissiles.hydra -ne 'icebolt' -or $hdMissiles.firebolt -ne 'firebolt' -or $hdMissiles.icebolt -ne 'icebolt') {
+    throw 'Only the hydra missile may use the Ice Bolt look; Fire Bolt and Ice Bolt must keep their models.'
+}
+foreach ($hydraFile in $hydraHide.removedEntities.PSObject.Properties.Name) {
+    $hydraUnit = [System.IO.File]::ReadAllText((Join-Path $modRoot $hydraFile), [System.Text.Encoding]::UTF8) | ConvertFrom-Json
+    if (@($hydraUnit.entities).Count -ne 1 -or $hydraUnit.entities[0].name -ne 'entity_root') {
+        throw "Hydra unit must keep only entity_root: $hydraFile"
+    }
+}
+$clientUpdate = Get-Content -LiteralPath (Join-Path $PSScriptRoot 'client-update-assets.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+if ($clientUpdate.build -ne '95039' -or @($clientUpdate.originalSha256.PSObject.Properties).Count -ne 37 -or
+    @($clientUpdate.files.PSObject.Properties).Count -ne 61) {
+    throw 'Client update audit is incomplete or has the wrong build.'
+}
+foreach ($file in $clientUpdate.originalSha256.PSObject.Properties) {
+    if ((Get-FileHash -LiteralPath (Join-Path $PSScriptRoot "$($clientUpdate.baseline)/$($file.Name)")).Hash -ne $file.Value) {
+        throw "Current client baseline hash mismatch: $($file.Name)"
+    }
+}
+foreach ($file in $clientUpdate.files.PSObject.Properties) {
+    if ((Get-FileHash -LiteralPath (Join-Path $modRoot $file.Name)).Hash -ne $file.Value) {
+        throw "Current client output hash mismatch: $($file.Name)"
+    }
+}
+if (Test-Path -LiteralPath (Join-Path $modRoot 'data/hd/character/enemy/councilmember1.json')) {
+    throw 'Updated council model must be loaded from the client, without a stale override.'
+}
+$originalNames = @(Get-Content -LiteralPath (Join-Path $PSScriptRoot "$($clientUpdate.baseline)/data/local/lng/strings/item-names.json") -Raw -Encoding UTF8 | ConvertFrom-Json)
+$modNames = @(Get-Content -LiteralPath (Join-Path $modRoot 'data/local/lng/strings/item-names.json') -Raw -Encoding UTF8 | ConvertFrom-Json)
+if ($originalNames.Count -ne $modNames.Count) { throw 'Item name entry count changed.' }
+for ($i = 0; $i -lt $originalNames.Count; $i++) {
+    foreach ($field in $originalNames[$i].PSObject.Properties) {
+        if ($field.Name -ne 'zhCN' -and $modNames[$i].($field.Name) -cne $field.Value) {
+            throw "Client item localization changed outside zhCN: $i / $($field.Name)"
+        }
+    }
+}
+Write-Host 'Verification passed: CN 95039 baseline and outputs, official localization updates, existing FarmHub features, navigation, rune audio, corpse/panel visibility, stash, MDM3C warcries, hydra visuals, and item tiers.'

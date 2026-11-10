@@ -6,7 +6,7 @@
             "type": "TimerWidget",
             "name": "reshaping_timer",
             "fields": {
-                "time": 0.9,
+                "time": 0.4,
                 "message": "BankPanelMessage:Convert"
             }
         },
@@ -14,7 +14,7 @@
             "type": "TimerWidget",
             "name": "TimerClose8",
             "fields": {
-                "time": 0.9,
+                "time": 0.4,
                 "message": "PanelManager:UnloadPanel:CALL/mymodConvert"
             }
         }

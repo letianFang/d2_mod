@@ -1,0 +1,88 @@
+{
+  "build": "95039",
+  "source": "MDM3C.7z (author 暗黑2阿檬), local copy",
+  "sourceSha256": {
+    "data/hd/overlays/common/battlecommand.json": "0f14e94e4209cfc34494fa72bdd757e6a7559165705e184e659d9167bf87edc1",
+    "data/hd/overlays/common/battleorders.json": "3f322dc22bb7267fa9878eab77984005c28456603baf568c0029c2b513fb5a39",
+    "data/hd/directionarrows/particles/buff_skill.particles": "23ffe0591ee8493170ad777b968a0d727fa907f83464c2b446e35f4f4c00adc2",
+    "data/hd/directionarrows/particles/buff_hp.particles": "432225fb7b1aab797c51c45347626b0aa7910c2f1943f06e2171d3385556b22c",
+    "data/hd/directionarrows/textures/buff_skillup_0000000.texture": "3267049777be210082931625f0c03afab6cae18876d025bf4dd0597820fbdacb",
+    "data/hd/directionarrows/textures/buff_hpup_0000000000.texture": "6c6c3037b0cac336db2418d3d0bd5234337ae896552c7fa2146e0eeba1a2f1d4"
+  },
+  "originalSha256": {
+    "data/hd/overlays/common/battlecommand.json": "125847be7d4f96d9a4ba8f31ca26a1379dc835228a17e30c05b541a61c28402c",
+    "data/hd/overlays/common/battleorders.json": "48d2a50ead761d895cbc73f22ac9547d7c99f0953ff88b04fde616180983f2d9"
+  },
+  "labels": {
+    "battlecommand": {
+      "text": "Skill ↑",
+      "overlay": "data/hd/overlays/common/battlecommand.json",
+      "particle": "data/hd/directionarrows/particles/buff_skill.particles",
+      "texture": "data/hd/directionarrows/textures/buff_skillup_0000000.texture",
+      "transform": {
+        "type": "TransformDefinitionComponent",
+        "name": "entity_vfx_BaalTaunt_TransformDefinition",
+        "position": {
+          "x": 122,
+          "y": 95,
+          "z": 116
+        },
+        "orientation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "inheritOnlyPosition": true
+      }
+    },
+    "battleorders": {
+      "text": "HP ↑",
+      "overlay": "data/hd/overlays/common/battleorders.json",
+      "particle": "data/hd/directionarrows/particles/buff_hp.particles",
+      "texture": "data/hd/directionarrows/textures/buff_hpup_0000000000.texture",
+      "transform": {
+        "type": "TransformDefinitionComponent",
+        "name": "entity_vfx_BaalTaunt_TransformDefinition",
+        "position": {
+          "x": 122,
+          "y": 95,
+          "z": 116
+        },
+        "orientation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "inheritOnlyPosition": true
+      }
+    }
+  },
+  "tablesChanged": [],
+  "removedFiles": [
+    "data/hd/directionarrows/particles/farmhub_bc_skilltext.particles",
+    "data/hd/directionarrows/particles/farmhub_bo_life_text.particles",
+    "data/hd/directionarrows/textures/farmhub_bc_skilltext.texture",
+    "data/hd/directionarrows/textures/farmhub_bo_life_text.texture"
+  ],
+  "files": {
+    "data/hd/directionarrows/particles/buff_hp.particles": "432225fb7b1aab797c51c45347626b0aa7910c2f1943f06e2171d3385556b22c",
+    "data/hd/directionarrows/particles/buff_skill.particles": "23ffe0591ee8493170ad777b968a0d727fa907f83464c2b446e35f4f4c00adc2",
+    "data/hd/directionarrows/textures/buff_hpup_0000000000.texture": "6c6c3037b0cac336db2418d3d0bd5234337ae896552c7fa2146e0eeba1a2f1d4",
+    "data/hd/directionarrows/textures/buff_skillup_0000000.texture": "3267049777be210082931625f0c03afab6cae18876d025bf4dd0597820fbdacb",
+    "data/hd/overlays/common/battlecommand.json": "4d664f7666acb2906e330b346151e758760249d4e726004c2700f3b1bea879de",
+    "data/hd/overlays/common/battleorders.json": "8a082fd45f39e3a5fd93692b0ca2363390f247ebc489d8607070571efd7ff58f"
+  },
+  "runtimeVerification": "pending"
+}
